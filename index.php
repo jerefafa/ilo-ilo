@@ -114,7 +114,6 @@
     
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                                     <ul class="dropdown-menu">
-                                    	<li><a href="hotel-homepage.php">Hotel Homepage</a></li>
                                         <li><a href="hotel-hrsc.php">HRTSC</a></li>
                                         <li><a href="hotel-tlsc.php">TLSC</a></li>
                                     </ul>			

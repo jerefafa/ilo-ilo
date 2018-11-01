@@ -92,7 +92,7 @@
                     <ul class="nav navbar-nav navbar-right navbar-search-link">
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                                <li><a href="index.php">Hotel Homepage</a></li>
                             </ul>			
                         </li>
     
@@ -123,7 +123,7 @@
                     
                         <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
                         <div class="collapse sub-menu" id="home-links">
-                            <a href="hotel-homepage.php" class="list-group-item">Hotel Homepage</a>
+                            <a href="index.php" class="list-group-item">Hotel Homepage</a>
                         </div><!-- end sub-menu -->
                         
                         <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>

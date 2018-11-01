@@ -1,3 +1,11 @@
+<?php
+session_start();
+$style = "display:none";
+if(isset($_SESSION["invalid"])) {
+    $style = "color:red;display:block";
+    session_destroy();
+}
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -90,7 +98,7 @@
                     <ul class="nav navbar-nav navbar-right navbar-search-link">
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                                <li><a href="index.php">Hotel Homepage</a></li>
                             </ul>			
                         </li>
                 
@@ -120,7 +128,7 @@
                     
                         <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
                         <div class="collapse sub-menu" id="home-links">
-                            <a href="hotel-homepage.php" class="list-group-item">Hotel Homepage</a>
+                            <a href="index.php" class="list-group-item">Hotel Homepage</a>
                         </div><!-- end sub-menu -->
                         
                         <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
@@ -160,20 +168,20 @@
                         	<div class="flex-content">
                                 <div class="custom-form custom-form-fields">
                                     <h3>Login</h3>
-                                    <form>
+                                    <form action="login-user.php" method="post">
                                             
                                         <div class="form-group">
-                                             <input type="text" class="form-control" placeholder="Username"  required/>
+                                             <input type="text" class="form-control" placeholder="Username" name="username" required/>
                                              <span><i class="fa fa-user"></i></span>
                                         </div>
                                         
                                         <div class="form-group">
-                                             <input type="password" class="form-control" placeholder="Password"  required/>
+                                             <input type="password" class="form-control" placeholder="Password" name="password" required/>
                                              <span><i class="fa fa-lock"></i></span>
                                         </div>
                                         
                                         <div class="checkbox">
-                                             <label><input type="checkbox"> Remember me</label>
+                                            <span style="<?=$style ?>">Invalid Username or Password</span>
                                         </div>
                                         
                                         <button class="btn btn-orange btn-block">Login</button>
