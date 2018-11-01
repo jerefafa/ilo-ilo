@@ -1,6 +1,9 @@
 <?php
 session_start();
 $style = "display:none";
+if(isset($_SESSION["user_id"])){
+    header("location:dashboard.php");
+}
 if(isset($_SESSION["invalid"])) {
     $style = "color:red;display:block";
     session_destroy();
