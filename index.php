@@ -176,7 +176,7 @@
                             <div class="tab-content">
                                 
                                 <div id="hotels" class="tab-pane in active">
-                                    <form>
+                                    <form method="get">
                                         <div class="row">
                                             
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -185,7 +185,7 @@
                                                     <div class="col-xs-12 col-sm-6">
                                                         <div class="form-group left-icon">
                                                             <label>Check In</label>
-                                                            <input type="text" class="form-control dpd1" placeholder="Check In" >
+                                                            <input type="text" class="form-control dpd1" placeholder="Check In" name="checkIn">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div><!-- end columns -->
@@ -193,7 +193,7 @@
                                                     <div class="col-xs-12 col-sm-6">
                                                         <div class="form-group left-icon">
                                                             <label>Check Out</label>
-                                                            <input type="text" class="form-control dpd2" placeholder="Check Out" >
+                                                            <input type="text" class="form-control dpd2" placeholder="Check Out" name="checkOut">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
                                                     </div><!-- end columns -->
@@ -207,11 +207,11 @@
                                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                                         <div class="form-group right-icon">
                                                             <label>Rooms</label>
-                                                            <select class="form-control">
-                                                                <option selected>01</option>
-                                                                <option>02</option>
-                                                                <option>03</option>
-                                                                <option>04</option>
+                                                            <select class="form-control" name="numRooms">
+                                                                <option selected value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
                                                             </select>
                                                             <i class="fa fa-angle-down"></i>
                                                         </div>
@@ -220,11 +220,11 @@
                                                     <div class="col-xs-6 col-sm-6 col-md-6">
                                                         <div class="form-group right-icon">
                                                             <label>Adults</label>
-                                                            <select class="form-control">
-                                                                <option selected>01</option>
-                                                                <option>02</option>
-                                                                <option>03</option>
-                                                                <option>04</option>
+                                                            <select class="form-control" name="numAdult">
+                                                                <option selected value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
                                                             </select>
                                                             <i class="fa fa-angle-down"></i>
                                                         </div>
@@ -233,11 +233,11 @@
                                                     <div class="col-xs-6 col-sm-6 col-md-6">
                                                         <div class="form-group right-icon">
                                                             <label>Kids</label>
-                                                            <select class="form-control">
-                                                                <option selected>01</option>
-                                                                <option>02</option>
-                                                                <option>03</option>
-                                                                <option>04</option>
+                                                            <select class="form-control" name="numChild">
+                                                                <option selected value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
                                                             </select>
                                                             <i class="fa fa-angle-down"></i>
                                                         </div>
