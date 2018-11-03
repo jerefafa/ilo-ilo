@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION["rooms"])) {
+    unset($_SESSION["rooms"]);
+}
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -7,7 +13,7 @@
         <link rel="icon" href="images/download.png" type="image/x-icon">
         
         <!-- Google Fonts -->	
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<!--        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">-->
         
         <!-- Bootstrap Stylesheet -->	
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -176,7 +182,7 @@
                             <div class="tab-content">
                                 
                                 <div id="hotels" class="tab-pane in active">
-                                    <form method="get">
+                                    <form method="get" action="room-suggestions.php">
                                         <div class="row">
                                             
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -234,7 +240,8 @@
                                                         <div class="form-group right-icon">
                                                             <label>Kids</label>
                                                             <select class="form-control" name="numChild">
-                                                                <option selected value="1">01</option>
+                                                                <option selected value="0">0</option>
+                                                                <option value="1">01</option>
                                                                 <option value="2">02</option>
                                                                 <option value="3">03</option>
                                                                 <option value="4">04</option>

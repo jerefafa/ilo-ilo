@@ -1,3 +1,19 @@
+<?php
+    session_start();
+    $hotel_id = 2;
+    require "connection.php";
+    function checkRoomExistence($roomId) {
+            $isExist = false;
+            foreach ($_SESSION["rooms"] as $room) {
+                if($roomId == $room->id) {
+                    $isExist = true;
+                    break;
+                }
+            }
+            return $isExist;
+        }
+
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -123,25 +139,25 @@
                 	<div class="closebtn">
                         <button class="btn btn-default" id="closebtn">&times;</button>
                     </div><!-- end close-btn -->
-                    
+
                     <div class="list-group panel">
-                    
+
                         <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
                         <div class="collapse sub-menu" id="home-links">
                             <a href="index.php" class="list-group-item">Hotel Homepage</a>
                         </div><!-- end sub-menu -->
-                        
+
                        <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
                             <div class="collapse sub-menu" id="hotels-links">
                                 <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
                                 <a href="hotel-tlsc.php" class="list-group-item">TLSC</a>
                             </div><!-- end sub-menu -->
-                        
+
                     </div><!-- end list-group -->
                 </div><!-- end main-menu -->
             </div><!-- end mySidenav -->
         </div><!-- end sidenav-content -->
-        
+
         
         <!--================= PAGE-COVER ================-->
         <section class="page-cover" id="cover-hotel-detail">
@@ -164,146 +180,8 @@
         	<div id="hotel-details" class="innerpage-section-padding">
                 <div class="container">
                     <div class="row">        	
-                        
-                        <div class="col-xs-12 col-sm-12 col-md-3 side-bar left-side-bar">
-                            
-                            <div class="side-bar-block booking-form-block">
-                            	<h2 class="selected-price"><span>Price starts at </span>₱3500.00</h2>
-                            
-                            	<div class="booking-form">
-                                	<h3>Book Hotel</h3>
-                                    <p>Find your room today</p>
-                                    
-                                    <form>
-                                    	<div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="First Name" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="Last Name" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="email" class="form-control" placeholder="Email" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="Phone" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="Address" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="text" class="form-control dpd1" placeholder="Arrival Date" required/>                                       		<i class="fa fa-calendar"></i>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="text" class="form-control dpd2" placeholder="Departure Date" required/>                                       		<i class="fa fa-calendar"></i>
-                                        </div>
 
-                                             <div class="form-group right-icon">
-                                            <select class="form-control">
-                                                <option selected>Available Rooms</option>
-                                                <option>Superior Room</option>
-                                                <option>Deluxe Room</option>
-                                                <option>Executive Room</option>
-                                            </select>
-                                            <i class="fa fa-angle-down"></i>
-                                        </div>
-                                        
-                                        <div class="row">
-                                        	<div class="col-sm-6 col-md-12 col-lg-6 no-sp-r">
-                                                <div class="form-group right-icon">
-                                                    <select class="form-control">
-                                                        <option selected>Rooms</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="col-sm-6 col-md-12 col-lg-6 no-sp-l">    
-                                                <div class="form-group right-icon">
-                                                    <select class="form-control">
-                                                        <option selected>Beds</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row">
-                                        	<div class="col-sm-6 col-md-12 col-lg-6 no-sp-r">
-                                                <div class="form-group right-icon">
-                                                    <select class="form-control">
-                                                        <option selected>Adults</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="col-sm-6 col-md-12 col-lg-6 no-sp-l">    
-                                                <div class="form-group right-icon">
-                                                    <select class="form-control">
-                                                        <option selected>Childs</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group right-icon">
-                                            <select class="form-control" id="myselect">
-                                                <option selected>Payment Method</option>
-                                                <option>Cash</option>
-                                                <option value="credit-card">Credit Card</option>
-                                            </select>
-                                            <i class="fa fa-angle-down"></i>
-                                        </div>
-                                        
-                                        <div class="checkbox custom-check">
-                                        	<input type="checkbox" id="check01" name="checkbox"/>
-                                            <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="before-you-fly.php">Terms & Conditions.</a></label>
-                                        </div>
-                                        
-                                        <!-- pag confirm pag cash sa cash-payment.php mapupunta pag credit naman sa credit-payment.php -->
-                                        <button class="btn btn-block btn-orange">Confirm Booking</button>
-                                    </form>
-
-                                </div><!-- end booking-form -->
-                            </div><!-- end side-bar-block -->
-                            
-                            <div class="row">
-                               
-                                
-                                <div class="col-xs-12 col-sm-6 col-md-12">    
-                                    <div class="side-bar-block support-block">
-                                        <h3>Need Help</h3>
-                                        <p>Tawag ka sa wonder pets.</p>
-                                        <div class="support-contact">
-                                            <span><i class="fa fa-phone"></i></span>
-                                            <p>(033) 320-7190</p>
-                                        </div><!-- end support-contact -->
-                                    </div><!-- end side-bar-block -->
-                                </div><!-- end columns -->
-                                
-                            </div><!-- end row -->
-                        </div><!-- end columns -->
-                        
-                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 content-side">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-side">
                             
                             <div class="detail-slider">
                                 <div class="feature-slider">
@@ -414,92 +292,90 @@
                             
                             <div class="available-blocks" id="available-rooms">
                             	<h2>Available Rooms</h2>
-                            	<div class="list-block main-block room-block">
-                                    <div class="list-content">
-                                        <div class="main-img list-img room-img">
-                                            <a href="#">
-                                                <img src="images/available-room-1.jpg" class="img-responsive" alt="room-img" />
-                                            </a>
-                                            <div class="main-mask">
-                                                <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">₱3500.00<span class="divider">|</span><span class="pkg">7 Nights</span></li>
-                                                    <li class="rating">
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star lightgrey"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- end main-mask -->
-                                        </div><!-- end room-img -->
-                                        
-                                        <div class="list-info room-info">
-                                            <h3 class="block-title"><a href="#">Superior Room</a></h3>
-                                            <p class="block-minor">Max Guests:TBA</p>
-                                            <p>Unwind in our Superior Room which comes with an indulgent rain shower as well as a LCD television with local and cable channels.</p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                         </div><!-- end room-info -->
-                                    </div><!-- end list-content -->
-                                </div><!-- end room-block -->
-								
-                                <div class="list-block main-block room-block">
-                                    <div class="list-content">
-                                        <div class="main-img list-img room-img">
-                                            <a href="#">
-                                                <img src="images/available-room-2.jpg" class="img-responsive" alt="room-img" />
-                                            </a>
-                                            <div class="main-mask">
-                                                <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">₱4000.00<span class="divider">|</span><span class="pkg">7 Nights</span></li>
-                                                    <li class="rating">
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star lightgrey"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- end main-mask -->
-                                        </div><!-- end room-img -->
-                                        
-                                        <div class="list-info room-info">
-                                            <h3 class="block-title"><a href="#">Deluxe Room</a></h3>
-                                            <p class="block-minor">Max Guest:03</p>
-                                            <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                         </div><!-- end room-info -->
-                                    </div><!-- end list-content -->
-                                </div><!-- end room-block -->
-                                
-                                <div class="list-block main-block room-block">
-                                    <div class="list-content">
-                                        <div class="main-img list-img room-img">
-                                            <a href="#">
-                                                <img src="images/available-room-3.jpg" class="img-responsive" alt="room-img" />
-                                            </a>
-                                            <div class="main-mask">
-                                                <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">₱4300.00<span class="divider">|</span><span class="pkg">7 Nights</span></li>
-                                                    <li class="rating">
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star lightgrey"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- end main-mask -->
-                                        </div><!-- end room-img -->
-                                        
-                                        <div class="list-info room-info">
-                                            <h3 class="block-title"><a href="#">Executive Room</a></h3>
-                                            <p class="block-minor">Max Guest:04</p>
-                                            <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                         </div><!-- end room-info -->
-                                    </div><!-- end list-content -->
-                                </div><!-- end room-block -->
+                            	<div class="list-block main-block room-block"  <?php
+                               ?>
+                                    <?php
+                                    if(isset($_SESSION["rooms"])) {
+                                        foreach ($_SESSION["rooms"] as $room) {
+                                    if ($room->hotel_id == $hotel_id){
+                                    ?>
+                                        <div class="list-block main-block room-block">
+                                            <div class="list-content">
+                                                <div class="main-img list-img room-img">
+                                                    <a href="#">
+                                                        <img src="<?= $room->image_path ?>" class="img-responsive" alt="room-img" />
+                                                    </a>
+                                                    <div class="main-mask">
+                                                        <ul class="list-unstyled list-inline offer-price-1">
+                                                            <li class="price">₱<?= $room->rate ?><span class="divider">|</span><span class="pkg"> | Night</span></li>
+                                                            <li class="rating">
+                                                                <span><i class="fa fa-star orange"></i></span>
+                                                                <span><i class="fa fa-star orange"></i></span>
+                                                                <span><i class="fa fa-star orange"></i></span>
+                                                                <span><i class="fa fa-star orange"></i></span>
+                                                                <span><i class="fa fa-star lightgrey"></i></span>
+                                                            </li>
+                                                        </ul>
+                                                    </div><!-- end main-mask -->
+                                                </div><!-- end room-img -->
+
+                                                <div class="list-info room-info">
+                                                    <h3 class="block-title"><a href="#"><?= $room->room_type ?> Room</a></h3>
+                                                    <p class="block-minor">Room: <?= $room->room_name ?></p>
+                                                    <p class="block-minor">Max Guest: <?= $room->max_guest ?></p>
+                                                    <p><?= $room->room_description?></p>
+                                                    <a href="#" class="btn btn-orange btn-lg">View More</a>
+                                                    <a href="#" class="btn btn-orange btn-lg">Book</a>
+                                                </div><!-- end room-info -->
+                                            </div><!-- end list-content -->
+                                        </div>
+                                <?php
+                                }
+                                }
+                                    }
+                                    else {
+                                        $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '$hotel_id'");
+                                        while ($row = $stmt->fetch_object()) {
+                                            ?>
+                                            <div class="list-block main-block room-block">
+                                                <div class="list-content">
+                                                    <div class="main-img list-img room-img">
+                                                        <a href="#">
+                                                            <img src="<?= $row->image_path ?>" class="img-responsive" alt="room-img" />
+                                                        </a>
+                                                        <div class="main-mask">
+                                                            <ul class="list-unstyled list-inline offer-price-1">
+                                                                <li class="price">₱<?= $row->rate ?><span class="divider">|</span><span class="pkg"> | Night</span></li>
+                                                                <li class="rating">
+                                                                    <span><i class="fa fa-star orange"></i></span>
+                                                                    <span><i class="fa fa-star orange"></i></span>
+                                                                    <span><i class="fa fa-star orange"></i></span>
+                                                                    <span><i class="fa fa-star orange"></i></span>
+                                                                    <span><i class="fa fa-star lightgrey"></i></span>
+                                                                </li>
+                                                            </ul>
+                                                        </div><!-- end main-mask -->
+                                                    </div><!-- end room-img -->
+
+                                                    <div class="list-info room-info">
+                                                        <h3 class="block-title"><a href="#"><?= $row->room_type ?> Room</a></h3>
+                                                        <p class="block-minor">Room: <?= $row->room_name ?></p>
+                                                        <p class="block-minor">Max Guest: <?= $row->max_guest ?></p>
+                                                        <p><?= $row->room_description?></p>
+                                                        <a href="#" class="btn btn-orange btn-lg">View More</a>
+                                                        <a href="#" class="btn btn-orange btn-lg">Book</a>
+                                                    </div><!-- end room-info -->
+                                                </div><!-- end list-content -->
+                                            </div>
+
+
+                                    <?php
+                                        }
+                                    }
+
+
+                                    ?>
+
                                 
                             
                          <!--
