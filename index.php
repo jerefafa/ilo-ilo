@@ -13,7 +13,7 @@ if(isset($_SESSION["rooms"])) {
         <link rel="icon" href="images/download.png" type="image/x-icon">
         
         <!-- Google Fonts -->	
-<!--        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
         
         <!-- Bootstrap Stylesheet -->	
         <link rel="stylesheet" href="css/bootstrap.min.css">

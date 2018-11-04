@@ -324,8 +324,7 @@
                                                     <p class="block-minor">Room: <?= $room->room_name ?></p>
                                                     <p class="block-minor">Max Guest: <?= $room->max_guest ?></p>
                                                     <p><?= $room->room_description?></p>
-                                                    <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                                    <a href="#" class="btn btn-orange btn-lg">Book</a>
+                                                    <a href="book-room.php?roomId=<?=$room->id?>" class="btn btn-orange btn-lg">View More</a>
                                                 </div><!-- end room-info -->
                                             </div><!-- end list-content -->
                                         </div>
@@ -362,8 +361,7 @@
                                                         <p class="block-minor">Room: <?= $row->room_name ?></p>
                                                         <p class="block-minor">Max Guest: <?= $row->max_guest ?></p>
                                                         <p><?= $row->room_description?></p>
-                                                        <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                                        <a href="#" class="btn btn-orange btn-lg">Book</a>
+                                                        <a href="book-room.php?roomId=<?=$row->id?>" class="btn btn-orange btn-lg">View More</a>
                                                     </div><!-- end room-info -->
                                                 </div><!-- end list-content -->
                                             </div>
@@ -375,20 +373,6 @@
 
 
                                     ?>
-
-                                
-                            
-                         <!--
-                            <div class="pages">
-                                <ol class="pagination">
-                                    <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li>
-                                </ol>
-                            </div><!-- end pages -->
 
                         </div><!-- end columns -->
 

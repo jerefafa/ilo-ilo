@@ -16,7 +16,7 @@ function checkRoomExistence($roomId) {
 <!doctype html>
 <html lang="en">
 <head>
-    <title>TLSC</title>
+    <title>HRTSC</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="images/download.png" type="image/x-icon">
@@ -54,7 +54,7 @@ function checkRoomExistence($roomId) {
 <div class="overlay">
     <a href="javascript:void(0)" id="close-button" class="closebtn">&times;</a>
     <div class="overlay-content">
-        <div class="form-center">
+        <div class="form-center" >
             <form>
                 <div class="form-group">
                     <div class="input-group">
@@ -323,8 +323,7 @@ function checkRoomExistence($roomId) {
                                                 <p class="block-minor">Room: <?= $room->room_name ?></p>
                                                 <p class="block-minor">Max Guest: <?= $room->max_guest ?></p>
                                                 <p><?= $room->room_description?></p>
-                                                <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                                <a href="#" class="btn btn-orange btn-lg">Book</a>
+                                                <a href="book-room.php?roomId=<?=$room->id?>" class="btn btn-orange btn-lg">View More</a>
                                             </div><!-- end room-info -->
                                         </div><!-- end list-content -->
                                     </div>
@@ -361,8 +360,7 @@ function checkRoomExistence($roomId) {
                                             <p class="block-minor">Room: <?= $row->room_name ?></p>
                                             <p class="block-minor">Max Guest: <?= $row->max_guest ?></p>
                                             <p><?= $row->room_description?></p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                            <a href="#" class="btn btn-orange btn-lg">Book</a>
+                                            <a href="book-room.php?roomId=<?=$row->id?>" class="btn btn-orange btn-lg">View More</a>
                                         </div><!-- end room-info -->
                                     </div><!-- end list-content -->
                                 </div>
