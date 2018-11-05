@@ -1,3 +1,9 @@
+<?php
+    session_start();
+if(!isset($_SESSION["bookingInfo"])) {
+    header("location:index.php");
+}
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -168,54 +174,50 @@
                                		<div class="table-responsive">
                                			<table class="table">
                                         	<tbody>
-                                        		<tr>
-                                                	<td>Booking Number:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                	<td>First Name:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                	<td>Last Name:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                	<td>Email Address:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                	<td>Home Address:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                	<td>Town/City:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                	<td>Zip Code:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                	<td>Country:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Check In:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Check Out:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Room:</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Total:</td>
-                                                    <td></td>
-                                                </tr>
+                                            <tr>
+                                                <td>First Name:</td>
+                                                <td><?= $_SESSION["bookingInfo"][3]?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Last Name:</td>
+                                                <td><?= $_SESSION["bookingInfo"][4] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email Address:</td>
+                                                <td><?= $_SESSION["bookingInfo"][5] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Home Address:</td>
+                                                <td><?= $_SESSION["bookingInfo"][7] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone Number:</td>
+                                                <td><?= $_SESSION["bookingInfo"][6] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Check In:</td>
+                                                <td><?= date('M d Y',strtotime($_SESSION["bookingInfo"][8])) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Check Out:</td>
+                                                <td><?= date('M d Y',strtotime($_SESSION["bookingInfo"][9])) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Room:</td>
+                                                <td><?= $_SESSION["bookingInfo"][0]->room_type ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Number of Adult: </td>
+                                                <td><?= $_SESSION["bookingInfo"][10] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Number of Child:</td>
+                                                <td><?= $_SESSION["bookingInfo"][11] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Price:</td>
+                                                <td><?= $_SESSION["bookingInfo"][2] ?></td>
+                                            </tr>
                                         	</tbody>
                                         </table>
                                		</div><!-- end table-responsive -->

@@ -35,11 +35,12 @@ if(isset($_GET["numChild"])){
     //removing used rooms
     foreach ($roomsArray as $room) {
             if(mysqli_num_rows($conn->query("SELECT * FROM `reservations` WHERE ((`check_in` between '$checkIn' AND '$checkOut') OR (`check_out` between '$checkIn' AND '$checkOut')) AND `room_id` = '$room->id' AND `cancelled_by` IS NULL")) > 0) {
-            array_splice($roomsArray,$i,1);
+                echo json_encode($roomsArray[$i]);
+                array_splice($roomsArray,$i,1);
+                continue;
         }
         $i++;
     }
-    echo json_encode($roomsArray);
     //finding highest price
     $i = 0;
     $currentIndex=0;
@@ -55,11 +56,8 @@ if(isset($_GET["numChild"])){
     //removing other hotel rooms
     $i = 0;
     $_SESSION["rooms"] = $roomsArray;
-    $stmt = $conn->query("SELECT * FROM `rooms`");
-    $allRooms = array();
-    while ($row = $stmt->fetch_object()) {
-        array_push($allRooms, $row);
-    }
+
+
     if($currentRoomId == 1) {
         header("location:hotel-hrsc.php");
     } elseif($currentRoomId  == 2){

@@ -361,7 +361,6 @@
                                                         <p class="block-minor">Room: <?= $row->room_name ?></p>
                                                         <p class="block-minor">Max Guest: <?= $row->max_guest ?></p>
                                                         <p><?= $row->room_description?></p>
-                                                        <a href="book-room.php?roomId=<?=$row->id?>" class="btn btn-orange btn-lg">View More</a>
                                                     </div><!-- end room-info -->
                                                 </div><!-- end list-content -->
                                             </div>

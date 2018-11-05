@@ -21,18 +21,29 @@ $stmt = $conn->query("SELECT * FROM `packages` WHERE `id` = '$package' AND `date
 while ($row = $stmt->fetch_object()) {
     $totalPrice+=$row->price;
 }
-echo $totalPrice;
-
-$stmt = $conn->query("INSERT INTO `reservations`(`room_id`,`check_in`,`check_out`,`mode_of_payment`,`total_price`) VALUES ('$roomId','".$_SESSION["reservationInfo"][0]."','".$_SESSION["reservationInfo"][1]."','".$_POST["paymentMethod"]."','$totalPrice')");
 $id = $conn->insert_id;
 $fname = $_POST["fname"];
 $lname = $_POST["lname"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
 $address = $_POST["address"];
-$stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id','$fname','$lname','$email','$phone','".$_SESSION["reservationInfo"][2]."','".$_SESSION["reservationInfo"][3]."','$package')");
+$bookingInfo = array();
+array_push($bookingInfo,$roomObject);
+array_push($bookingInfo,$numdays);
+array_push($bookingInfo,$totalPrice);
+array_push($bookingInfo,$fname);
+array_push($bookingInfo,$lname);
+array_push($bookingInfo,$email);
+array_push($bookingInfo,$phone);
+array_push($bookingInfo,$address);
+array_push($bookingInfo, $_SESSION["reservationInfo"][0]);
+array_push($bookingInfo, $_SESSION["reservationInfo"][1]);
+array_push($bookingInfo, $_SESSION["reservationInfo"][2]);
+array_push($bookingInfo, $_SESSION["reservationInfo"][3]);
+array_push($bookingInfo,$package);
+$_SESSION["bookingInfo"] = $bookingInfo;
 if($_POST["paymentMethod"] == "cash") {
-
+    header("location:cash-payment.php");
 }else {
-
+    header("location:credit-payment.php");
 }

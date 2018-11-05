@@ -1,8 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["rooms"])) {
-    unset($_SESSION["rooms"]);
-}
+session_destroy();
 ?>
 <!doctype html>
 <html lang="en">

@@ -119,7 +119,7 @@ function checkRoomExistence($roomId) {
                 <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
                         <li class="active"><a href="hotel-hrsc.php">HRTSC</a></li>
-                        <li class="active"><a href="#">TLSC</a></li>
+                        <li class="active"><a href="hotel-tlsc.php">TLSC</a></li>
                     </ul>
                 </li>
 
@@ -360,7 +360,6 @@ function checkRoomExistence($roomId) {
                                             <p class="block-minor">Room: <?= $row->room_name ?></p>
                                             <p class="block-minor">Max Guest: <?= $row->max_guest ?></p>
                                             <p><?= $row->room_description?></p>
-                                            <a href="book-room.php?roomId=<?=$row->id?>" class="btn btn-orange btn-lg">View More</a>
                                         </div><!-- end room-info -->
                                     </div><!-- end list-content -->
                                 </div>

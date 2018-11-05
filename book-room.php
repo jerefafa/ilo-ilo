@@ -239,25 +239,14 @@ else {
                                     <i class="fa fa-angle-down"></i>
                                 </div>
 
-
                                 <div class="form-group right-icon">
-                                    <select class="form-control" id="paymentMethod" name="paymentMethod" onchange="toggleCreditCardDiv()">
+                                    <select class="form-control" id="paymentMethod" name="paymentMethod">
                                         <option selected>Payment Method</option>
                                         <option value="cash">Cash</option>
                                         <option value="card">Credit Card</option>
                                     </select>
                                     <i class="fa fa-angle-down"></i>
                                 </div>
-                                <div class="cardDetails" id="cardDetails" style="display: none">
-                                    <div class="form-group right-icon">
-                                        <input type="text" class="form-control" placeholder="Card Number" name="cardNumber">
-                                    </div>
-                                    <div class="form-group right-icon">
-                                        <input type="text" class="form-control dpd1" placeholder="Expiration Date" name="expDate">
-                                        <i class="fa fa-calendar"></i>
-                                    </div>
-                                </div>
-
                                 <div class="checkbox custom-check">
                                     <input type="checkbox" id="check01" name="checkbox"/>
                                     <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="hotel-policy.php">Terms & Conditions.</a></label>
