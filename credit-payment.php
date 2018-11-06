@@ -226,7 +226,8 @@ if(!isset($_SESSION["bookingInfo"])) {
                                         <h3 class="t-info-heading"><span><i class="fa fa-credit-card"></i></span>Credit Card Information</h3>
                                         <p>Payment is made by the use of: Credit Card</p>
                                         <ul class="list-inline">
-                                        	<div class="form-group">
+                                        	<form action="room-booking.php?paymentMode=card" method="post">
+                                            <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Name on Card" required/>  
                                         </div>
                                         <div class="form-group">
@@ -243,13 +244,13 @@ if(!isset($_SESSION["bookingInfo"])) {
                                             <br>
                                       <input type="checkbox" id="check02" name="checkbox"/>
                                             <label for="check02"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="before-you-fly.php">Hotel Policies, Terms and Conditions.</a></label>
-                                            <br><br>    
-                                            <a href="#thanks" data-toggle="modal">                       
+                                            <br><br>
                                             <button class="btn btn-orange btn-block">Confirm</button>
-                                            </a>
+                                            </form>
                                     	</ul>
                                     </div><!-- end payment-method -->
                                </div><!-- end traveler-info -->
+
                         	</div><!-- end space-right -->
                         </div><!-- end columns -->
 <!-- modal -->
