@@ -20,9 +20,10 @@ else{
             $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id', '" . $_SESSION["bookingInfo"][3] . "','" . $_SESSION["bookingInfo"][4] . "','" . $_SESSION["bookingInfo"][5] . "','" . $_SESSION["bookingInfo"][6] . "','" . $_SESSION["bookingInfo"][10] . "','" . $_SESSION["bookingInfo"][11] . "','" . $_SESSION["bookingInfo"][12] . "')");
             $to = $_SESSION["bookingInfo"][5];
             $subject = "Thank you for your reservation";
-            $body = "<a href = 'receipt.php?reservationId=".$id."'>Click here to print your receipt</a>";
+            $body = "<a href = 'receipt.php?reservationId=$id'>Click here to print your receipt</a>";
             $headers = "From: <iloilo-Hotel@gmail.com>";
             mail($to,$subject,$body,$headers);
+            header("location:receipt.php?reservationId=$id");
         }
     }
 }
