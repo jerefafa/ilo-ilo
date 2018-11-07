@@ -13,7 +13,17 @@ else{
             $stmt = $conn->query("INSERT INTO `reservations`(`room_id`,`check_in`,`check_out`,`mode_of_payment`,`total_price`) VALUES ('" . $_SESSION["bookingInfo"][0]->id . "','" . $_SESSION["bookingInfo"][8] . "','" . $_SESSION["bookingInfo"][9] . "','cash','" . $_SESSION["bookingInfo"][2] . "')");
             $id = $conn->insert_id;
             $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id', '" . $_SESSION["bookingInfo"][3] . "','" . $_SESSION["bookingInfo"][4] . "','" . $_SESSION["bookingInfo"][5] . "','" . $_SESSION["bookingInfo"][6] . "','" . $_SESSION["bookingInfo"][10] . "','" . $_SESSION["bookingInfo"][11] . "','" . $_SESSION["bookingInfo"][12] . "')");
-            echo "<script>alert('Registered, still gonna integrate the cash and card payment'); </script>";
+            $to = $_SESSION["bookingInfo"][5];
+            $subject = "Thank you for your reservation";
+            $body = "<a href = 'receipt.php?reservationId=$id'>Click here to print Payment Information</a>";
+            $headers = "From: <iloilo-Hotel@gmail.com>";
+//            mail($to,$subject,$body,$headers);
+            $url= "pay.php?reservationId=$id";
+            echo "<script>
+            window.open('$url', '_blank');
+            alert('The payment information has been sent to your email, Thank you for your registration');
+            location.href = 'index.php';
+            </script>";
         } else {
             $stmt = $conn->query("INSERT INTO `reservations`(`room_id`,`check_in`,`check_out`,`mode_of_payment`,`total_price`) VALUES ('" . $_SESSION["bookingInfo"][0]->id . "','" . $_SESSION["bookingInfo"][8] . "','" . $_SESSION["bookingInfo"][9] . "','card','" . $_SESSION["bookingInfo"][2] . "')");
             $id = $conn->insert_id;
@@ -22,8 +32,13 @@ else{
             $subject = "Thank you for your reservation";
             $body = "<a href = 'receipt.php?reservationId=$id'>Click here to print your receipt</a>";
             $headers = "From: <iloilo-Hotel@gmail.com>";
-            mail($to,$subject,$body,$headers);
-            header("location:receipt.php?reservationId=$id");
+//            mail($to,$subject,$body,$headers);
+            $url= "receipt.php?reservationId=$id";
+            echo "<script>
+            window.open('$url', '_blank');
+            alert('The payment information has been sent to your email, Thank you for your registration');
+            location.href = 'index.php';
+            </script>";
         }
     }
 }

@@ -19,9 +19,9 @@ while ($row = $stmt->fetch_object()) {
             size: A4;   /* auto is the initial value */
             height: auto;
             margin: 0;  /* this affects the margin in the printer settings */
-            page-break-after {
-                display: none;
-            }
+        page-break-after {
+            display: none;
+        }
         }
     </style>
 </head>
@@ -30,7 +30,7 @@ while ($row = $stmt->fetch_object()) {
 
 <page size="A4">
     <div style="margin-left: 3%; margin-right: 3%; padding-top: 5%;text-align:center;">
-            <h1><?= $printableObject->hotel_name?></h1>
+        <h1><?= $printableObject->hotel_name?></h1>
         <h3>Room: <?= $printableObject->room_type.' '.$printableObject->room_name?></h3><br>
         <br>
         <br>
@@ -38,7 +38,13 @@ while ($row = $stmt->fetch_object()) {
             <span>Check In : <?= date('M d Y',strtotime($printableObject->check_in)) ?></span><br>
             <span>Check Out : <?= date('M d Y',strtotime($printableObject->check_out)) ?></span><br>
             <br>
-            <span>Reservation #: <?= $printableObject->reservation_id?></span>
+            <span>Bank : BDO</span>
+            <br>
+            <span>Account#: 54168532418651</span>
+            <br>
+            <span>Account Type: Savings</span>
+            <br>
+            <span>Reservation #/Reference #: <?= $printableObject->reservation_id?></span>
             <br>
             <span>Name: <?= $printableObject->first_name.' '.$printableObject->last_name?></span>
             <br>

@@ -253,7 +253,7 @@ else {
                                 </div>
                                 <input type="hidden" value="<?= $_GET["roomId"]?>" name="roomId">
                                 <!-- pag confirm pag cash sa cash-payment.php mapupunta pag credit naman sa credit-payment.php -->
-                                <button class="btn btn-block btn-orange">Confirm Booking</button>
+                                <button class="btn btn-block btn-orange">Proceed</button>
                             </form>
 
                         </div><!-- end booking-form -->

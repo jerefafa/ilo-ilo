@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bffea9c-5ccf-40d7-bca7-9fdcc80b9a51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/Style4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-room.php" beforeDir="false" afterPath="$PROJECT_DIR$/book-room.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/receipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/room-booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/room-booking.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +43,7 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="js" value="1" />
-          <entry key="php" value="23" />
+          <entry key="php" value="25" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
@@ -51,19 +51,19 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="23" />
+          <entry key="PHP" value="25" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="10344" />
+          <entry key="php" value="11799" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="11" />
-          <entry key="PHP" value="10323" />
+          <entry key="HTML" value="17" />
+          <entry key="PHP" value="11772" />
           <entry key="SQL" value="10" />
         </counts>
       </usages-collector>
@@ -71,11 +71,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/room-suggestions.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -94,22 +89,45 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/room-booking.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="23" column="56" lean-forward="true" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+            <state relative-caret-position="170">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book-room.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="255" column="80" selection-start-line="255" selection-start-column="80" selection-end-line="255" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/receipt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pay.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,7 +135,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/Style4.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -143,15 +165,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="349">
               <caret line="239" column="90" selection-start-line="239" selection-start-column="90" selection-end-line="239" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotel-hrsc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="121" column="66" selection-start-line="121" selection-start-column="66" selection-end-line="121" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -188,8 +201,8 @@
       <find>print</find>
       <find>cash</find>
       <find>reservationInfo</find>
-      <find>confi</find>
       <find>ema</find>
+      <find>confi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,7 +219,6 @@
         <option value="$PROJECT_DIR$/accomodation.php" />
         <option value="$PROJECT_DIR$/sales.php" />
         <option value="$PROJECT_DIR$/payment.php" />
-        <option value="$PROJECT_DIR$/book-room.php" />
         <option value="$PROJECT_DIR$/room-suggestions.php" />
         <option value="$PROJECT_DIR$/hotel-tlsc.php" />
         <option value="$PROJECT_DIR$/hotel-hrsc.php" />
@@ -214,8 +226,10 @@
         <option value="$PROJECT_DIR$/cash-payment.php" />
         <option value="$PROJECT_DIR$/booking.php" />
         <option value="$PROJECT_DIR$/credit-payment.php" />
-        <option value="$PROJECT_DIR$/room-booking.php" />
         <option value="$PROJECT_DIR$/receipt.php" />
+        <option value="$PROJECT_DIR$/pay.php" />
+        <option value="$PROJECT_DIR$/book-room.php" />
+        <option value="$PROJECT_DIR$/room-booking.php" />
       </list>
     </option>
   </component>
@@ -242,11 +256,6 @@
               <item name="iloilo-hotel" type="b2602c69:ProjectViewProjectNode" />
               <item name="iloilo-hotel" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="iloilo-hotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iloilo-hotel" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -255,7 +264,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="cre&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/credit-payment.php&#10;inde&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/index.php&#10;book&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/booking.php" />
+    <property name="SearchEverywhereHistoryKey" value="Sty&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/css/Style4.css&#10;cre&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/credit-payment.php&#10;inde&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/index.php&#10;book&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/booking.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../NULS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -294,12 +303,12 @@
       <workItem from="1541028618859" duration="4403000" />
       <workItem from="1541065934604" duration="403000" />
       <workItem from="1541072197948" duration="905000" />
-      <workItem from="1541151784968" duration="56085000" />
+      <workItem from="1541151784968" duration="61509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64648000" />
+    <option name="totallyTimeSpent" value="70072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -318,7 +327,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -413,17 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book-room.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="190" column="35" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
-          <folding>
-            <element signature="e#1542#1549#1#HTML" expanded="true" />
-            <element signature="e#5678#5685#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotel-hrsc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2057">
@@ -476,23 +474,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/room-booking.php">
+    <entry file="file://$PROJECT_DIR$/css/Style4.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="23" column="56" lean-forward="true" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/Style4.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/receipt.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="n#style#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pay.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#page#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book-room.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="255" column="80" selection-start-line="255" selection-start-column="80" selection-end-line="255" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/room-booking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
         </state>
       </provider>
     </entry>
