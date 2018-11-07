@@ -27,7 +27,8 @@ else{
         } else {
             $stmt = $conn->query("INSERT INTO `reservations`(`room_id`,`check_in`,`check_out`,`mode_of_payment`,`total_price`) VALUES ('" . $_SESSION["bookingInfo"][0]->id . "','" . $_SESSION["bookingInfo"][8] . "','" . $_SESSION["bookingInfo"][9] . "','card','" . $_SESSION["bookingInfo"][2] . "')");
             $id = $conn->insert_id;
-            $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id', '" . $_SESSION["bookingInfo"][3] . "','" . $_SESSION["bookingInfo"][4] . "','" . $_SESSION["bookingInfo"][5] . "','" . $_SESSION["bookingInfo"][6] . "','" . $_SESSION["bookingInfo"][10] . "','" . $_SESSION["bookingInfo"][11] . "','" . $_SESSION["bookingInfo"][12] . "')");
+            $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id','".$_SESSION["bookingInfo"][3]."','".$_SESSION["bookingInfo"][4]."','".$_SESSION["bookingInfo"][5]."','".$_SESSION["bookingInfo"][6]."','".$_SESSION["bookingInfo"][10]."','".$_SESSION["bookingInfo"][11]."','".$_SESSION["bookingInfo"][12]."')");
+            echo $conn->error;
             $to = $_SESSION["bookingInfo"][5];
             $subject = "Thank you for your reservation";
             $body = "<a href = 'receipt.php?reservationId=$id'>Click here to print your receipt</a>";

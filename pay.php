@@ -6,6 +6,7 @@ $printableObject;
 while ($row = $stmt->fetch_object()) {
     $printableObject = $row;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
