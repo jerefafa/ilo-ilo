@@ -129,6 +129,8 @@ function checkRoomExistence($roomId) {
     </div><!-- end container -->
 </nav><!-- end navbar -->
 
+
+
 <div class="sidenav-content">
     <div id="mySidenav" class="sidenav" >
         <img src="images/logo.png" class="img-responsive" alt="registration-img">
@@ -151,7 +153,6 @@ function checkRoomExistence($roomId) {
                     <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
                     <a href="hotel-tlsc.php" class="list-group-item">TLSC</a>
                 </div><!-- end sub-menu -->
-
             </div><!-- end list-group -->
         </div><!-- end main-menu -->
     </div><!-- end mySidenav -->
@@ -163,10 +164,10 @@ function checkRoomExistence($roomId) {
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="page-title">Technology and Livelihood Service Center</h1>
+                <h1 class="page-title">Hotel Restaurant Training and Service Center</h1>
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Technology and Livelihood Service Center</li>
+                    <li class="active">Hotel Restaurant Training and Service Center</li>
                 </ul>
             </div><!-- end columns -->
         </div><!-- end row -->
@@ -210,84 +211,6 @@ function checkRoomExistence($roomId) {
                         </div><!-- end feature-slider-nav -->
                     </div>  <!-- end detail-slider -->
 
-                    <div class="detail-tabs">
-                        <ul class="nav nav-tabs nav-justified">
-                            <li class="active"><a href="#hotel-overview" data-toggle="tab">Hotel Overview</a></li>
-                            <li><a href="#restaurant" data-toggle="tab">Restaurant</a></li>
-                            <li><a href="#pick-up" data-toggle="tab">Pick Up Services</a></li>
-                            <li><a href="#luxury-gym" data-toggle="tab">Luxury Gym</a></li>
-                            <li><a href="#sports-club" data-toggle="tab">Sports Club</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-
-                            <div id="hotel-overview" class="tab-pane in active">
-                                <div class="row">
-                                    <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="images/hotel-detail-tab-1.jpg" class="img-responsive" alt="flight-detail-img" />
-                                    </div><!-- end columns -->
-
-                                    <div class="col-sm-8 col-md-8 tab-text">
-                                        <h3>Hotel Overview</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div><!-- end columns -->
-                                </div><!-- end row -->
-                            </div><!-- end hotel-overview -->
-
-                            <div id="restaurant" class="tab-pane">
-                                <div class="row">
-                                    <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="images/hotel-detail-tab-2.jpg" class="img-responsive" alt="flight-detail-img" />
-                                    </div><!-- end columns -->
-
-                                    <div class="col-sm-8 col-md-8 tab-text">
-                                        <h3>Restaurant</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                                    </div><!-- end columns -->
-                                </div><!-- end row -->
-                            </div><!-- end restaurant -->
-
-                            <div id="pick-up" class="tab-pane">
-                                <div class="row">
-                                    <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="images/hotel-detail-tab-3.jpg" class="img-responsive" alt="flight-detail-img" />
-                                    </div><!-- end columns -->
-
-                                    <div class="col-sm-8 col-md-8 tab-text">
-                                        <h3>Pick Up Services</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br/> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div><!-- end columns -->
-                                </div><!-- end row -->
-                            </div><!-- end pick-up -->
-
-                            <div id="luxury-gym" class="tab-pane">
-                                <div class="row">
-                                    <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="images/hotel-detail-tab-4.jpg" class="img-responsive" alt="flight-detail-img" />
-                                    </div><!-- end columns -->
-
-                                    <div class="col-sm-8 col-md-8 tab-text">
-                                        <h3>Luxury Gym</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div><!-- end columns -->
-                                </div><!-- end row -->
-                            </div><!-- end luxury-gym -->
-
-                            <div id="sports-club" class="tab-pane">
-                                <div class="row">
-                                    <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="images/hotel-detail-tab-5.jpg" class="img-responsive" alt="flight-detail-img" />
-                                    </div><!-- end columns -->
-
-                                    <div class="col-sm-8 col-md-8 tab-text">
-                                        <h3>Sports Club</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    </div><!-- end columns -->
-                                </div><!-- end row -->
-                            </div><!-- end sports-club -->
-
-                        </div><!-- end tab-content -->
-                    </div><!-- end detail-tabs -->
 
                     <div class="available-blocks" id="available-rooms">
                         <h2>Available Rooms</h2>
@@ -371,6 +294,85 @@ function checkRoomExistence($roomId) {
 
 
                         ?>
+                        <div class="detail-tabs">
+                            <ul class="nav nav-tabs nav-justified">
+                                <li class="active"><a href="#hotel-overview" data-toggle="tab">Hotel Overview</a></li>
+                                <li><a href="#restaurant" data-toggle="tab">Restaurant</a></li>
+                                <li><a href="#pick-up" data-toggle="tab">Pick Up Services</a></li>
+                                <li><a href="#luxury-gym" data-toggle="tab">Luxury Gym</a></li>
+                                <li><a href="#sports-club" data-toggle="tab">Sports Club</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+
+                                <div id="hotel-overview" class="tab-pane in active">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 tab-img">
+                                            <img src="images/hotel-detail-tab-1.jpg" class="img-responsive" alt="flight-detail-img" />
+                                        </div><!-- end columns -->
+
+                                        <div class="col-sm-8 col-md-8 tab-text">
+                                            <h3>Hotel Overview</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                        </div><!-- end columns -->
+                                    </div><!-- end row -->
+                                </div><!-- end hotel-overview -->
+
+                                <div id="restaurant" class="tab-pane">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 tab-img">
+                                            <img src="images/hotel-detail-tab-2.jpg" class="img-responsive" alt="flight-detail-img" />
+                                        </div><!-- end columns -->
+
+                                        <div class="col-sm-8 col-md-8 tab-text">
+                                            <h3>Restaurant</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+                                        </div><!-- end columns -->
+                                    </div><!-- end row -->
+                                </div><!-- end restaurant -->
+
+                                <div id="pick-up" class="tab-pane">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 tab-img">
+                                            <img src="images/hotel-detail-tab-3.jpg" class="img-responsive" alt="flight-detail-img" />
+                                        </div><!-- end columns -->
+
+                                        <div class="col-sm-8 col-md-8 tab-text">
+                                            <h3>Pick Up Services</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br/> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                        </div><!-- end columns -->
+                                    </div><!-- end row -->
+                                </div><!-- end pick-up -->
+
+                                <div id="luxury-gym" class="tab-pane">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 tab-img">
+                                            <img src="images/hotel-detail-tab-4.jpg" class="img-responsive" alt="flight-detail-img" />
+                                        </div><!-- end columns -->
+
+                                        <div class="col-sm-8 col-md-8 tab-text">
+                                            <h3>Luxury Gym</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                        </div><!-- end columns -->
+                                    </div><!-- end row -->
+                                </div><!-- end luxury-gym -->
+
+                                <div id="sports-club" class="tab-pane">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 tab-img">
+                                            <img src="images/hotel-detail-tab-5.jpg" class="img-responsive" alt="flight-detail-img" />
+                                        </div><!-- end columns -->
+
+                                        <div class="col-sm-8 col-md-8 tab-text">
+                                            <h3>Sports Club</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                        </div><!-- end columns -->
+                                    </div><!-- end row -->
+                                </div><!-- end sports-club -->
+
+                            </div><!-- end tab-content -->
+                        </div><!-- end detail-tabs -->
+
 
 
 
