@@ -127,6 +127,15 @@
                         <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
                     </ul>
                 </div><!-- end navbar collapse -->
+
+                <div class="navbar" >
+                    <a href="#" class="about-text">Home</a> |
+                    <a href="#gallery">Gallery</a> |
+                    <a href="#available-rooms">Rooms</a> |
+                    <a href="#">Reserve Now</a> |
+                    <a href="#">Reports</a> |
+                    <a href="#hotel-overview">Other Services</a>
+                </div>
             </div><!-- end container -->
         </nav><!-- end navbar -->
         
@@ -178,7 +187,7 @@
         <!--===== INNERPAGE-WRAPPER ====-->
         <section class="innerpage-wrapper">
         	<div id="hotel-details" class="innerpage-section-padding">
-                <div class="container">
+                <div class="container" id="gallery">
                     <div class="row">        	
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-side">
@@ -294,9 +303,9 @@
 
                                     ?>
 
-                                <div class="detail-tabs">
+                                <div class="detail-tabs" id="hotel-overview">
                                     <ul class="nav nav-tabs nav-justified">
-                                        <li class="active"><a href="#hotel-overview" data-toggle="tab">Hotel Overview</a></li>
+                                        <li class="active"><a " data-toggle="tab">Hotel Overview</a></li>
                                         <li><a href="#restaurant" data-toggle="tab">Restaurant</a></li>
                                         <li><a href="#pick-up" data-toggle="tab">Pick Up Services</a></li>
                                         <li><a href="#luxury-gym" data-toggle="tab">Luxury Gym</a></li>
@@ -305,7 +314,7 @@
 
                                     <div class="tab-content">
 
-                                        <div id="hotel-overview" class="tab-pane in active">
+                                        <div  class="tab-pane in active">
                                             <div class="row">
                                                 <div class="col-sm-4 col-md-4 tab-img">
                                                     <img src="images/hotel-detail-tab-1.jpg" class="img-responsive" alt="flight-detail-img" />

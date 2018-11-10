@@ -126,6 +126,14 @@ function checkRoomExistence($roomId) {
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
             </ul>
         </div><!-- end navbar collapse -->
+        <div class="navbar" >
+            <a href="#" class="about-text">Home</a> |
+            <a href="#gallery">Gallery</a> |
+            <a href="#available-rooms">Rooms</a> |
+            <a href="#">Reserve Now</a> |
+            <a href="#">Reports</a> |
+            <a href="#hotel-overview">Other Services</a>
+        </div>
     </div><!-- end container -->
 </nav><!-- end navbar -->
 
@@ -183,7 +191,7 @@ function checkRoomExistence($roomId) {
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-side">
 
-                    <div class="detail-slider">
+                    <div class="detail-slider" id="gallery">
                         <div class="feature-slider">
                             <div><img src="images/tls-1.jpg" class="img-responsive" alt="feature-img"/></div>
                             <div><img src="images/tls-2.jpg" class="img-responsive" alt="feature-img"/></div>
