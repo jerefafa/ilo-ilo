@@ -125,13 +125,13 @@ else {
             <ul class="nav navbar-nav navbar-right navbar-search-link">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                        <li><a href="index.php">Hotel Homepage</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                        <li><a href="index.php">Hotel Homepage</a></li>
                         <li class="active"><a href="#">HRTSC</a></li>
                     </ul>
                 </li>
@@ -195,70 +195,6 @@ else {
 
                 <div class="col-xs-12 col-sm-12 col-md-3 side-bar left-side-bar">
 
-                    <div class="side-bar-block booking-form-block">
-                        <h2 class="selected-price"><span>Price starts at </span><?= $roomObject->rate ?></h2> <!-- yung price pang market sa db din nag iiba kasi-->
-
-                        <div class="booking-form">
-                            <h3>Book this room</h3>
-
-                            <form action="booking.php" method="post">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="fname" placeholder="First Name" required/>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="lname" placeholder="Last Name" required/>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" placeholder="Email" required/>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="phone" placeholder="Phone" required/>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="address" placeholder="Address" required/>
-                                </div>
-
-
-
-                                <div class="form-group">
-                                    <select class="form-control" required name="package">
-                                        <option selected disabled>Packages</option>
-                                        <?php
-                                            $stmt = $conn->query("SELECT * FROM `packages` WHERE `room_id` = '".$_GET["roomId"]."' AND `date_deleted` IS NULL");
-                                            while ($row = $stmt->fetch_object()) {
-                                                ?>
-                                                <option value="<?= $row->id ?>"><?= $row->package_title ?></option>
-                                        <?php
-                                            }
-                                        ?>
-                                    </select>
-                                    <i class="fa fa-angle-down"></i>
-                                </div>
-
-                                <div class="form-group right-icon">
-                                    <select class="form-control" id="paymentMethod" name="paymentMethod">
-                                        <option selected>Payment Method</option>
-                                        <option value="cash">Cash</option>
-                                        <option value="card">Credit Card</option>
-                                    </select>
-                                    <i class="fa fa-angle-down"></i>
-                                </div>
-                                <div class="checkbox custom-check">
-                                    <input type="checkbox" id="check01" name="checkbox"/>
-                                    <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="hotel-policy.php">Terms & Conditions.</a></label>
-                                </div>
-                                <input type="hidden" value="<?= $_GET["roomId"]?>" name="roomId">
-                                <!-- pag confirm pag cash sa cash-payment.php mapupunta pag credit naman sa credit-payment.php -->
-                                <button class="btn btn-block btn-orange">Proceed</button>
-                            </form>
-
-                        </div><!-- end booking-form -->
-                    </div><!-- end side-bar-block -->
-
                     <div class="row">
 
 
@@ -299,7 +235,7 @@ else {
                         </div><!-- end feature-slider-nav -->
                     </div>  <!-- end detail-slider -->
 
-                    <div class="detail-tabs">
+                    <div class="detail-tabs" id="packages">
                         <ul class="nav nav-tabs nav-justified">
                             <li class="active"><a href="#hotel-overview" data-toggle="tab">Room Overview</a></li>
                             <?php
@@ -324,7 +260,16 @@ else {
 
                                     <div class="col-sm-8 col-md-8 tab-text">
                                         <h3>Room Overview</h3>
-                                        <p><?= $roomObject->room_description ?>.</p>
+                                        <ul>
+                                            <?php
+                                            $stmt = $conn->query("SELECT * FROM `room_amenities` WHERE `room_id` = '".$_GET["roomId"]."'");
+                                            while ($row = $stmt->fetch_object()) {
+                                                ?>
+                                            <li><?= $row->amenity  ?></li>
+                                            <?php
+                                            }
+                                            ?>
+                                        </ul>
                                     </div><!-- end columns -->
                                 </div><!-- end row -->
                             </div><!-- end hotel-overview -->

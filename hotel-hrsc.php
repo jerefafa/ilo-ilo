@@ -85,7 +85,6 @@ function checkRoomExistence($roomId) {
                 <div id="links">
                     <ul class="list-unstyled list-inline">
                         <li><a href="login.php"><span><i class="fa fa-lock"></i></span>Login</a></li>
-                        <!-- <li><a href="registration.php"><span><i class="fa fa-plus"></i></span>Sign Up</a></li> -->
                     </ul>
                 </div><!-- end links -->
             </div><!-- end columns -->
@@ -126,11 +125,11 @@ function checkRoomExistence($roomId) {
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
             </ul>
         </div><!-- end navbar collapse -->
-        <div class="navbar" >
+        <div class="navbar" style="margin-left: 10%">
             <a href="#" class="about-text">Home</a> |
             <a href="#gallery">Gallery</a> |
             <a href="#available-rooms">Rooms</a> |
-            <a href="#">Reserve Now</a> |
+            <a data-toggle="modal" data-target="#thanks" style="cursor: pointer">Reserve Now</a> |
             <a href="#">Reports</a> |
             <a href="#hotel-overview">Other Services</a>
         </div>
@@ -223,46 +222,6 @@ function checkRoomExistence($roomId) {
                     <div class="available-blocks" id="available-rooms">
                         <h2>Available Rooms</h2>
                         <div class="list-block main-block room-block"  <?php
-                        ?>
-                        <?php
-                        if(isset($_SESSION["rooms"])) {
-                            foreach ($_SESSION["rooms"] as $room) {
-                                if ($room->hotel_id == $hotel_id){
-                                    ?>
-                                    <div class="list-block main-block room-block">
-                                        <div class="list-content">
-                                            <div class="main-img list-img room-img">
-                                                <a href="#">
-                                                    <img src="<?= $room->image_path ?>" class="img-responsive" alt="room-img" />
-                                                </a>
-                                                <div class="main-mask">
-                                                    <ul class="list-unstyled list-inline offer-price-1">
-                                                        <li class="price">₱<?= $room->rate ?><span class="divider">|</span><span class="pkg"> | Night</span></li>
-                                                        <li class="rating">
-                                                            <span><i class="fa fa-star orange"></i></span>
-                                                            <span><i class="fa fa-star orange"></i></span>
-                                                            <span><i class="fa fa-star orange"></i></span>
-                                                            <span><i class="fa fa-star orange"></i></span>
-                                                            <span><i class="fa fa-star lightgrey"></i></span>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- end main-mask -->
-                                            </div><!-- end room-img -->
-
-                                            <div class="list-info room-info">
-                                                <h3 class="block-title"><a href="#"><?= $room->room_type ?> Room</a></h3>
-                                                <p class="block-minor">Room: <?= $room->room_name ?></p>
-                                                <p class="block-minor">Max Guest: <?= $room->max_guest ?></p>
-                                                <p><?= $room->room_description?></p>
-                                                <a href="book-room.php?roomId=<?=$room->id?>" class="btn btn-orange btn-lg">View More</a>
-                                            </div><!-- end room-info -->
-                                        </div><!-- end list-content -->
-                                    </div>
-                                    <?php
-                                }
-                            }
-                        }
-                        else {
                             $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '$hotel_id'");
                             while ($row = $stmt->fetch_object()) {
                                 ?>
@@ -289,18 +248,12 @@ function checkRoomExistence($roomId) {
                                         <div class="list-info room-info">
                                             <h3 class="block-title"><a href="#"><?= $row->room_type ?> Room</a></h3>
                                             <p class="block-minor">Room: <?= $row->room_name ?></p>
-                                            <p class="block-minor">Max Guest: <?= $row->max_guest ?></p>
                                             <p><?= $row->room_description?></p>
                                         </div><!-- end room-info -->
                                     </div><!-- end list-content -->
                                 </div>
-
-
                                 <?php
-                            }
                         }
-
-
                         ?>
                         <div class="detail-tabs">
                             <ul class="nav nav-tabs nav-justified">
@@ -403,6 +356,66 @@ function checkRoomExistence($roomId) {
         </div><!-- end hotel-details -->
 </section><!-- end innerpage-wrapper -->
 
+
+//Reservation Modal
+
+<!-- MODAL -->
+<div id="thanks" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Please fill in the following fields</h3>
+            </div><!-- end modal-header -->
+
+            <div class="modal-body">
+                <form method="get" action="check-available-rooms.php">
+                    <div class="form-group">
+                        <label>Arrival Date</label>
+                        <input placeholder="Arrival Date" class="form-control" type="date" name="checkIn" required/>
+                    </div>
+
+                    <input type="hidden" value="1" name="hotelId">
+                    <div class="form-group">
+                        <label>Departure Date</label>
+                        <input placeholder="Departure Date" class="form-control" type="date" name="checkOut" required/>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-12 col-lg-6 no-sp-r">
+                            <div class="form-group right-icon">
+                                <select class="form-control" name="numAdult" required>
+                                    <option selected disabled>Adults</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-12 col-lg-6 no-sp-l">
+                            <div class="form-group right-icon">
+                                <select class="form-control" name="numChild" required>
+                                    <option selected disabled>Children</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-orange">Proceed</button>
+                </form>
+            </div><!-- end modal-bpdy -->
+        </div><!-- end modal-content -->
+    </div><!-- end modal-dialog -->
+</div><!-- end add-card -->
+<!--end of modal -->
+
+
 <div id="footer-bottom" class="ftr-bot-black">
     <div class="container">
         <div class="row">
@@ -420,6 +433,7 @@ function checkRoomExistence($roomId) {
     </div><!-- end container -->
 </div><!-- end footer-bottom -->
 
+
 </section><!-- end footer -->
 
 
@@ -431,6 +445,21 @@ function checkRoomExistence($roomId) {
 <script src="js/custom-navigation.js"></script>
 <script src="js/custom-date-picker.js"></script>
 <script src="js/custom-slick.js"></script>
+<script>
+    $('#datepicker')
+        .datepicker({
+            format: 'mm/dd/yyyy',
+            beforeShow: function () {
+                setTimeout(function () {
+                    $('.ui-datepicker').css('z-index', 99999);
+                }, 0);
+            }
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#eventForm').formValidation('revalidateField', 'date');
+        });
+</script>
 <!-- Page Scripts Ends -->
 </body>
 </html>
