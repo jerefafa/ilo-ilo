@@ -15,13 +15,12 @@ else{
             $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id', '" . $_SESSION["reservation"]["reservationInfo"]["fname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["lname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["email"] . "','" . $_SESSION["reservation"]["reservationInfo"]["phone"] . "','" . $_SESSION["reservation"][1]["numAdult"] . "','" . $_SESSION["reservation"][1]["numChild"] . "','" . $_SESSION["reservation"]["reservationInfo"]["package"]->id . "')");
             $to = $_SESSION["reservation"]["reservationInfo"]["email"];
             $subject = "Thank you for your reservation";
-            $body = "<a href = 'receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
-                        <a href='email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
-            $headers = "From: <iloilo-Hotel@gmail.com>";
+            $body = "<a href = 'http://iloilo.x10host.com/receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
+                        <a href='http://iloilo.x10host.com/email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             mail($to,$subject,$body,$headers);
             $url= "pay.php?reservationId=$id";
             echo "<script>
-            window.open('$url', '_blank');
             location.href = 'reservation-landing-page.php';
             </script>";
     }
