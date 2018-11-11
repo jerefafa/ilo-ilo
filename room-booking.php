@@ -1,45 +1,28 @@
 <?php
 require "connection.php";
 session_start();
-if(!isset($_SESSION["bookingInfo"])) {
+if(!isset($_SESSION["reservation"])) {
     header("location:index.php");
 }
 else{
-    if(mysqli_num_rows($conn->query("SELECT * FROM `reservations` WHERE ((`check_in` between '".$_SESSION["bookingInfo"][8]."' AND '".$_SESSION["bookingInfo"][8]."') OR (`check_out` between '".$_SESSION["bookingInfo"][8]."' AND '".$_SESSION["bookingInfo"][9]."')) AND `room_id` = '".$_SESSION["bookingInfo"][0]->id."' AND `cancelled_by` IS NULL")) > 0) {
+    $str = "";
+    if(mysqli_num_rows($conn->query("SELECT * FROM `reservations` WHERE ((`check_in` between '".$_SESSION["reservation"][1]['checkIn']."' AND '".$_SESSION["reservation"][1]['checkOut']."') OR (`check_out` between '".$_SESSION["reservation"][1]['checkIn']."' AND '".$_SESSION["reservation"][1]['checkOut']."')) AND `room_id` = '".$_SESSION["reservation"]['reservationInfo']['room']->id."' AND `cancelled_by` IS NULL")) > 0) {
         echo "<script>alert('The room is already taken');</script>";
     }
     else {
-        if ($_GET["paymentMode"] === "cash") {
-            $stmt = $conn->query("INSERT INTO `reservations`(`room_id`,`check_in`,`check_out`,`mode_of_payment`,`total_price`) VALUES ('" . $_SESSION["bookingInfo"][0]->id . "','" . $_SESSION["bookingInfo"][8] . "','" . $_SESSION["bookingInfo"][9] . "','cash','" . $_SESSION["bookingInfo"][2] . "')");
+            $stmt = $conn->query("INSERT INTO `reservations`(`room_id`,`check_in`,`check_out`,`rate_id`,`total_price`,`has_confirmed`,`has_additional_bed`) VALUES ('" . $_SESSION["reservation"]["reservationInfo"]["room"]->id . "','" . $_SESSION["reservation"][1]['checkIn'] . "','" . $_SESSION["reservation"][1]['checkOut'] . "','".$_SESSION["reservation"]["reservationInfo"]['choice']->id."','" . $_SESSION["reservation"]["reservationInfo"]['totalPrice'] . "','0','".$_SESSION["reservation"]["reservationInfo"]['additionalBed']."')");
             $id = $conn->insert_id;
-            $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id', '" . $_SESSION["bookingInfo"][3] . "','" . $_SESSION["bookingInfo"][4] . "','" . $_SESSION["bookingInfo"][5] . "','" . $_SESSION["bookingInfo"][6] . "','" . $_SESSION["bookingInfo"][10] . "','" . $_SESSION["bookingInfo"][11] . "','" . $_SESSION["bookingInfo"][12] . "')");
-            $to = $_SESSION["bookingInfo"][5];
+            $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id', '" . $_SESSION["reservation"]["reservationInfo"]["fname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["lname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["email"] . "','" . $_SESSION["reservation"]["reservationInfo"]["phone"] . "','" . $_SESSION["reservation"][1]["numAdult"] . "','" . $_SESSION["reservation"][1]["numChild"] . "','" . $_SESSION["reservation"]["reservationInfo"]["package"]->id . "')");
+            $to = $_SESSION["reservation"]["reservationInfo"]["email"];
             $subject = "Thank you for your reservation";
-            $body = "<a href = 'receipt.php?reservationId=$id'>Click here to print Payment Information</a>";
+            $body = "<a href = 'receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
+                        <a href='email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
             $headers = "From: <iloilo-Hotel@gmail.com>";
-//            mail($to,$subject,$body,$headers);
+            mail($to,$subject,$body,$headers);
             $url= "pay.php?reservationId=$id";
             echo "<script>
             window.open('$url', '_blank');
-            alert('The payment information has been sent to your email, Thank you for your registration');
-            location.href = 'index.php';
+            location.href = 'reservation-landing-page.php';
             </script>";
-        } else {
-            $stmt = $conn->query("INSERT INTO `reservations`(`room_id`,`check_in`,`check_out`,`mode_of_payment`,`total_price`) VALUES ('" . $_SESSION["bookingInfo"][0]->id . "','" . $_SESSION["bookingInfo"][8] . "','" . $_SESSION["bookingInfo"][9] . "','card','" . $_SESSION["bookingInfo"][2] . "')");
-            $id = $conn->insert_id;
-            $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id','".$_SESSION["bookingInfo"][3]."','".$_SESSION["bookingInfo"][4]."','".$_SESSION["bookingInfo"][5]."','".$_SESSION["bookingInfo"][6]."','".$_SESSION["bookingInfo"][10]."','".$_SESSION["bookingInfo"][11]."','".$_SESSION["bookingInfo"][12]."')");
-            echo $conn->error;
-            $to = $_SESSION["bookingInfo"][5];
-            $subject = "Thank you for your reservation";
-            $body = "<a href = 'receipt.php?reservationId=$id'>Click here to print your receipt</a>";
-            $headers = "From: <iloilo-Hotel@gmail.com>";
-//            mail($to,$subject,$body,$headers);
-            $url= "receipt.php?reservationId=$id";
-            echo "<script>
-            window.open('$url', '_blank');
-            alert('The payment information has been sent to your email, Thank you for your registration');
-            location.href = 'index.php';
-            </script>";
-        }
     }
 }

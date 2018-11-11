@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2018 at 05:11 PM
+-- Generation Time: Nov 11, 2018 at 05:36 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.0.25
 
@@ -108,18 +108,18 @@ CREATE TABLE `reservations` (
   `check_in` datetime NOT NULL,
   `check_out` datetime NOT NULL,
   `cancelled_by` int(11) DEFAULT NULL,
-  `mode_of_payment` varchar(50) NOT NULL,
-  `total_price` decimal(10,0) NOT NULL
+  `rate_id` int(11) NOT NULL,
+  `total_price` decimal(10,0) NOT NULL,
+  `has_confirmed` tinyint(1) NOT NULL,
+  `has_additional_bed` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reservations`
 --
 
-INSERT INTO `reservations` (`id`, `room_id`, `check_in`, `check_out`, `cancelled_by`, `mode_of_payment`, `total_price`) VALUES
-(17, 7, '2018-11-04 00:00:00', '2018-11-06 00:00:00', NULL, 'cash', '7500'),
-(18, 4, '2018-11-03 00:00:00', '2018-11-05 00:00:00', NULL, 'cash', '6500'),
-(28, 6, '2018-11-04 00:00:00', '2018-11-05 00:00:00', NULL, 'cash', '2000');
+INSERT INTO `reservations` (`id`, `room_id`, `check_in`, `check_out`, `cancelled_by`, `rate_id`, `total_price`, `has_confirmed`, `has_additional_bed`) VALUES
+(60, 2, '2018-11-11 00:00:00', '2018-11-12 00:00:00', NULL, 1, '1700', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -144,9 +144,7 @@ CREATE TABLE `reservation_info` (
 --
 
 INSERT INTO `reservation_info` (`id`, `reservation_id`, `first_name`, `last_name`, `email`, `phone_number`, `num_adult`, `num_child`, `package_id`) VALUES
-(16, 17, 'Hello', 'World', 'helloworld@gmail.com', '09235323039', 4, 4, 8),
-(17, 18, 'Mister', 'Suave', 'mrsuave@gmail.com', '09235323039', 3, 0, 5),
-(27, 28, 'Jeremiah', 'Malicdem', 'jmalicdem45@gmail.com', '09235323039', 1, 0, 7);
+(59, 60, 'Jeremiah', 'Malicdem', 'jmalicdem45@gmail.com', '09193184874', 1, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -160,9 +158,7 @@ CREATE TABLE `rooms` (
   `room_type` varchar(255) NOT NULL,
   `room_name` varchar(50) NOT NULL,
   `room_description` text NOT NULL,
-  `rate` decimal(10,0) NOT NULL,
-  `max_guest` int(11) NOT NULL,
-  `num_rooms` int(11) NOT NULL,
+  `bed_number` int(11) NOT NULL,
   `image_path` varchar(255) NOT NULL,
   `last_edited_by` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -171,13 +167,80 @@ CREATE TABLE `rooms` (
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `hotel_id`, `room_type`, `room_name`, `room_description`, `rate`, `max_guest`, `num_rooms`, `image_path`, `last_edited_by`) VALUES
-(2, 1, 'Deluxe', '626', 'Hotel 1 Deluxe Room', '2000', 5, 3, 'images/available-room-2.jpg', 1),
-(3, 1, 'Supreme', 'Room 101', 'Hotel 1 Supreme Room', '2500', 3, 2, 'images/available-room-2.jpg', NULL),
-(4, 1, 'Deluxe', '102', 'Hotel 1 Deluxe Room 2', '3000', 6, 4, 'images/available-room-2.jpg', NULL),
-(5, 2, 'Supreme', '152', 'Hotel 2 Supreme Room', '2700', 6, 3, 'images/available-room-2.jpg', NULL),
-(6, 2, 'Deluxe', 'Hotel 2 Deluxe Room', 'Hotel 2 Deluxe Room ', '1500', 2, 1, 'images/available-room-2.jpg', NULL),
-(7, 2, 'Supreme', '202', 'Hotel 2 Deluxe Room 2', '3500', 8, 4, 'images/available-room-2.jpg', NULL);
+INSERT INTO `rooms` (`id`, `hotel_id`, `room_type`, `room_name`, `room_description`, `bed_number`, `image_path`, `last_edited_by`) VALUES
+(2, 1, 'Deluxe', '626', 'Room', 3, 'images/available-room-2.jpg', 1),
+(3, 1, 'Supreme', 'Room 101', 'Room', 3, 'images/available-room-2.jpg', NULL),
+(4, 1, 'Deluxe', '102', 'Hotel 1 Deluxe Room 2', 3, 'images/available-room-2.jpg', NULL),
+(5, 2, 'Supreme', '152', 'Hotel 2 Supreme Room', 3, 'images/available-room-2.jpg', NULL),
+(6, 2, 'Deluxe', 'Hotel 2 Deluxe Room', 'Hotel 2 Deluxe Room ', 3, 'images/available-room-2.jpg', NULL),
+(7, 2, 'Supreme', '202', 'Hotel 2 Deluxe Room 2', 3, 'images/available-room-2.jpg', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room_amenities`
+--
+
+CREATE TABLE `room_amenities` (
+  `id` int(11) NOT NULL,
+  `room_id` int(11) NOT NULL,
+  `amenity` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `room_amenities`
+--
+
+INSERT INTO `room_amenities` (`id`, `room_id`, `amenity`) VALUES
+(1, 3, 'LCD TV'),
+(2, 3, 'Wifi'),
+(3, 2, 'Wifi'),
+(4, 2, 'Shower'),
+(5, 2, 'Television'),
+(6, 3, 'Shower'),
+(7, 4, 'Wifi'),
+(8, 5, 'Wifi'),
+(9, 6, 'Wifi'),
+(10, 7, 'Wifi'),
+(11, 4, 'Telephone Unit'),
+(12, 3, ' Telephone Unit');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room_rates`
+--
+
+CREATE TABLE `room_rates` (
+  `id` int(11) NOT NULL,
+  `room_id` int(11) NOT NULL,
+  `rate_description` varchar(255) NOT NULL,
+  `rate` decimal(10,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `room_rates`
+--
+
+INSERT INTO `room_rates` (`id`, `room_id`, `rate_description`, `rate`) VALUES
+(1, 2, 'Good for 2 person with breakfast', '1200'),
+(2, 2, 'Good for 2 person Without Breakfast', '1000'),
+(3, 2, 'Good for 1 Person', '800'),
+(4, 3, 'Good for 2 person With Breakfast', '1200'),
+(5, 3, 'Good for 2 person Without Breakfast', '1000'),
+(6, 3, 'Good for 1 person', '800'),
+(7, 4, 'Good for 2 person With Breakfast', '1200'),
+(8, 4, 'Good for 2 Without', '1000'),
+(9, 4, 'Good for 1 person', '800'),
+(10, 5, 'Good for 2 person With Breakfast', '1200'),
+(11, 5, 'Good for 2 Without', '1000'),
+(12, 5, 'Good for 1 person', '800'),
+(13, 6, 'Good for 2 person With Breakfast', '1200'),
+(14, 6, 'Good for 2 Without', '1000'),
+(15, 6, 'Good for 1 person', '800'),
+(16, 7, 'Good for 2 person With Breakfast', '1200'),
+(17, 7, 'Good for 2 Without', '1000'),
+(18, 7, 'Good for 1 person', '800');
 
 -- --------------------------------------------------------
 
@@ -253,14 +316,14 @@ ALTER TABLE `payments`
 ALTER TABLE `reservations`
   ADD PRIMARY KEY (`id`),
   ADD KEY `room_id` (`room_id`),
-  ADD KEY `cancelled_by` (`cancelled_by`);
+  ADD KEY `cancelled_by` (`cancelled_by`),
+  ADD KEY `rate_id` (`rate_id`);
 
 --
 -- Indexes for table `reservation_info`
 --
 ALTER TABLE `reservation_info`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
   ADD KEY `reservation_id` (`reservation_id`),
   ADD KEY `package_id` (`package_id`);
 
@@ -271,6 +334,20 @@ ALTER TABLE `rooms`
   ADD PRIMARY KEY (`id`),
   ADD KEY `hotel_id` (`hotel_id`),
   ADD KEY `last_edited_by` (`last_edited_by`);
+
+--
+-- Indexes for table `room_amenities`
+--
+ALTER TABLE `room_amenities`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `room_id` (`room_id`);
+
+--
+-- Indexes for table `room_rates`
+--
+ALTER TABLE `room_rates`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `room_id` (`room_id`);
 
 --
 -- Indexes for table `users`
@@ -313,19 +390,31 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `reservation_info`
 --
 ALTER TABLE `reservation_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `room_amenities`
+--
+ALTER TABLE `room_amenities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `room_rates`
+--
+ALTER TABLE `room_rates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -383,6 +472,18 @@ ALTER TABLE `reservation_info`
 ALTER TABLE `rooms`
   ADD CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`last_edited_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `rooms_ibfk_2` FOREIGN KEY (`hotel_id`) REFERENCES `hotels` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `room_amenities`
+--
+ALTER TABLE `room_amenities`
+  ADD CONSTRAINT `room_amenities_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `room_rates`
+--
+ALTER TABLE `room_rates`
+  ADD CONSTRAINT `room_rates_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user_access`

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["bookingInfo"])) {
+if(!isset($_SESSION["reservation"])) {
     header("location:index.php");
 }
 ?>
@@ -176,47 +176,47 @@ if(!isset($_SESSION["bookingInfo"])) {
                                         	<tbody>
                                                 <tr>
                                                 	<td>First Name:</td>
-                                                    <td><?= $_SESSION["bookingInfo"][3]?></td>
+                                                    <td><?= $_SESSION["reservation"]["reservationInfo"]['fname']?></td>
                                                 </tr>
                                                 <tr>
                                                 	<td>Last Name:</td>
-                                                    <td><?= $_SESSION["bookingInfo"][4] ?></td>
+                                                    <td><?= $_SESSION["reservation"]["reservationInfo"]['lname']?></td>
                                                 </tr>
                                                 <tr>
                                                 	<td>Email Address:</td>
-                                                    <td><?= $_SESSION["bookingInfo"][5] ?></td>
+                                                    <td><?= $_SESSION["reservation"]["reservationInfo"]['email']?></td>
                                                 </tr>
                                                 <tr>
                                                 	<td>Home Address:</td>
-                                                    <td><?= $_SESSION["bookingInfo"][7] ?></td>
+                                                    <td><?= $_SESSION["reservation"]["reservationInfo"]['address']?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Phone Number:</td>
-                                                    <td><?= $_SESSION["bookingInfo"][6] ?></td>
+                                                    <td><?= $_SESSION["reservation"]["reservationInfo"]['phone']?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Check In:</td>
-                                                    <td><?= date('M d Y',strtotime($_SESSION["bookingInfo"][8])) ?></td>
+                                                    <td><?= date('M d Y',strtotime($_SESSION["reservation"][1]['checkIn'])) ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Check Out:</td>
-                                                    <td><?= date('M d Y',strtotime($_SESSION["bookingInfo"][9])) ?></td>
+                                                    <td><?= date('M d Y',strtotime($_SESSION["reservation"][1]['checkOut'])) ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Room:</td>
-                                                    <td><?= $_SESSION["bookingInfo"][0]->room_type ?></td>
+                                                    <td><?= $_SESSION["reservation"]["reservationInfo"]['room']->room_name.' '.$_SESSION["reservation"]["reservationInfo"]['room']->room_description ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Number of Adult: </td>
-                                                    <td><?= $_SESSION["bookingInfo"][10] ?></td>
+                                                    <td><?= $_SESSION["reservation"][1]['numAdult'] ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Number of Child:</td>
-                                                    <td><?= $_SESSION["bookingInfo"][11] ?></td>
+                                                    <td><?= $_SESSION["reservation"][1]['numChild'] ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Total Price:</td>
-                                                    <td><?= $_SESSION["bookingInfo"][2] ?></td>
+                                                    <td><?= $_SESSION["reservation"]['reservationInfo']['totalPrice'] ?></td>
                                                 </tr>
                                         	</tbody>
                                         </table>

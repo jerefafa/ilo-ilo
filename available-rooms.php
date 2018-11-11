@@ -1,5 +1,9 @@
 <?php
 session_start();
+require "connection.php";
+if(!isset($_SESSION["reservation"])){
+    header("location: index.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -203,6 +207,11 @@ session_start();
 
                         <?php
                         foreach ($_SESSION["reservation"][0] as $room){
+                            $lowestPrice;
+                            $stmt2 = $conn->query("SELECT MIN(rate) AS minimumRate FROM (room_rates) WHERE `room_id` = '$room->id'");
+                            while ($row2 = $stmt2->fetch_object()){
+                                $lowestPrice = $row2->minimumRate;
+                            }
                             ?>
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="grid-block main-block h-grid-block">
@@ -212,7 +221,7 @@ session_start();
                                         </a>
                                         <div class="main-mask">
                                             <ul class="list-unstyled list-inline offer-price-1">
-                                                <li class="price">₱<?= $room->rate?><span class="divider">|</span><span class="pkg">Day</span></li>
+                                                <li class="price">Starts at ₱<?= $lowestPrice ?><span class="divider"></span><span class="pkg"> | Day</span></li>
                                             </ul>
                                         </div><!-- end main-mask -->
                                     </div><!-- end h-grid-img -->
@@ -240,59 +249,77 @@ session_start();
                                         </div><!-- end modal-header -->
 
                                         <div class="modal-body">
-                                            <form>
+                                            <form action="redirect-to-cash.php" method="post">
+                                                <input type="hidden" value="<?=$room->id?>" name="room">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="First Name" required/>
+                                                    <input type="text" class="form-control" placeholder="First Name" name="fname" required/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Last Name" required/>
+                                                    <input type="text" class="form-control" placeholder="Last Name" name="lname" required/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <input type="email" class="form-control" placeholder="Email" required/>
+                                                    <input type="email" class="form-control" placeholder="Email" name="email" required/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Phone" required/>
+                                                    <input type="text" class="form-control" placeholder="Phone" name="phone" required/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Address" required/>
+                                                    <input type="text" class="form-control" placeholder="Address" name="address" required/>
                                                 </div>
 
                                                 <div class="form-group right-icon">
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="package">
                                                         <option selected>Package</option>
-                                                        <option>A</option>
-                                                        <option>B</option>
-                                                        <option>C</option>
-                                                        <option>D</option>
+                                                        <?php
+                                                        $stmt = $conn->query("SELECT * FROM `packages` WHERE `room_id` = '$room->id'");
+                                                        while ($row = $stmt->fetch_object()) {
+                                                            ?>
+                                                            <option value="<?=$row->id?>"><?=$row->package_title?></option>
+                                                        <?php
+                                                        }
+
+                                                        ?>
                                                     </select>
                                                     <br>
                                                     <a href="book-room.php?roomId=<?=$room->id?>"  target="_blank" style="margin-left: 3px;text-decoration: underline; color: darkred">See packages info</a>
                                                 </div>
+                                                <div class="form-group right-icon">
+                                                <select class="form-control" required name="choice">
+                                                    <option selected disabled>Rate Choice</option>
+                                                    <?php
+                                                        $stmt = $conn->query("SELECT * FROM `room_rates` WHERE `room_id` = '$room->id'");
+                                                        while ($row = $stmt->fetch_object()) {
+                                                            ?>
+                                                            <option value="<?=$row->id?>"><?=$row->rate.'-'.$row->rate_description?></option>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                </select>
+                                                </div>
                                                 <?php
-                                                    if($room->hotel_id == 1){
-                                                        ?>
+                                                if($room->hotel_id == 1){
+                                                    ?>
 
-                                                        <div class="form-group right-icon">
-                                                            <select class="form-control">
-                                                                <option selected>Additional Bed</option>
-                                                                <option>0</option>
-                                                                <option>1</option>
-                                                            </select>
-                                                        </div>
-                                                <?php
-                                                    }
-
+                                                    <div class="form-group right-icon">
+                                                        <select class="form-control" name="additionalBed">
+                                                            <option selected value="0">Additional Bed (Additional P300)</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                        </select>
+                                                    </div>
+                                                    <?php
+                                                }
                                                 ?>
 
                                                 <div class="checkbox custom-check">
                                                     <input type="checkbox" id="check01" name="checkbox"/>
                                                     <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="hotel-policy.php">Terms & Conditions.</a></label>
                                                 </div>
-                                                <a href="cash-payment.php" class="btn btn-orange">Book</a>
+                                                <button type="submit" class="btn btn-orange">Book</button>
                                             </form>
                                         </div><!-- end modal-bpdy -->
                                     </div><!-- end modal-content -->

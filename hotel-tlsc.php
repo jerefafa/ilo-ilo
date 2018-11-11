@@ -133,7 +133,7 @@
                     <a href="#gallery">Gallery</a> |
                     <a href="#available-rooms">Rooms</a> |
                     <a data-toggle="modal" data-target="#thanks" style="cursor: pointer">Reserve Now</a> |
-                    <a href="#">Reports</a> |
+                    <a href="login.php">Reports</a> |
                     <a href="#hotel-overview">Other Services</a>
                 </div>
             </div><!-- end container -->
@@ -225,6 +225,11 @@
                             	<div class="list-block main-block room-block"  <?php
                                         $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '$hotel_id'");
                                         while ($row = $stmt->fetch_object()) {
+                                            $lowestPrice;
+                                            $stmt2 = $conn->query("SELECT MIN(rate) AS minimumRate FROM (room_rates) WHERE `room_id` = '$row->id'");
+                                            while ($row2 = $stmt2->fetch_object()){
+                                                $lowestPrice = $row2->minimumRate;
+                                            }
                                             ?>
                                             <div class="list-block main-block room-block">
                                                 <div class="list-content">
@@ -234,7 +239,7 @@
                                                         </a>
                                                         <div class="main-mask">
                                                             <ul class="list-unstyled list-inline offer-price-1">
-                                                                <li class="price">₱<?= $row->rate ?><span class="divider">|</span><span class="pkg"> | Night</span></li>
+                                                                <li class="price">Starts at ₱<?= $lowestPrice ?><span class="divider"></span><span class="pkg"> | Day</span></li>
                                                                 <li class="rating">
                                                                     <span><i class="fa fa-star orange"></i></span>
                                                                     <span><i class="fa fa-star orange"></i></span>

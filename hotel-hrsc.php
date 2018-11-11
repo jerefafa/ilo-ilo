@@ -130,7 +130,7 @@ function checkRoomExistence($roomId) {
             <a href="#gallery">Gallery</a> |
             <a href="#available-rooms">Rooms</a> |
             <a data-toggle="modal" data-target="#thanks" style="cursor: pointer">Reserve Now</a> |
-            <a href="#">Reports</a> |
+            <a href="login.php">Reports</a> |
             <a href="#hotel-overview">Other Services</a>
         </div>
     </div><!-- end container -->
@@ -221,40 +221,47 @@ function checkRoomExistence($roomId) {
 
                     <div class="available-blocks" id="available-rooms">
                         <h2>Available Rooms</h2>
-                        <div class="list-block main-block room-block"  <?php
-                            $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '$hotel_id'");
+                        <div class="list-block main-block room-block"
+                             <?php
+                             $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '$hotel_id'");
                             while ($row = $stmt->fetch_object()) {
-                                ?>
-                                <div class="list-block main-block room-block">
-                                    <div class="list-content">
-                                        <div class="main-img list-img room-img">
-                                            <a href="#">
-                                                <img src="<?= $row->image_path ?>" class="img-responsive" alt="room-img" />
-                                            </a>
-                                            <div class="main-mask">
-                                                <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">₱<?= $row->rate ?><span class="divider">|</span><span class="pkg"> | Night</span></li>
-                                                    <li class="rating">
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star lightgrey"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- end main-mask -->
-                                        </div><!-- end room-img -->
+                            $lowestPrice;
+                            $stmt2 = $conn->query("SELECT MIN(rate) AS minimumRate FROM (room_rates) WHERE `room_id` = '$row->id'");
+                            while ($row2 = $stmt2->fetch_object()){
+                            $lowestPrice = $row2->minimumRate;
+                            }
+                            ?>
+                            <div class="list-block main-block room-block">
+                                <div class="list-content">
+                                    <div class="main-img list-img room-img">
+                                        <a href="#">
+                                            <img src="<?= $row->image_path ?>" class="img-responsive" alt="room-img" />
+                                        </a>
+                                        <div class="main-mask">
+                                            <ul class="list-unstyled list-inline offer-price-1">
+                                                <li class="price">Starts at ₱<?= $lowestPrice ?><span class="divider"></span><span class="pkg"> | Day</span></li>
+                                                <li class="rating">
+                                                    <span><i class="fa fa-star orange"></i></span>
+                                                    <span><i class="fa fa-star orange"></i></span>
+                                                    <span><i class="fa fa-star orange"></i></span>
+                                                    <span><i class="fa fa-star orange"></i></span>
+                                                    <span><i class="fa fa-star lightgrey"></i></span>
+                                                </li>
+                                            </ul>
+                                        </div><!-- end main-mask -->
+                                        g                          </div><!-- end room-img -->
 
-                                        <div class="list-info room-info">
-                                            <h3 class="block-title"><a href="#"><?= $row->room_type ?> Room</a></h3>
-                                            <p class="block-minor">Room: <?= $row->room_name ?></p>
-                                            <p><?= $row->room_description?></p>
-                                        </div><!-- end room-info -->
-                                    </div><!-- end list-content -->
-                                </div>
-                                <?php
-                        }
-                        ?>
+                                    <div class="list-info room-info">
+                                        <h3 class="block-title"><a href="#"><?= $row->room_type ?> Room</a></h3>
+                                        <p class="block-minor">Room: <?= $row->room_name ?></p>
+                                        <p><?= $row->room_description?></p>
+                                        <a href="book-room.php?roomId=<?=$row->id?>" class="btn btn-orange btn-lg">View More</a>
+                                    </div><!-- end room-info -->
+                                </div><!-- end list-content -->
+                            </div>
+                            <?php
+                                    }
+                                    ?>
                         <div class="detail-tabs">
                             <ul class="nav nav-tabs nav-justified">
                                 <li class="active"><a href="#hotel-overview" data-toggle="tab">Hotel Overview</a></li>
