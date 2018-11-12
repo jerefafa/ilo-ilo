@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -70,7 +72,18 @@
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div id="links">
                     <ul class="list-unstyled list-inline">
-                        <li><a href="login.php"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                        <?php
+                        if(isset($_SESSION["user_id"])) {
+                            ?>
+                            <li><a href="login-user.php"><span><i class="fa fa-lock"></i></span>Logout</a></li>
+                            <?php
+                        }
+                        else {
+                            ?>
+                            <li><a href="login.php"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                            <?php
+                        }
+                        ?>
                         <!-- <li><a href="registration.php"><span><i class="fa fa-plus"></i></span>Sign Up</a></li> -->
                     </ul>
                 </div><!-- end links -->
@@ -175,7 +188,15 @@
 <section class="innerpage-wrapper">
     <div id="hotel-details" class="innerpage-section-padding">
         <div class="container">
-        <h1>Thank you for your reservation, an email was sent to you to confirm your booking. Please Confirm 2 days before the check in date or else the reservation will be voided.</h1>
+            <?php
+            if(isset($_SESSION["user_id"])){
+                echo "<h1>Thank you for booking with us.</h1>";
+            }
+            else {
+
+                echo "<h1>Thank you for your reservation, an email was sent to you to confirm your booking. Please Confirm 2 days before the check in date or else the reservation will be voided.</h1>";
+            }
+            ?>
         </div>
     </div>
 <!-- end innerpage-wrapper -->

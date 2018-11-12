@@ -1,6 +1,8 @@
 <?php
 session_start();
-session_destroy();
+if(isset($_SESSION["reservation"])) {
+    unset($_SESSION["reservation"]);
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -79,7 +81,18 @@ session_destroy();
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div id="links">
                             <ul class="list-unstyled list-inline">
-                                <li><a href="login.php"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                                <?php
+                                    if(isset($_SESSION["user_id"])) {
+                                        ?>
+                                        <li><a href="login-user.php"><span><i class="fa fa-lock"></i></span>Logout</a></li>
+                                <?php
+                                    }
+                                    else {
+                                        ?>
+                                        <li><a href="login.php"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                                        <?php
+                                    }
+                                ?>
 										</ul>
                                     </form>
                                 </li>

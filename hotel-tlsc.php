@@ -85,7 +85,18 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div id="links">
                             <ul class="list-unstyled list-inline">
-                                <li><a href="login.php"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                                <?php
+                                if(isset($_SESSION["user_id"])) {
+                                    ?>
+                                    <li><a href="login-user.php"><span><i class="fa fa-lock"></i></span>Logout</a></li>
+                                    <?php
+                                }
+                                else {
+                                    ?>
+                                    <li><a href="login.php"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                                    <?php
+                                }
+                                ?>
                                 <!-- <li><a href="registration.php"><span><i class="fa fa-plus"></i></span>Sign Up</a></li> -->
                             </ul>
                         </div><!-- end links -->
@@ -133,7 +144,13 @@
                     <a href="#gallery">Gallery</a> |
                     <a href="#available-rooms">Rooms</a> |
                     <a data-toggle="modal" data-target="#thanks" style="cursor: pointer">Reserve Now</a> |
-                    <a href="login.php">Reports</a> |
+                    <?php
+                    if(isset($_SESSION["user_id"])) {
+                        ?>
+                        <a href="login.php">Reports</a> |
+                        <?php
+                    }
+                    ?>
                     <a href="#hotel-overview">Other Services</a>
                 </div>
             </div><!-- end container -->

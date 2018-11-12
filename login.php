@@ -73,7 +73,6 @@ if(isset($_SESSION["invalid"])) {
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div id="links">
                             <ul class="list-unstyled list-inline">
-                                <li><a href="login.php"><span><i class="fa fa-lock"></i></span>Login</a></li>
                               <!--  <li><a href="registration.php"><span><i class="fa fa-plus"></i></span>Sign Up</a></li> -->
                             </ul>
                         </div><!-- end links -->
