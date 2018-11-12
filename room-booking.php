@@ -17,7 +17,7 @@ else{
             $subject = "Thank you for your reservation";
             $body = "<a href = 'http://iloilo.x10host.com/receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
                         <a href='http://iloilo.x10host.com/email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             mail($to,$subject,$body,$headers);
             $url= "pay.php?reservationId=$id";
             echo "<script>
