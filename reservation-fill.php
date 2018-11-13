@@ -161,93 +161,56 @@ require "auth-checker.php";
 
                             <div class="col-xs-12 col-sm-2 col-md-2 dashboard-nav">
                                 <ul class="nav nav-tabs nav-stacked text-center">
-                                    <li><a href="dashboard.php"><span><i class="fa fa-reply"></i></span>Back</a></li>
-                                    <li><a href="accomodation.php"><span><i class="fa fa-briefcase"></i></span>Accomodation</a></li>
-                                    <li class="active"><a href="#"><span><i class="fa fa-line-chart"></i></span>Sales</a></li>
-                                    <li><a href="reservation.php"><span><i class="fa fa-line-chart"></i></span>Reservation</a></li>
+                                    <li><a href="inquiry.php"><span><i class="fa fa-vcard-o"></i></span>Inquiry</a></li>
+                                    <li class="active"><a href="#"><span><i class="fa fa-file"></i></span>Reservation</a></li>
+                                    <li><a href="accomodation.php"><span><i class="fa fa-briefcase"></i></span>Reports</a></li>
                                 </ul>
                             </div><!-- end columns -->
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
-                                <h2 class="dash-content-title">SALES</h2>
                                 <form>
-                                    <div class="form-group right-icon">
-                                        <select class="form-control">
-                                            <option selected>HOTELS</option>
-                                            <option>HRTSC</option>
-                                            <option>TLSC</option>
-                                        </select>
-                                    </div>
-                                </form>
-                                <!--SALES FORECAST -->
-                                <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">SALES FORECAST FOR THE MONTH</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <tbody>
-                                            <tr>
-                                                <th>MONTH</th>
-                                                <th>ACTUAL AMOUNT (PHP)</th>
-                                                <th>FORECAST AMOUNT (PHP)</th>
-                                            </tr>
+                                    <h2 class="dash-content-title">Reservation</h2>
+                                    <form>
+                                        <div class="form-group">
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">1/1/18</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                                <td class="dash-list-text recent-ac-text">-</td>
-                                            </tr>
+                                            <p>Check in</p>
+                                            <input type="date" class="form-control dpd2" required/>
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">2/1/18</td>
-                                                <td class="dash-list-text recent-ac-text">100000</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                            </tr>
+                                        </div>
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">TOTAL</td>
-                                                <td class="dash-list-text recent-ac-text">850000</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                            </tr>
+                                        <div class="form-group">
 
-                                            </tbody>
-                                        </table>
-                                    </div><!-- end table-responsive -->
-                                </div><!-- end recent-activity -->
+                                            <p>Check out</p>
+                                            <input type="date" class="form-control dpd2" required/>
 
-                                <!-- GRAPH POWER BI -->
-                                <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">FORECAST SALES FOR THE NEXT MONTH</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <tbody>
+                                        </div>
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">INPUT GRAPH HERE POWER BI</td>
-                                            </tr>
+                                        <p>Number of Adults</p>
+                                        <div class="form-group right-icon">
+                                            <select class="form-control">
+                                                <option selected>Adults</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
 
-                                            <!-- INPUT GRAPH HERE POWER BI -->
+                                        <p>Number of Children</p>
+                                        <div class="form-group right-icon">
+                                            <select class="form-control">
+                                                <option selected>Children</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
 
-                                            </tbody>
-                                        </table>
-                                    </div><!-- end table-responsive -->
-                                </div><!-- end recent-activity -->
+                                        <br>
+                                        <a href="#" data-toggle="modal"><button class="btn btn-orange btn-block">Proceed</button></a>
 
-                                <!--INTERPRETATION-->
-                                <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">INTERPRETATION</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <tbody>
+                                        <br><br><br><br><br><br>
+                                    </form>
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">INPUT INTERPRETATION HERE</td>
-                                            </tr>
-
-
-                                            </tbody>
-                                        </table>
-                                    </div><!-- end table-responsive -->
-                                </div><!-- end recent-activity -->
                             </div><!-- end columns -->
 
                         </div><!-- end row -->

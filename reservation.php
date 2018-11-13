@@ -1,5 +1,6 @@
 <?php
 require "auth-checker.php";
+require "connection.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -163,91 +164,141 @@ require "auth-checker.php";
                                 <ul class="nav nav-tabs nav-stacked text-center">
                                     <li><a href="dashboard.php"><span><i class="fa fa-reply"></i></span>Back</a></li>
                                     <li><a href="accomodation.php"><span><i class="fa fa-briefcase"></i></span>Accomodation</a></li>
-                                    <li class="active"><a href="#"><span><i class="fa fa-line-chart"></i></span>Sales</a></li>
-                                    <li><a href="reservation.php"><span><i class="fa fa-line-chart"></i></span>Reservation</a></li>
+                                    <li><a href="sales.php"><span><i class="fa fa-line-chart"></i></span>Sales</a></li>
+                                    <li class="active"><a href="#"><span><i class="fa fa-line-chart"></i></span>Reservation</a></li>
                                 </ul>
                             </div><!-- end columns -->
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
-                                <h2 class="dash-content-title">SALES</h2>
-                                <form>
+                                <h2 class="dash-content-title">RESERVATION</h2>
+                                <form action="reservation.php" method="get">
                                     <div class="form-group right-icon">
-                                        <select class="form-control">
+                                        <select class="form-control" name="hotel">
                                             <option selected>HOTELS</option>
-                                            <option>HRTSC</option>
-                                            <option>TLSC</option>
+                                            <option value="1">HRTSC</option>
+                                            <option value="2">TLSC</option>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control dpd2" required name="checkIn"/>
+                                        <p>All reservations will be displayed on the given date</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success">Search</button>
+                                    </div>
                                 </form>
-                                <!--SALES FORECAST -->
+
                                 <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">SALES FORECAST FOR THE MONTH</h3>
+                                    <h3 class="dash-listing-heading"><?php
+                                        if(!isset($_GET["hotel"])) {
+                                            echo "Hotel";
+                                        }
+                                        elseif ($_GET["hotel"] == 1) {
+                                            echo "HRTSC";
+                                        }
+                                        else {
+                                            echo "TLSC";
+                                        }
+                                        ?></h3>
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <tbody>
-                                            <tr>
-                                                <th>MONTH</th>
-                                                <th>ACTUAL AMOUNT (PHP)</th>
-                                                <th>FORECAST AMOUNT (PHP)</th>
-                                            </tr>
+
+                                            <!-- Search Bar -->
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Search reservation number here...." />
+                                                <span class="input-group-btn"><button type="submit" class="btn"><span>
+                                                                <i class="fa fa-search"></i>
+                                                            </span>
+                                                        </button>
+                                                    </span>
+                                            </div><!--end search bar -->
 
                                             <tr>
-                                                <td class="dash-list-text recent-ac-text">1/1/18</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                                <td class="dash-list-text recent-ac-text">-</td>
+                                                <th>RESERVATION#</th>
+                                                <th>CUSTOMER NAME</th>
+                                                <th>HOTEL ROOMS</th>
+                                                <th>CHECK IN</th>
+                                                <th>CHECK OUT</th>
+                                                <th>REMARKS</th>
+                                                <th>ACTIONS</th>
                                             </tr>
+                                            <?php
+                                            $sql;
+                                            if(isset($_GET["hotel"])) {
+                                                $sql = "SELECT * FROM `reservations` INNER JOIN `reservation_info` INNER JOIN `rooms` WHERE `reservations`.`room_id` = `rooms`.`id` AND `reservation_info`.`reservation_id` = `reservations`.`id` AND `rooms`.`hotel_id` = '".$_GET["hotel"]."' AND `check_in` = '".$_GET["checkIn"]."'";
+                                            }
+                                            else {
+                                                $sql = "SELECT * FROM `reservations` INNER JOIN `reservation_info` INNER JOIN `rooms` WHERE `reservations`.`room_id` = `rooms`.`id` AND `reservation_info`.`reservation_id` = `reservations`.`id`";
+                                            }
+                                            $stmt = $conn->query($sql);
+                                            while ($row = $stmt->fetch_object()) {
+                                                ?>
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">2/1/18</td>
-                                                <td class="dash-list-text recent-ac-text">100000</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="dash-list-text recent-ac-text"><?= $row->reservation_id ?></td>
+                                                    <td class="dash-list-text recent-ac-text"><?= $row->first_name.' '.$row->last_name ?></td>
+                                                    <td class="dash-list-text recent-ac-text"><?= $row->room_type.' '.$row->room_name?></td>
+                                                    <td class="dash-list-text recent-ac-text"><?= date('M d Y', strtotime($row->check_in))?></td>
+                                                    <td class="dash-list-text recent-ac-text"><?= date('M d Y', strtotime($row->check_out))?></td>
+                                                    <td class="dash-list-text recent-ac-text">
+                                                        <?php
+                                                            if($row->cancelled_by != null){
+                                                                echo "Cancelled";
+                                                            }
+                                                            elseif($row->cancelled_by == null && mysqli_num_rows($conn->query("SELECT * FROM `payments` WHERE `reservation_id` = '$row->reservation_id'")) > 0){
+                                                                echo "Confirmed";
+                                                            }
+                                                            elseif($row->cancelled_by == null && mysqli_num_rows($conn->query("SELECT * FROM `payments` WHERE `reservation_id` = '$row->reservation_id'")) == 0 && $row->has_confirmed == true) {
+                                                                echo "Not Yet Confirmed";
+                                                            }
+                                                            else {
+                                                                echo "Waiting for Confirmation and Payment";
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        if(mysqli_num_rows($conn->query("SELECT * FROM `payments` WHERE `reservation_id` = '$row->reservation_id'")) == 0) {
+                                                            ?>
+                                                            <form action="confirm-payment.php" method="post">
+                                                                <input type="hidden" value="<?=$row->reservation_id?>" name="id">
+                                                                <input type="hidden" value="<?=$row->total_price?>" name="amount">
+                                                                <button class="btn btn-info">Confirm Payment</button>
+                                                            </form>
+                                                        <?php
+                                                        }
+                                                        if($row->cancelled_by != null) {
+                                                            ?>
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">TOTAL</td>
-                                                <td class="dash-list-text recent-ac-text">850000</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                            </tr>
+                                                            <form action="cancel-reservation.php" method="post">
+                                                                <input type="hidden" value="<?=$row->reservation_id?>" name="id">
+                                                                <input type="hidden" value="<?=$row->cancelled_by?>" name="state">
+                                                                <button class="btn btn-primary">Redo Reservation</button>
+                                                            </form>
+                                                        <?php
 
+                                                        }
+                                                        else {
+                                                            ?>
+                                                            <form action="cancel-reservation.php" method="post">
+                                                                <input type="hidden" value="<?=$row->reservation_id?>" name="id">
+                                                                <input type="hidden" value="<?=$row->cancelled_by?>" name="state">
+                                                                <button class="btn btn-danger">Cancel Reservation</button>
+                                                            </form>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div><!-- end table-responsive -->
                                 </div><!-- end recent-activity -->
 
-                                <!-- GRAPH POWER BI -->
-                                <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">FORECAST SALES FOR THE NEXT MONTH</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <tbody>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">INPUT GRAPH HERE POWER BI</td>
-                                            </tr>
-
-                                            <!-- INPUT GRAPH HERE POWER BI -->
-
-                                            </tbody>
-                                        </table>
-                                    </div><!-- end table-responsive -->
-                                </div><!-- end recent-activity -->
-
-                                <!--INTERPRETATION-->
-                                <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">INTERPRETATION</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <tbody>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">INPUT INTERPRETATION HERE</td>
-                                            </tr>
-
-
-                                            </tbody>
-                                        </table>
-                                    </div><!-- end table-responsive -->
-                                </div><!-- end recent-activity -->
                             </div><!-- end columns -->
 
                         </div><!-- end row -->

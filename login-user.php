@@ -9,7 +9,7 @@ if(isset($_POST["username"])) {
         while ($row = $stmt->fetch_object()) {
             $_SESSION["user_id"] = $row->id;
         }
-        header("location:index.php");
+        header("location:dashboard.php");
     } else {
         $_SESSION["invalid"] = true;
         header("location:login.php");

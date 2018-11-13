@@ -161,88 +161,31 @@ require "auth-checker.php";
 
                             <div class="col-xs-12 col-sm-2 col-md-2 dashboard-nav">
                                 <ul class="nav nav-tabs nav-stacked text-center">
-                                    <li><a href="dashboard.php"><span><i class="fa fa-reply"></i></span>Back</a></li>
-                                    <li><a href="accomodation.php"><span><i class="fa fa-briefcase"></i></span>Accomodation</a></li>
-                                    <li class="active"><a href="#"><span><i class="fa fa-line-chart"></i></span>Sales</a></li>
-                                    <li><a href="reservation.php"><span><i class="fa fa-line-chart"></i></span>Reservation</a></li>
+                                    <li class="active"><a href="#"><span><i class="fa fa-vcard-o"></i></span>Inquiry</a></li>
+                                    <li><a href="reservation-fill.php"><span><i class="fa fa-file"></i></span>Reservation</a></li>
+                                    <li><a href="accomodation.php"><span><i class="fa fa-briefcase"></i></span>Reports</a></li>
                                 </ul>
                             </div><!-- end columns -->
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
-                                <h2 class="dash-content-title">SALES</h2>
-                                <form>
-                                    <div class="form-group right-icon">
-                                        <select class="form-control">
-                                            <option selected>HOTELS</option>
-                                            <option>HRTSC</option>
-                                            <option>TLSC</option>
-                                        </select>
-                                    </div>
-                                </form>
-                                <!--SALES FORECAST -->
+                                <h2 class="dash-content-title">INQUIRY</h2>
+
                                 <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">SALES FORECAST FOR THE MONTH</h3>
+                                    <h3 class="dash-listing-heading">LIST OF INQUIRY</h3>
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <tbody>
                                             <tr>
-                                                <th>MONTH</th>
-                                                <th>ACTUAL AMOUNT (PHP)</th>
-                                                <th>FORECAST AMOUNT (PHP)</th>
+                                                <th>DATE</th>
+                                                <th>NAME</th>
+                                                <th>REMARKS</th>
                                             </tr>
 
                                             <tr>
-                                                <td class="dash-list-text recent-ac-text">1/1/18</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                                <td class="dash-list-text recent-ac-text">-</td>
+                                                <td class="dash-list-text recent-ac-text">13/11/2018</td>
+                                                <td class="dash-list-text recent-ac-text">Kate Pangan</td>
+                                                <td class="dash-list-text recent-ac-text"><a href="#thanks" data-toggle="modal" class="btn btn-orange">Pending</a></td>
                                             </tr>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">2/1/18</td>
-                                                <td class="dash-list-text recent-ac-text">100000</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">TOTAL</td>
-                                                <td class="dash-list-text recent-ac-text">850000</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div><!-- end table-responsive -->
-                                </div><!-- end recent-activity -->
-
-                                <!-- GRAPH POWER BI -->
-                                <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">FORECAST SALES FOR THE NEXT MONTH</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <tbody>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">INPUT GRAPH HERE POWER BI</td>
-                                            </tr>
-
-                                            <!-- INPUT GRAPH HERE POWER BI -->
-
-                                            </tbody>
-                                        </table>
-                                    </div><!-- end table-responsive -->
-                                </div><!-- end recent-activity -->
-
-                                <!--INTERPRETATION-->
-                                <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">INTERPRETATION</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <tbody>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">INPUT INTERPRETATION HERE</td>
-                                            </tr>
-
 
                                             </tbody>
                                         </table>
@@ -257,6 +200,29 @@ require "auth-checker.php";
         </div><!-- end container -->
     </div><!-- end dashboard -->
 </section><!-- end innerpage-wrapper -->
+
+
+
+<!-- modal -->
+<div id="thanks" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Message</h3>
+            </div><!-- end modal-header -->
+
+            <div class="modal-body">
+                <form>
+                    <p>Is there any available rooms for me and my husband Mr. Jeremiah Malicdem?</p>
+
+                    <a href="#" class="btn btn-orange">Reply</a>
+                </form>
+            </div><!-- end modal-bpdy -->
+        </div><!-- end modal-content -->
+    </div><!-- end modal-dialog -->
+</div><!-- end add-card -->
+<!--end of modal -->
 
 
 
