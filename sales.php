@@ -1,5 +1,6 @@
 <?php
 require "auth-checker.php";
+require "connection.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -170,13 +171,16 @@ require "auth-checker.php";
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
                                 <h2 class="dash-content-title">SALES</h2>
-                                <form>
+                                <form action="sales.php" method="get">
                                     <div class="form-group right-icon">
-                                        <select class="form-control">
+                                        <select class="form-control" name="hotel">
                                             <option selected>HOTELS</option>
-                                            <option>HRTSC</option>
-                                            <option>TLSC</option>
+                                            <option value="1">HRTSC</option>
+                                            <option value="2">TLSC</option>
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary">Search</button>
                                     </div>
                                 </form>
                                 <!--SALES FORECAST -->
@@ -190,24 +194,30 @@ require "auth-checker.php";
                                                 <th>ACTUAL AMOUNT (PHP)</th>
                                                 <th>FORECAST AMOUNT (PHP)</th>
                                             </tr>
+                                            <?php
+                                            if(isset($_GET["hotel"])) {
+                                                for ($i = 1; $i <= 12; $i++) {
+                                                    $dateObj = DateTime::createFromFormat('!m', $i)->format('F');
+                                                    $rowAmount = 0;
+                                                    $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '".$_GET["hotel"]."'");
+                                                    while ($row = $stmt->fetch_object()) {
+                                                        $stmt2 = $conn->query("SELECT * FROM `reservations` INNER JOIN `payments` WHERE `payments`.`reservation_id` = `reservations`.`id` AND `reservations`.`room_id` = '$row->id' AND MONTH(`reservations`.`check_in`) = '$i' AND YEAR(`reservations`.`check_in`) = '".date('Y')."'");
+                                                        while ($row2 = $stmt2->fetch_object()) {
+                                                            $rowAmount+= $row2->amount_paid;
+                                                        }
+                                                    }
+                                                    $forecastAmount = 0.2 * $rowAmount + 0.8 * mysqli_num_rows($stmt2);
+                                                    ?>
+                                                    <tr>
+                                                        <td class="dash-list-text recent-ac-text"><?= $dateObj ?></td>
+                                                        <td class="dash-list-text recent-ac-text"><?= $rowAmount ?></td>
+                                                        <td class="dash-list-text recent-ac-text"><?= $forecastAmount?></td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">1/1/18</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                                <td class="dash-list-text recent-ac-text">-</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">2/1/18</td>
-                                                <td class="dash-list-text recent-ac-text">100000</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">TOTAL</td>
-                                                <td class="dash-list-text recent-ac-text">850000</td>
-                                                <td class="dash-list-text recent-ac-text">750000</td>
-                                            </tr>
 
                                             </tbody>
                                         </table>

@@ -205,6 +205,16 @@ require "auth-checker.php";
                                             </select>
                                         </div>
 
+                                        <p>Hotel</p>
+
+                                        <div class="form-group right-icon">
+                                            <select class="form-control">
+                                                <option selected>Hotel</option>
+                                                <option value="1">HRTSC</option>
+                                                <option value="2">TLSC</option>
+                                            </select>
+                                        </div>
+
                                         <br>
                                         <a href="#" data-toggle="modal"><button class="btn btn-orange btn-block">Proceed</button></a>
 

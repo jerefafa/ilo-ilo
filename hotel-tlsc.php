@@ -377,13 +377,13 @@
                             <div class="modal-body">
                                 <form method="get" action="check-available-rooms.php">
                                     <div class="form-group">
-                                        <label>Arrival Date</label>
+                                        <label>Check in</label>
                                         <input placeholder="Arrival Date" class="form-control" type="date" name="checkIn" required/>
                                     </div>
 
                                     <input type="hidden" value="2" name="hotelId">
                                     <div class="form-group">
-                                        <label>Departure Date</label>
+                                        <label>Check out</label>
                                         <input placeholder="Departure Date" class="form-control" type="date" name="checkOut" required/>
                                     </div>
 
