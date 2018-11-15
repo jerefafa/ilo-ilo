@@ -119,6 +119,10 @@ if(!isset($_SESSION["reservation"])) {
                             </ul>			
                         </li>
 
+                        <li class="text ">
+                            <a href="inquiry-client.php">About us</a>
+                        </li>
+
                         <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
                     </ul>
                 </div><!-- end navbar collapse -->

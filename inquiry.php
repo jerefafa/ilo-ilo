@@ -1,5 +1,6 @@
 <?php
 require "auth-checker.php";
+require "connection.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -93,7 +94,7 @@ require "auth-checker.php";
             <ul class="nav navbar-nav navbar-right navbar-search-link">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                        <li><a href="index.php">Hotel Homepage</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
@@ -175,17 +176,52 @@ require "auth-checker.php";
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <tbody>
+
                                             <tr>
                                                 <th>DATE</th>
                                                 <th>NAME</th>
-                                                <th>REMARKS</th>
+                                                <th>Action</th>
                                             </tr>
 
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">13/11/2018</td>
-                                                <td class="dash-list-text recent-ac-text">Kate Pangan</td>
-                                                <td class="dash-list-text recent-ac-text"><a href="#thanks" data-toggle="modal" class="btn btn-orange">Pending</a></td>
-                                            </tr>
+                                            <?php
+                                             $stmt = $conn->query("SELECT * FROM `inquiry` WHERE `replied_by` IS NULL ORDER BY `date_inquired` LIMIT 50");
+                                             while ($row = $stmt->fetch_object()) {
+                                                 ?>
+                                                 <tr>
+                                                     <td class="dash-list-text recent-ac-text"><?= date('M d Y',strtotime($row->date_inquired))?></td>
+                                                     <td class="dash-list-text recent-ac-text"><?= $row->sender_name ?></td>
+                                                     <td class="dash-list-text recent-ac-text"><a href="#<?=$row->id?>" data-toggle="modal" class="btn btn-orange">Reply</a></td>
+                                                 </tr>
+
+                                                 <!-- modal -->
+                                                 <div id="<?=$row->id?>" class="modal custom-modal fade" role="dialog">
+                                                     <div class="modal-dialog">
+                                                         <div class="modal-content">
+                                                             <div class="modal-header">
+                                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                 <h3 class="modal-title">Message</h3>
+                                                             </div><!-- end modal-header -->
+
+                                                             <div class="modal-body">
+                                                                 <form action="answer-inquiry.php" method="post">
+                                                                     <input type="hidden" value="<?=$row->id?>" name="id">
+                                                                     <input type="hidden" value="<?=$row->email?>" name="email">
+                                                                     <p><?=$row->question?></p>
+                                                                     <div class="form-group">
+                                                                         <textarea class="form-control" name="reply"></textarea>
+                                                                     </div>
+                                                                     <button class="btn btn-orange">Reply</button>
+                                                                 </form>
+                                                             </div><!-- end modal-bpdy -->
+                                                         </div><!-- end modal-content -->
+                                                     </div><!-- end modal-dialog -->
+                                                 </div><!-- end add-card -->
+                                                 <!--end of modal -->
+                                            <?php
+                                             }
+                                             ?>
+
+
 
                                             </tbody>
                                         </table>
@@ -203,26 +239,6 @@ require "auth-checker.php";
 
 
 
-<!-- modal -->
-<div id="thanks" class="modal custom-modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title">Message</h3>
-            </div><!-- end modal-header -->
-
-            <div class="modal-body">
-                <form>
-                    <p>Is there any available rooms for me and my husband Mr. Jeremiah Malicdem?</p>
-
-                    <a href="#" class="btn btn-orange">Reply</a>
-                </form>
-            </div><!-- end modal-bpdy -->
-        </div><!-- end modal-content -->
-    </div><!-- end modal-dialog -->
-</div><!-- end add-card -->
-<!--end of modal -->
 
 
 

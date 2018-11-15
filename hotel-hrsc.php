@@ -124,6 +124,7 @@ function checkRoomExistence($roomId) {
                     <ul class="dropdown-menu">
                         <li><a href="index.php">Hotel Homepage</a></li>
                     </ul>
+
                 </li>
 
                 <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
@@ -131,6 +132,10 @@ function checkRoomExistence($roomId) {
                         <li class="active"><a href="hotel-hrsc.php">HRTSC</a></li>
                         <li class="active"><a href="hotel-tlsc.php">TLSC</a></li>
                     </ul>
+                </li>
+
+                <li class="text">
+                    <a href="inquiry-client.php">About us</a>
                 </li>
 
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
