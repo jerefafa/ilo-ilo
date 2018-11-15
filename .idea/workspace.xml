@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bffea9c-5ccf-40d7-bca7-9fdcc80b9a51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fill-reservation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/finalize-reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cash-payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/cash-payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation-fill.php" beforeDir="false" afterPath="$PROJECT_DIR$/reservation-fill.php" afterDir="false" />
-    </list>
+    <list default="true" id="0bffea9c-5ccf-40d7-bca7-9fdcc80b9a51" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +55,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="27039" />
+          <entry key="php" value="27040" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="24" />
-          <entry key="PHP" value="27001" />
+          <entry key="PHP" value="27002" />
           <entry key="SQL" value="14" />
         </counts>
       </usages-collector>
@@ -111,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/finalize-reservation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="271">
-              <caret line="317" column="42" selection-start-line="317" selection-start-column="42" selection-end-line="317" selection-end-column="42" />
+              <caret line="317" column="43" selection-start-line="317" selection-start-column="43" selection-end-line="317" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -324,18 +318,17 @@
       <workItem from="1541072197948" duration="905000" />
       <workItem from="1541151784968" duration="63771000" />
       <workItem from="1541855203069" duration="35912000" />
-      <workItem from="1542033422199" duration="23331000" />
+      <workItem from="1542033422199" duration="23390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131577000" />
+    <option name="totallyTimeSpent" value="131636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -348,7 +341,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23404256" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23404256" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -683,7 +676,7 @@
     <entry file="file://$PROJECT_DIR$/finalize-reservation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
-          <caret line="317" column="42" selection-start-line="317" selection-start-column="42" selection-end-line="317" selection-end-column="42" />
+          <caret line="317" column="43" selection-start-line="317" selection-start-column="43" selection-end-line="317" selection-end-column="43" />
         </state>
       </provider>
     </entry>

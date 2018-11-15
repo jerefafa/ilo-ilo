@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2018 at 05:36 PM
+-- Generation Time: Nov 16, 2018 at 12:09 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.0.25
 
@@ -56,6 +56,28 @@ CREATE TABLE `images` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `inquiry`
+--
+
+CREATE TABLE `inquiry` (
+  `id` int(11) NOT NULL,
+  `sender_name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `question` text NOT NULL,
+  `date_inquired` date NOT NULL,
+  `replied_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `inquiry`
+--
+
+INSERT INTO `inquiry` (`id`, `sender_name`, `email`, `question`, `date_inquired`, `replied_by`) VALUES
+(10, 'Jeremiah Malicdem', 'jmalicdem45@gmail.com', 'is anybody here?', '2018-11-15', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `packages`
 --
 
@@ -96,6 +118,15 @@ CREATE TABLE `payments` (
   `amount_paid` decimal(10,0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `reservation_id`, `amount_paid`) VALUES
+(4, 64, '1700'),
+(6, 65, '1500'),
+(7, 60, '2500');
+
 -- --------------------------------------------------------
 
 --
@@ -119,7 +150,9 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id`, `room_id`, `check_in`, `check_out`, `cancelled_by`, `rate_id`, `total_price`, `has_confirmed`, `has_additional_bed`) VALUES
-(60, 2, '2018-11-11 00:00:00', '2018-11-12 00:00:00', NULL, 1, '1700', 0, 0);
+(60, 2, '2018-11-11 00:00:00', '2018-11-12 00:00:00', NULL, 1, '1700', 0, 0),
+(64, 2, '2018-11-21 00:00:00', '2018-11-22 00:00:00', NULL, 1, '1700', 0, 0),
+(65, 3, '2018-11-24 00:00:00', '2018-11-25 00:00:00', NULL, 4, '2500', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +177,9 @@ CREATE TABLE `reservation_info` (
 --
 
 INSERT INTO `reservation_info` (`id`, `reservation_id`, `first_name`, `last_name`, `email`, `phone_number`, `num_adult`, `num_child`, `package_id`) VALUES
-(59, 60, 'Jeremiah', 'Malicdem', 'jmalicdem45@gmail.com', '09193184874', 1, 0, 3);
+(59, 60, 'Jeremiah', 'Malicdem', 'jmalicdem45@gmail.com', '09193184874', 1, 0, 3),
+(63, 64, 'Jeremiah', 'Malicdem', 'jmalicdem45@gmail.com', '09235323039', 1, 1, 3),
+(64, 65, 'Jeremiah', 'Malicdem', 'jmalicdem45@gmail.com', '09235323039', 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -296,6 +331,13 @@ ALTER TABLE `images`
   ADD KEY `room_id` (`room_id`);
 
 --
+-- Indexes for table `inquiry`
+--
+ALTER TABLE `inquiry`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `replied_by` (`replied_by`);
+
+--
 -- Indexes for table `packages`
 --
 ALTER TABLE `packages`
@@ -375,6 +417,12 @@ ALTER TABLE `hotels`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `inquiry`
+--
+ALTER TABLE `inquiry`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
@@ -384,19 +432,19 @@ ALTER TABLE `packages`
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `reservation_info`
 --
 ALTER TABLE `reservation_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `rooms`
@@ -440,6 +488,12 @@ ALTER TABLE `images`
   ADD CONSTRAINT `images_ibfk_2` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `inquiry`
+--
+ALTER TABLE `inquiry`
+  ADD CONSTRAINT `inquiry_ibfk_1` FOREIGN KEY (`replied_by`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
 -- Constraints for table `packages`
 --
 ALTER TABLE `packages`
@@ -450,7 +504,7 @@ ALTER TABLE `packages`
 -- Constraints for table `payments`
 --
 ALTER TABLE `payments`
-  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`id`) REFERENCES `reservations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`reservation_id`) REFERENCES `reservations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `reservations`
