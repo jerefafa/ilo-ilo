@@ -1,5 +1,9 @@
 <?php
 require "auth-checker.php";
+require "connection.php";
+if(!isset($_SESSION["reservationInfo"])) {
+    header("location:reservation-fill.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -169,55 +173,87 @@ require "auth-checker.php";
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
                                 <form action="fill-reservation.php" method="post">
-                                <h2 class="dash-content-title">Reservation</h2>
-                                        <div class="form-group">
 
-                                            <p>Check in</p>
-                                            <input type="date" class="form-control dpd2" required name="checkIn"/>
 
-                                        </div>
+                                    <div class="form-group right-icon">
+                                        <select class="form-control" name="room" id="room">
+                                            <option selected>Rooms</option>
+                                            <?php
+                                            $roomsArray = array();
+                                            $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '".$_SESSION["reservationInfo"][4]."'");
+                                            while ($row = $stmt->fetch_object()) {
+                                                array_push($roomsArray, $row);
+                                            }
+                                            $i=0;
+                                            foreach ($roomsArray as $room) {
+                                                if(mysqli_num_rows($conn->query("SELECT * FROM `reservations` WHERE ((`check_in` between '".$_SESSION["reservationInfo"][0]."' AND '".$_SESSION["reservationInfo"][1]."') OR (`check_out` between '".$_SESSION["reservationInfo"][0]."' AND '".$_SESSION["reservationInfo"][1]."')) AND `room_id` = '$room->id' AND `cancelled_by` IS NULL")) > 0) {
+                                                    array_splice($roomsArray,$i,1);
+                                                    continue;
+                                                }
+                                                else{
+                                                    ?>
+                                                    <option value="<?=$room->id?>"><?=$room->room_type.' '.$room->room_name?></option>
+                                                    <?php
+                                                }
+                                                $i++;
+                                            }
+                                            ?>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name" name="fname" required/>
+                                    </div>
 
-                                        <div class="form-group">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name" name="lname" required/>
+                                    </div>
 
-                                            <p>Check out</p>
-                                            <input type="date" class="form-control dpd2" name="checkOut" required/>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email" name="email" required/>
+                                    </div>
 
-                                        </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Phone" name="phone" required/>
+                                    </div>
 
-                                        <p>Number of Adults</p>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Address" name="address" required/>
+                                    </div>
+
+                                    <div class="form-group right-icon">
+                                        <select class="form-control" name="package" id="package">
+                                            <option selected>Package</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="form-group right-icon">
+                                        <select class="form-control" required name="choice" id="choice">
+                                            <option selected disabled>Rate Choice</option>
+
+                                        </select>
+                                    </div>
+                                    <?php
+                                    if($_SESSION["reservationInfo"][4] == 1){
+                                        ?>
+
                                         <div class="form-group right-icon">
-                                            <select class="form-control" name="numAdult" required>
+                                            <select class="form-control" name="additionalBed">
+                                                <option selected value="0">Additional Bed (Additional P300)</option>
+                                                <option value="0">0</option>
                                                 <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
                                             </select>
                                         </div>
+                                        <?php
+                                    }
+                                    ?>
 
-                                        <p>Number of Children</p>
-                                        <div class="form-group right-icon">
-                                            <select class="form-control" name="numChild" required>
-                                                <option selected>0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                            </select>
-                                        </div>
-
-                                        <p>Hotel</p>
-
-                                        <div class="form-group right-icon">
-                                            <select class="form-control" name="hotel">
-                                                <option selected>Hotel</option>
-                                                <option value="1">HRTSC</option>
-                                                <option value="2">TLSC</option>
-                                            </select>
-                                        </div>
-
-                                        <br>
-                                        <button class="btn btn-orange btn-block" >Proceed</button>
-
-                                        <br><br><br><br><br><br>
-                                    </form>
+                                    <div class="checkbox custom-check">
+                                        <input type="checkbox" id="check01" name="checkbox"/>
+                                        <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="hotel-policy.php">Terms & Conditions.</a></label>
+                                    </div>
+                                    <button type="submit" class="btn btn-orange">Book</button>
+                                </form>
 
                             </div><!-- end columns -->
 
@@ -255,6 +291,39 @@ require "auth-checker.php";
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/custom-navigation.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#room").change(function () {
+            var room_id = $(this).val();
+            $.ajax({
+                url:"get-packages.php",
+                type:"POST",
+                data:{room_id:room_id},
+                dataType:"Text",
+                success:function (data) {
+                    var selectName='package';
+                    $('#'+selectName).html(data);
+                }
+            });
+        });
+
+        $("#room").change(function () {
+            var room_id = $(this).val();
+            $.ajax({
+                url:"get-prices.php",
+                type:"POST",
+                data:{room_id:room_id},
+                dataType:"Text",
+                success:function (data) {
+                    var selectName='choiceg';
+                    $('#'+selectName).html(data);
+                }
+            });
+        });
+
+
+    });
+</script>
 <!-- Page Scripts Ends -->
 </body>
 </html>

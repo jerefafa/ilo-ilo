@@ -119,7 +119,7 @@ if(!isset($_SESSION["reservation"])) {
                             </ul>			
                         </li>
 
-                        <li class="text ">
+                        <li class="text">
                             <a href="inquiry-client.php">About us</a>
                         </li>
 
