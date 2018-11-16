@@ -1,5 +1,5 @@
-    <?php
-session_start();
+<?php
+require "auth-checker.php";
 if(!isset($_SESSION["reservation"])) {
     header("location:index.php");
 }
@@ -190,47 +190,47 @@ if(!isset($_SESSION["reservation"])) {
                                     <tbody>
                                     <tr>
                                         <td>First Name:</td>
-                                        <td><?= $_SESSION["reservation"]["reservationInfo"]['fname']?></td>
+                                        <td><?= $_SESSION["reservation"][6]?></td>
                                     </tr>
                                     <tr>
                                         <td>Last Name:</td>
-                                        <td><?= $_SESSION["reservation"]["reservationInfo"]['lname']?></td>
+                                        <td><?= $_SESSION["reservation"][7]?></td>
                                     </tr>
                                     <tr>
                                         <td>Email Address:</td>
-                                        <td><?= $_SESSION["reservation"]["reservationInfo"]['email']?></td>
+                                        <td><?= $_SESSION["reservation"][8]?></td>
                                     </tr>
                                     <tr>
                                         <td>Home Address:</td>
-                                        <td><?= $_SESSION["reservation"]["reservationInfo"]['address']?></td>
+                                        <td><?= $_SESSION["reservation"][10]?></td>
                                     </tr>
                                     <tr>
                                         <td>Phone Number:</td>
-                                        <td><?= $_SESSION["reservation"]["reservationInfo"]['phone']?></td>
+                                        <td><?= $_SESSION["reservation"][9]?></td>
                                     </tr>
                                     <tr>
                                         <td>Check In:</td>
-                                        <td><?= date('M d Y',strtotime($_SESSION["reservation"][1]['checkIn'])) ?></td>
+                                        <td><?= date('M d Y',strtotime($_SESSION["reservation"][0])) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Check Out:</td>
-                                        <td><?= date('M d Y',strtotime($_SESSION["reservation"][1]['checkOut'])) ?></td>
+                                        <td><?= date('M d Y',strtotime($_SESSION["reservation"][1])) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Room:</td>
-                                        <td><?= $_SESSION["reservation"]["reservationInfo"]['room']->room_name.' '.$_SESSION["reservation"]["reservationInfo"]['room']->room_description ?></td>
+                                        <td><?= $_SESSION["reservation"][5]->room_name.' '.$_SESSION["reservation"][5]->room_description ?></td>
                                     </tr>
                                     <tr>
                                         <td>Number of Adult: </td>
-                                        <td><?= $_SESSION["reservation"][1]['numAdult'] ?></td>
+                                        <td><?= $_SESSION["reservation"][2] ?></td>
                                     </tr>
                                     <tr>
                                         <td>Number of Child:</td>
-                                        <td><?= $_SESSION["reservation"][1]['numChild'] ?></td>
+                                        <td><?= $_SESSION["reservation"][3]?></td>
                                     </tr>
                                     <tr>
                                         <td>Total Price:</td>
-                                        <td><?= $_SESSION["reservation"]['reservationInfo']['totalPrice'] ?></td>
+                                        <td><?= $_SESSION["reservation"][14] ?></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -251,7 +251,7 @@ if(!isset($_SESSION["reservation"])) {
                                         <input type="checkbox" id="check02" name="checkbox"/>
                                         <label for="check02"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="before-you-fly.php">Hotel Policies, Terms and Conditions.</a></label>
                                         <br><br>
-                                        <a href="room-booking.php?paymentMode=cash" class="btn btn-orange">Print Details & Reserve</a>
+                                        <a href="admin-reservation.php" class="btn btn-orange">Print Details & Reserve</a>
                                     </div>
                                 </ul>
                             </div><!-- end payment-method -->

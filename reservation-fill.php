@@ -206,8 +206,8 @@ require "auth-checker.php";
                                         <p>Hotel</p>
 
                                         <div class="form-group right-icon">
-                                            <select class="form-control" name="hotel">
-                                                <option selected>Hotel</option>
+                                            <select class="form-control" name="hotel" required>
+                                                <option selected disabled>Hotel</option>
                                                 <option value="1">HRTSC</option>
                                                 <option value="2">TLSC</option>
                                             </select>

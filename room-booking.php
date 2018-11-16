@@ -25,6 +25,7 @@ else{
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 mail($to, $subject, $body, $headers);
             }
+            unset($_SESSION["reservation"]);
             echo "<script>
             location.href = 'reservation-landing-page.php';
             </script>";

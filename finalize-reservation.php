@@ -1,7 +1,7 @@
 <?php
 require "auth-checker.php";
 require "connection.php";
-if(!isset($_SESSION["reservationInfo"])) {
+if(!isset($_SESSION["reservation"])) {
     header("location:reservation-fill.php");
 }
 ?>
@@ -172,15 +172,15 @@ if(!isset($_SESSION["reservationInfo"])) {
                             </div><!-- end columns -->
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
-                                <form action="fill-reservation.php" method="post">
+                                <form action="set-all-reservations.php" method="post">
 
 
                                     <div class="form-group right-icon">
                                         <select class="form-control" name="room" id="room">
-                                            <option selected>Rooms</option>
+                                            <option selected disabled>Rooms</option>
                                             <?php
                                             $roomsArray = array();
-                                            $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '".$_SESSION["reservationInfo"][4]."'");
+                                            $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '".$_SESSION["reservation"][4]."'");
                                             while ($row = $stmt->fetch_object()) {
                                                 array_push($roomsArray, $row);
                                             }
@@ -221,8 +221,8 @@ if(!isset($_SESSION["reservationInfo"])) {
                                     </div>
 
                                     <div class="form-group right-icon">
-                                        <select class="form-control" name="package" id="package">
-                                            <option selected>Package</option>
+                                        <select class="form-control" name="package" id="package" required>
+                                            <option selected disabled>Package</option>
                                         </select>
 
                                     </div>
@@ -238,8 +238,8 @@ if(!isset($_SESSION["reservationInfo"])) {
                                         ?>
 
                                         <div class="form-group right-icon">
-                                            <select class="form-control" name="additionalBed">
-                                                <option selected value="0">Additional Bed (Additional P300)</option>
+                                            <select class="form-control" name="additionalBed" required>
+                                                <option selected value="0" disabled>Additional Bed (Additional P300)</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                             </select>
@@ -315,7 +315,7 @@ if(!isset($_SESSION["reservationInfo"])) {
                 data:{room_id:room_id},
                 dataType:"Text",
                 success:function (data) {
-                    var selectName='choiceg';
+                    var selectName='choice';
                     $('#'+selectName).html(data);
                 }
             });
