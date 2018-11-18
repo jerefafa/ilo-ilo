@@ -269,11 +269,10 @@
                                                                 </li>
                                                             </ul>
                                                         </div><!-- end main-mask -->
-                          g                          </div><!-- end room-img -->
+                                                    </div><!-- end room-img -->
 
                                                     <div class="list-info room-info">
-                                                        <h3 class="block-title"><a href="#"><?= $row->room_type ?> Room</a></h3>
-                                                        <p class="block-minor">Room: <?= $row->room_name ?></p>
+                                                        <h3 class="block-title">Room: <?= $row->room_name ?></h3>
                                                         <p><?= $row->room_description?></p>
                                                         <a href="book-room.php?roomId=<?=$row->id?>" class="btn btn-orange btn-lg">View More</a>
                                                     </div><!-- end room-info -->

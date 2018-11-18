@@ -28,8 +28,13 @@ foreach ($roomsArray as $room) {
     $i++;
 }
 
+if (count($roomsArray) < 1) {
+    echo "<script>alert('No Available rooms for that date'); window.history.back()</script>";
+}
+
 $reservation = array();
 array_push($reservation,$roomsArray);
 array_push($reservation,$reservationInfo);
 $_SESSION["reservation"] = $reservation;
 header("location:available-rooms.php");
+echo "<script>location.href='available-rooms.php'</script>";

@@ -190,6 +190,7 @@ require "connection.php";
 
                                 <div class="dashboard-listing recent-activity">
                                     <h3 class="dash-listing-heading"><?php
+
                                         if(!isset($_GET["hotel"])) {
                                             echo "Hotel";
                                         }
@@ -206,12 +207,14 @@ require "connection.php";
 
                                             <!-- Search Bar -->
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Search reservation number here...." />
+                                                <form action="reservation.php" method="get">
+                                                <input type="text" class="form-control" placeholder="Search reservation number here...." name="reservationId" />
                                                 <span class="input-group-btn"><button type="submit" class="btn"><span>
                                                                 <i class="fa fa-search"></i>
                                                             </span>
                                                         </button>
                                                     </span>
+                                                </form>
                                             </div><!--end search bar -->
 
                                             <tr>
@@ -225,7 +228,10 @@ require "connection.php";
                                             </tr>
                                             <?php
                                             $sql;
-                                            if(isset($_GET["hotel"])) {
+                                            if(isset($_GET["reservationId"])){
+                                            $sql = "SELECT * FROM `reservations` INNER JOIN `reservation_info` INNER JOIN `rooms` WHERE `reservation_info`.`reservation_id` = `reservations`.`id` AND `reservations`.`room_id` = `rooms`.`id` AND `reservations`.`id` = '".$_GET["reservationId"]."'";
+                                            }
+                                            elseif(isset($_GET["hotel"])) {
                                                 $sql = "SELECT * FROM `reservations` INNER JOIN `reservation_info` INNER JOIN `rooms` WHERE `reservations`.`room_id` = `rooms`.`id` AND `reservation_info`.`reservation_id` = `reservations`.`id` AND `rooms`.`hotel_id` = '".$_GET["hotel"]."' AND `check_in` = '".$_GET["checkIn"]."'";
                                             }
                                             else {

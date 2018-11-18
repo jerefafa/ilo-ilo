@@ -12,7 +12,15 @@ else{
     else {
             $stmt = $conn->query("INSERT INTO `reservations`(`room_id`,`check_in`,`check_out`,`rate_id`,`total_price`,`has_confirmed`,`has_additional_bed`) VALUES ('" . $_SESSION["reservation"]["reservationInfo"]["room"]->id . "','" . $_SESSION["reservation"][1]['checkIn'] . "','" . $_SESSION["reservation"][1]['checkOut'] . "','".$_SESSION["reservation"]["reservationInfo"]['choice']->id."','" . $_SESSION["reservation"]["reservationInfo"]['totalPrice'] . "','0','".$_SESSION["reservation"]["reservationInfo"]['additionalBed']."')");
             $id = $conn->insert_id;
-            $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id', '" . $_SESSION["reservation"]["reservationInfo"]["fname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["lname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["email"] . "','" . $_SESSION["reservation"]["reservationInfo"]["phone"] . "','" . $_SESSION["reservation"][1]["numAdult"] . "','" . $_SESSION["reservation"][1]["numChild"] . "','" . $_SESSION["reservation"]["reservationInfo"]["package"]->id . "')");
+            if(isset($_SESSION["reservation"]["reservationInfo"]["package"]->id )) {
+                $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`,`package_id`) VALUES('$id', '" . $_SESSION["reservation"]["reservationInfo"]["fname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["lname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["email"] . "','" . $_SESSION["reservation"]["reservationInfo"]["phone"] . "','" . $_SESSION["reservation"][1]["numAdult"] . "','" . $_SESSION["reservation"][1]["numChild"] . "','" . $_SESSION["reservation"]["reservationInfo"]["package"]->id . "')");
+
+            }
+            else{
+                $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`) VALUES('$id', '" . $_SESSION["reservation"]["reservationInfo"]["fname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["lname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["email"] . "','" . $_SESSION["reservation"]["reservationInfo"]["phone"] . "','" . $_SESSION["reservation"][1]["numAdult"] . "','" . $_SESSION["reservation"][1]["numChild"] . "')");
+
+            }
+            echo $_SESSION["reservation"]["reservationInfo"]["package"]->id;
             if(isset($_SESSION["user_id"])) {
             $stmt = $conn->query("INSERT INTO `payments`(`reservation_id`,`amount_paid`) VALUES('$id','".$_SESSION["reservation"]["reservationInfo"]['totalPrice']."')");
             echo $conn->error;

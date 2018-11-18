@@ -334,7 +334,7 @@ if(isset($_SESSION["reservation"])) {
                             </div><!-- end carousel-inner -->
                             
                             <ol class="carousel-indicators">
-                                <li data-target="#quote-carousel" data-slide-to="0" class="active"><img src="images/client-1.jpg" class="img-responsive"  alt="client-img">
+                                <li data-target="#quote-carousel" data-slide-to="0" class="active"><img src="images/hotel-hrt.jpg" class="img-responsive"  alt="client-img">
                                 </li>
                                 <li data-target="#quote-carousel" data-slide-to="1"><img src="images/client-2.jpg" class="img-responsive"  alt="client-img">
                                 </li>

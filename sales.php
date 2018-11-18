@@ -195,8 +195,10 @@ require "connection.php";
                                                 <th>FORECAST AMOUNT (PHP)</th>
                                             </tr>
                                             <?php
+                                            $dataPoints = array();
                                             if(isset($_GET["hotel"])) {
                                                 for ($i = 1; $i <= 12; $i++) {
+                                                    $chartDataObject = array();
                                                     $dateObj = DateTime::createFromFormat('!m', $i)->format('F');
                                                     $rowAmount = 0;
                                                     $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '".$_GET["hotel"]."'");
@@ -207,6 +209,8 @@ require "connection.php";
                                                         }
                                                     }
                                                     $forecastAmount = 0.2 * $rowAmount + 0.8 * mysqli_num_rows($stmt2);
+
+
                                                     ?>
                                                     <tr>
                                                         <td class="dash-list-text recent-ac-text"><?= $dateObj ?></td>
@@ -214,8 +218,29 @@ require "connection.php";
                                                         <td class="dash-list-text recent-ac-text"><?= $forecastAmount?></td>
                                                     </tr>
                                                     <?php
+
+                                                    array_push($dataPoints, [
+                                                        "label" => DateTime::createFromFormat('!m',$i)->format('F'),
+                                                        "y" => $rowAmount,
+                                                        "forecastAmount" => $forecastAmount,
+                                                        "monthNumber" => $i
+                                                    ]);
+                                                    $_SESSION["dataPoints"] = $dataPoints;
+
                                                 }
+//                                                echo "<script>
+//                                            window.open('generate-csv.php', '_blank');
+//                                            </script>";
+                                            ?>
+
+                                            <?php
                                             }
+
+                                            else {
+                                                unset($_SESSION["dataPoints"]);
+                                            }
+
+
                                             ?>
 
 
@@ -227,18 +252,8 @@ require "connection.php";
                                 <!-- GRAPH POWER BI -->
                                 <div class="dashboard-listing recent-activity">
                                     <h3 class="dash-listing-heading">FORECAST SALES FOR THE NEXT MONTH</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <tbody>
-
-                                            <tr>
-                                                <td class="dash-list-text recent-ac-text">INPUT GRAPH HERE POWER BI</td>
-                                            </tr>
-
-                                            <!-- INPUT GRAPH HERE POWER BI -->
-
-                                            </tbody>
-                                        </table>
+                                    <div class="table-responsive" id="chartContainer">
+                                        <iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYTM0ZTg3MTQtMjQyZS00MWM1LTg2ZWUtMjYxNzgxZTcyMzAyIiwidCI6IjFkOTgxZjc3LTNjYTMtNDZhZS1iMGQ0LWU4MDQ0ZTZjN2Y4NCIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
                                     </div><!-- end table-responsive -->
                                 </div><!-- end recent-activity -->
 
@@ -267,8 +282,6 @@ require "connection.php";
         </div><!-- end container -->
     </div><!-- end dashboard -->
 </section><!-- end innerpage-wrapper -->
-
-
 
 <div id="footer-bottom" class="ftr-bot-black">
     <div class="container">

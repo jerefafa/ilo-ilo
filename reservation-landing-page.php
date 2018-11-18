@@ -4,7 +4,7 @@ session_start();
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Email Confirmed</title>
+    <title>Thank You</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="images/download.png" type="image/x-icon">

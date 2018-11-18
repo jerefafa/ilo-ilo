@@ -219,20 +219,10 @@ else {
 
                     <div class="detail-slider">
                         <div class="feature-slider">
-                            <div><img src="images/f-feature-1.jpg" class="img-responsive" alt="feature-img"/></div>
-                            <div><img src="images/f-feature-2.jpg" class="img-responsive" alt="feature-img"/></div>
-                            <div><img src="images/f-feature-3.jpg" class="img-responsive" alt="feature-img"/></div>
-                            <div><img src="images/f-feature-4.jpg" class="img-responsive" alt="feature-img"/></div>
-                            <div><img src="images/f-feature-5.jpg" class="img-responsive" alt="feature-img"/></div>
+                            <div><img src="<?=$roomObject->image_path?>" class="img-responsive" alt="feature-img"/></div>
                         </div><!-- end feature-slider -->
 
-                        <div class="feature-slider-nav">
-                            <div><img src="images/f-feature-thumb-1.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                            <div><img src="images/f-feature-thumb-2.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                            <div><img src="images/f-feature-thumb-3.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                            <div><img src="images/f-feature-thumb-4.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                            <div><img src="images/f-feature-thumb-5.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                        </div><!-- end feature-slider-nav -->
+
                     </div>  <!-- end detail-slider -->
 
                     <div class="detail-tabs" id="packages">
