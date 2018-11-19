@@ -25,7 +25,19 @@ $mail->isHTML(true);                                  // Set email format to HTM
 $mail->Subject = 'Your Suffrage Account';
 $message = $_POST["reply"];
 $mail->Body    = $message;
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+$mail->SMTPOptions = array(
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+    )
+);
+if(!$mail->Send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+} else {
+    echo "Message has been sent";
+}
 
 $mail->send();
 //header("location:inquiry.php");
