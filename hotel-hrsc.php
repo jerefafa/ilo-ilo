@@ -385,9 +385,6 @@ function checkRoomExistence($roomId) {
         </div><!-- end hotel-details -->
 </section><!-- end innerpage-wrapper -->
 
-
-//Reservation Modal
-
 <!-- MODAL -->
 <div id="thanks" class="modal custom-modal fade" role="dialog">
     <div class="modal-dialog">
@@ -431,7 +428,7 @@ function checkRoomExistence($roomId) {
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                    <option value="4">3</option>
+
                                 </select>
                             </div>
                         </div>
