@@ -27,8 +27,8 @@ else{
             else {
                 $to = $_SESSION["reservation"]["reservationInfo"]["email"];
                 $subject = "Thank you for your reservation";
-                $body = "<a href = 'http://iloilo.x10host.com/receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
-                        <a href='http://iloilo.x10host.com/email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
+                $body = "<a href = 'https://iloilo.azurewebsites.net/receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
+                        <a href='https://iloilo.azurewebsites.net/email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 mail($to, $subject, $body, $headers);
             }
