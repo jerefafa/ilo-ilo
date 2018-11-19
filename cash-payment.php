@@ -266,7 +266,7 @@ if(!isset($_SESSION["reservation"])) {
                                         <h2 class="side-bar-heading">Contact Us</h2>
                                         <div class="c-list">
                                             <div class="icon"><span><i class="fa fa-envelope"></i></span></div>
-                                            <div class="text"><p>osas@isatu.edu.ph</p></div>
+                                            <div class="text"><p>vpaa@isatu.edu.ph</p></div>
                                         </div><!-- end c-list -->
                                         
                                         <div class="c-list">
