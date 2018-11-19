@@ -22,6 +22,7 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" id="cpswitch" href="css/orange.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/modified.css">
 </head>
 
 
@@ -151,7 +152,7 @@ session_start();
 
 
 <!--================= PAGE-COVER ================-->
-<section class="page-cover" id="cover-thank-you">
+<section class="page-cover" id="cover-inquiry">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -276,6 +277,32 @@ session_start();
 
 <!--======================= FOOTER =======================-->
 <section id="footer" class="ftr-heading-o ftr-heading-mgn-1">
+    <div id="footer-top" class="banner-padding ftr-top-grey ftr-text-grey">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 footer-widget ftr-about ftr-our-company">
+                    <h3 class="footer-heading">OUR COMPANY / UNIVERSITY</h3>
+                    <p>The University is committed to provide quality and relevant advanced education, higher technological, professional instruction and training in arts, sciences, education, architecture, engineering, agriculture,, forestry, and other fields of study, thereby producing locally oriented, globally competitive and eco-friendly human resources. It shall promote research and development programs to advance science and technology and undertake sustainable extension and production activities.</p>
+                    <ul class="social-links list-inline list-unstyled">
+                        <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-instagram"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-linkedin"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-youtube-play"></i></span></a></li>
+                    </ul>
+                </div><!-- end columns -->
+
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 footer-widget ftr-map">
+                    <div class="map">
+                    </div>
+                </div><!-- end columns -->
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end footer-top -->
 
     <div id="footer-bottom" class="ftr-bot-black">
         <div class="container">
@@ -295,6 +322,8 @@ session_start();
     </div><!-- end footer-bottom -->
 
 </section><!-- end footer -->
+
+
 
 
 <!-- Page Scripts Starts -->

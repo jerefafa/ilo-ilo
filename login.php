@@ -196,7 +196,7 @@ if(isset($_SESSION["invalid"])) {
                                 </div><!-- end custom-form -->
                                 
                                 <div class="flex-content-img custom-form-img">
-                                    <img src="images/login.jpg" class="img-responsive" alt="registration-img" />
+                                    <img src="images/hrtsc-login1.jpg" class="img-responsive" alt="registration-img" />
                                 </div><!-- end custom-form-img -->
                             </div><!-- end form-content -->
                             

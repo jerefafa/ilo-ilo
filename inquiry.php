@@ -86,7 +86,7 @@ require "connection.php";
             <div class="header-search hidden-lg">
                 <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
             </div>
-            <img src="images/logo.png" class="img-responsive" alt="registration-img">
+            <img src="images/" class="img-responsive" alt="registration-img">
             <!--<a href="#" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a> -->
         </div><!-- end navbar-header -->
 

@@ -145,51 +145,48 @@ if(isset($_SESSION["reservation"])) {
                     </div><!-- end container -->
                  </nav><!-- end navbar -->
         	</div><!-- end header-absolute -->
-            
             <div class="sidenav-content">
                 <div id="mySidenav" class="sidenav" >
-                    <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Star Travel</h2>
-    
+                    <img src="images/logo.png" class="img-responsive" alt="registration-img">
+                    <!-- <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Star Travel</h2> -->
+
                     <div id="main-menu">
                         <div class="closebtn">
                             <button class="btn btn-default" id="closebtn">&times;</button>
                         </div><!-- end close-btn -->
-                        
+
                         <div class="list-group panel">
-                        
-                            <a href="#home-links" class="list-group-item active" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
+
+                            <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
                             <div class="collapse sub-menu" id="home-links">
-                                <a href="#" class="list-group-item active">Hotel Homepage</a>
+                                <a href="index.php" class="list-group-item">Hotel Homepage</a>
                             </div><!-- end sub-menu -->
-            
-                            
+
                             <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
                             <div class="collapse sub-menu" id="hotels-links">
                                 <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
+                                <a href="hotel-tlsc.php" class="list-group-item">TLSC</a>
                             </div><!-- end sub-menu -->
-                                              
+
                         </div><!-- end list-group -->
                     </div><!-- end main-menu -->
                 </div><!-- end mySidenav -->
             </div><!-- end sidenav-content -->
-        
+
             <div class="flexslider slider" id="slider-3">
                 <ul class="slides">
-                    
-                    <li class="item-1 back-size" style="background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/hotel-slider-1.jpg) 50% 65%;background-size:cover;height:100%;">
+
+                    <li class="item-1 back-size" style="background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/hrt-bldg.jpg) 50% 65%;background-size:cover;height:100%;">
                     </li><!-- end item-1 -->
-                    
-                    <li class="item-2 back-size" style="background:			linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/hotel-slider-1.jpg) 50% 65%;background-size:cover;height:100%;">
+
+                    <li class="item-2 back-size" style="background:			linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/hrt-bldg1.jpg) 50% 65%;background-size:cover;height:100%;">
                     </li><!-- end item-2 -->
-                   
+
+                    <li class="item-3 back-size" style="background:         linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/tlsc-bldg.jpg) 50% 65%;background-size:cover;height:100%;">
+                    </li><!-- end item-2 -->
+
                 </ul>
             </div><!-- end slider -->
-            
-            <div class="search-tabs" id="search-tabs-3">
-            	<div class="container">
-
-                </div><!-- end container -->
-            </div><!-- end search-tabs -->
             
         </section><!-- end flexslider-container -->
 		

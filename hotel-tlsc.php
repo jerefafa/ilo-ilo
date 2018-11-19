@@ -42,6 +42,7 @@
         <!-- Slick Stylesheet -->
 		<link rel="stylesheet" href="css/slick.css">
         <link rel="stylesheet" href="css/slick-theme.css">
+        <link rel="stylesheet" href="css/modified.css">
     </head>
     
     
@@ -189,11 +190,11 @@
 
         
         <!--================= PAGE-COVER ================-->
-        <section class="page-cover" id="cover-hotel-detail">
+        <section class="page-cover" id="cover-hotel-tlsc">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                    	<h1 class="page-title">Technology and Livelihood Service Center</h1>
+                        <h1 class="page-title">Technology and Livelihood Service Center</h1>
                         <ul class="breadcrumb">
                             <li><a href="#">Home</a></li>
                             <li class="active">Technology and Livelihood Service Center</li>
@@ -201,8 +202,7 @@
                     </div><!-- end columns -->
                 </div><!-- end row -->
             </div><!-- end container -->
-        </section><!-- end page-cover -->
-        
+        </section>
         
         <!--===== INNERPAGE-WRAPPER ====-->
         <section class="innerpage-wrapper">
@@ -284,24 +284,22 @@
 
                                 <div class="detail-tabs" id="hotel-overview">
                                     <ul class="nav nav-tabs nav-justified">
-                                        <li class="active"><a " data-toggle="tab">Hotel Overview</a></li>
+                                        <li class="active"><a href="#hotel" data-toggle="tab">Hotel Overview</a></li>
                                         <li><a href="#restaurant" data-toggle="tab">Restaurant</a></li>
-                                        <li><a href="#pick-up" data-toggle="tab">Pick Up Services</a></li>
-                                        <li><a href="#luxury-gym" data-toggle="tab">Luxury Gym</a></li>
-                                        <li><a href="#sports-club" data-toggle="tab">Sports Club</a></li>
+                                        <li><a href="#pick-up" data-toggle="tab">Event Hall</a></li>
                                     </ul>
 
                                     <div class="tab-content">
 
-                                        <div  class="tab-pane in active">
+                                        <div id="hotel" class="tab-pane in active">
                                             <div class="row">
                                                 <div class="col-sm-4 col-md-4 tab-img">
-                                                    <img src="images/hotel-detail-tab-1.jpg" class="img-responsive" alt="flight-detail-img" />
+                                                    <img src="images/detail-tlsc-hotel.jpg" class="img-responsive" alt="flight-detail-img" />
                                                 </div><!-- end columns -->
 
                                                 <div class="col-sm-8 col-md-8 tab-text">
                                                     <h3>Hotel Overview</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                    <p>TLSC Hotel offers guests a unique hospitality experience, based on individual attention and value for their money. Its beautiful country setting makes every morning a bird watching experience. Enjoy tranquility and nature while being in a safe, private and comfortable environment.</p>
                                                 </div><!-- end columns -->
                                             </div><!-- end row -->
                                         </div><!-- end hotel-overview -->
@@ -309,12 +307,12 @@
                                         <div id="restaurant" class="tab-pane">
                                             <div class="row">
                                                 <div class="col-sm-4 col-md-4 tab-img">
-                                                    <img src="images/hotel-detail-tab-2.jpg" class="img-responsive" alt="flight-detail-img" />
+                                                    <img src="images/detail-tlsc-resto.jpg" class="img-responsive" alt="flight-detail-img" />
                                                 </div><!-- end columns -->
 
                                                 <div class="col-sm-8 col-md-8 tab-text">
                                                     <h3>Restaurant</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+                                                    <p>TLSC Lounge is designed to create a community atmosphere as a good, old fashioned, friendly, neighborhood cafe. The location puts the lounge in the heart of lively, downtown Iloilo.</p>
                                                 </div><!-- end columns -->
                                             </div><!-- end row -->
                                         </div><!-- end restaurant -->
@@ -322,41 +320,15 @@
                                         <div id="pick-up" class="tab-pane">
                                             <div class="row">
                                                 <div class="col-sm-4 col-md-4 tab-img">
-                                                    <img src="images/hotel-detail-tab-3.jpg" class="img-responsive" alt="flight-detail-img" />
+                                                    <img src="images/detail-tlsc-event.jpg" class="img-responsive" alt="flight-detail-img" />
                                                 </div><!-- end columns -->
 
                                                 <div class="col-sm-8 col-md-8 tab-text">
-                                                    <h3>Pick Up Services</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br/> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                    <h3>Event Hall</h3>
+                                                    <p>The event hall is a spacious function hall, a large room great to be used for public meetings or meetings of the members of an organization such as a school, church, or deliberative assembly.</p>
                                                 </div><!-- end columns -->
                                             </div><!-- end row -->
                                         </div><!-- end pick-up -->
-
-                                        <div id="luxury-gym" class="tab-pane">
-                                            <div class="row">
-                                                <div class="col-sm-4 col-md-4 tab-img">
-                                                    <img src="images/hotel-detail-tab-4.jpg" class="img-responsive" alt="flight-detail-img" />
-                                                </div><!-- end columns -->
-
-                                                <div class="col-sm-8 col-md-8 tab-text">
-                                                    <h3>Luxury Gym</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                                </div><!-- end columns -->
-                                            </div><!-- end row -->
-                                        </div><!-- end luxury-gym -->
-
-                                        <div id="sports-club" class="tab-pane">
-                                            <div class="row">
-                                                <div class="col-sm-4 col-md-4 tab-img">
-                                                    <img src="images/hotel-detail-tab-5.jpg" class="img-responsive" alt="flight-detail-img" />
-                                                </div><!-- end columns -->
-
-                                                <div class="col-sm-8 col-md-8 tab-text">
-                                                    <h3>Sports Club</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                                </div><!-- end columns -->
-                                            </div><!-- end row -->
-                                        </div><!-- end sports-club -->
 
                                     </div><!-- end tab-content -->
                                 </div><!-- end detail-tabs -->
