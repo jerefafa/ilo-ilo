@@ -115,7 +115,7 @@ if(!isset($_SESSION["reservation"])) {
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="hotel-hrsc.php">HRTSC</a></li>
-                                <li><a href="hotel-tlsc.php">TLSC</a></li>
+                                <li><a href="hotel-tlsc.php">TLEC</a></li>
                             </ul>			
                         </li>
 
@@ -249,7 +249,7 @@ if(!isset($_SESSION["reservation"])) {
 
                                                 <h3> Your booking details and bill</h3>
                                             <input type="checkbox" id="check02" name="checkbox"/>
-                                            <label for="check02"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="before-you-fly.php">Hotel Policies, Terms and Conditions.</a></label>
+                                            <label for="check02"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="hotel-policy.php">Hotel Policies, Terms and Conditions.</a></label>
                                                 <br><br>
                                                 <a href="room-booking.php?paymentMode=cash" class="btn btn-orange">Print Details & Reserve</a>
                                         </div>                        
@@ -316,8 +316,8 @@ if(!isset($_SESSION["reservation"])) {
                         
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
                             <ul class="list-unstyled list-inline">
-                            	<li><a href="#">Terms & Condition</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
+                            	<li><a href="hotel-policy.php">Terms & Condition</a></li>
+                                <li><a href="hotel-policy.php">Privacy Policy</a></li>
                             </ul>
                         </div><!-- end columns -->
                     </div><!-- end row -->
