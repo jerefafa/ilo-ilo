@@ -93,13 +93,13 @@
             <ul class="nav navbar-nav navbar-right navbar-search-link">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                        <li><a href="index.php">Hotel Homepage</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="hotel-hrsc.php" class="list-group-item">HRTSC</a></li>
-                        <li><a href="hotel-tlsc.php" class="list-group-item">TLSC</a></li>
+                        <li><a href="hotel-tlsc.php" class="list-group-item">TLEC</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
@@ -122,14 +122,14 @@
 
                 <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
                 <div class="collapse sub-menu" id="home-links">
-                    <a href="hotel-homepage.php" class="list-group-item">Hotel Homepage</a>
+                    <a href="index.php" class="list-group-item">Hotel Homepage</a>
                 </div><!-- end sub-menu -->
 
                 <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
                 <div class="collapse sub-menu" id="hotels-links">
-                    <a href="hotel-homepage.php" class="list-group-item">Hotel Homepage</a>
+                    <a href="index.php" class="list-group-item">Hotel Homepage</a>
                     <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
-                    <a href="hotel-tlsc.php" class="list-group-item">TLSC</a>
+                    <a href="hotel-tlsc.php" class="list-group-item">TLEC</a>
                 </div><!-- end sub-menu -->
 
             </div><!-- end list-group -->
@@ -162,7 +162,7 @@
                             <div class="col-xs-12 col-sm-2 col-md-2 dashboard-nav">
                                 <ul class="nav nav-tabs nav-stacked text-center">
                                     <li><a href="inquiry.php"><span><i class="fa fa-vcard-o"></i></span>Inquiry</a></li>
-                                    <li><a href="reservation.php"><span><i class="fa fa-file"></i></span>Reservation</a></li>
+                                    <li><a href="reservation-fill.php"><span><i class="fa fa-file"></i></span>Reservation</a></li>
                                     <li><a href="accomodation.php"><span><i class="fa fa-pencil-square-o"></i></span>Reports</a></li>
                                 </ul>
                             </div><!-- end columns -->
@@ -172,14 +172,10 @@
                                     <br><br>
                                     <h3 class="dash-listing-heading">Hello there admin!</h3>
                                     <br><br>
-                                    <div class="form-group right-icon">
-                                        <select class="form-control">
-                                            <option selected>HOTELS</option>
-                                            <option>HRTSC</option>
-                                            <option>TLSC</option>
-                                        </select>
-                                    </div>
-
+                                    <h3 class="dash-listing-heading">All reports have been updated for you.</h3>
+                                    <br><br>
+                                    <h3 class="dash-listing-heading">Powered by</h3>
+                                    <img src="images/powerbi.jpg" class="img-responsive" alt="feature-img"/>
                                 </form>
                             </div><!-- end columns -->
 
@@ -200,12 +196,6 @@
                 <p>© 2018 <a href="#">Iloilo Science and Technology University</a>. All rights reserved.</p>
             </div><!-- end columns -->
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
-                <ul class="list-unstyled list-inline">
-                    <li><a href="#">Terms & Condition</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div><!-- end columns -->
         </div><!-- end row -->
     </div><!-- end container -->
 </div><!-- end footer-bottom -->

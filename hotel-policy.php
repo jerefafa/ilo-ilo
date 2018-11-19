@@ -97,7 +97,7 @@
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="hotel-hrsc.php">HRTSC</a></li>
-                                <li><a href="hotel-tlsc.php">TLSC</a></li>
+                                <li><a href="hotel-tlsc.php">TLEC</a></li>
                             </ul>			
                         </li>
                         <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
@@ -106,37 +106,37 @@
             </div><!-- end container -->
         </nav><!-- end navbar -->
         
-        <div class="sidenav-content">
-            <div id="mySidenav" class="sidenav" >
-                <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Star Travel</h2>
+<div class="sidenav-content">
+    <div id="mySidenav" class="sidenav" >..
+        <img src="images/logo.png" class="img-responsive" alt="registration-img">
+        <!--<h2 id="web-name"><span><i class="fa fa-plane"></i></span>Star Travel</h2>-->
 
-                <div id="main-menu">
-                	<div class="closebtn">
-                        <button class="btn btn-default" id="closebtn">&times;</button>
-                    </div><!-- end close-btn -->
-                    
-                    <div class="list-group panel">
-                    
-                        <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
-                        <div class="collapse sub-menu" id="home-links">
-                            <a href="index.php" class="list-group-item">Main Homepage</a>
-                            <a href="index.php" class="list-group-item">Hotel Homepage</a>
-                        </div><!-- end sub-menu -->
-                        
-                        
-                        <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
-                        <div class="collapse sub-menu" id="hotels-links">
-                            <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
-                            <a href="hotel-tlsc.php" class="list-group-item">TLSC</a>
-                        </div><!-- end sub-menu -->
-                    </div><!-- end list-group -->
-                </div><!-- end main-menu -->
-            </div><!-- end mySidenav -->
-        </div><!-- end sidenav-content -->
+        <div id="main-menu">
+            <div class="closebtn">
+                <button class="btn btn-default" id="closebtn">&times;</button>
+            </div><!-- end close-btn -->
+
+            <div class="list-group panel">
+
+                <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                <div class="collapse sub-menu" id="home-links">
+                    <a href="index.php" class="list-group-item">Hotel Homepage</a>
+                </div><!-- end sub-menu -->
+
+                <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                <div class="collapse sub-menu" id="hotels-links">
+                    <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
+                    <a href="hotel-tlsc.php" class="list-group-item">TLEC</a>
+                </div><!-- end sub-menu -->
+
+            </div><!-- end list-group -->
+        </div><!-- end main-menu -->
+    </div><!-- end mySidenav -->
+</div><!-- end sidenav-content -->
         
         
         <!--================= PAGE-COVER ================-->
-        <section class="page-cover" id="cover-byf-info">
+        <section class="page-cover">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -160,22 +160,16 @@
                     	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 content-side byf-info">
                         	<div class="space-right">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#airport-info" data-toggle="tab"><span><i class="fa fa-building"></i></span>Hotel Policy</a></li>
-                                    <li><a href="#visa-passport" data-toggle="tab"><span><i class="fa fa-file"></i></span>Terms and Conditions</a></li>
+                                    <li class="active"><a href="#" data-toggle="tab"><span><i class="fa fa-building"></i></span>Hotel Policy</a></li>
+                                    <li><a href="#" data-toggle="tab"><span><i class="fa fa-file"></i></span>Terms and Conditions</a></li>
                                 </ul>
                                 
                                 <div class="tab-content">
     
                                     <div id="airport-info" class="tab-pane in active">
                                         <div class="byf-info-wrap">
-                                            <img src="images/byf-airport-info.jpg" class="img-responsive" alt="byf-info-img">
                                             <h3 class="byf-info-heading">Guarantee Policy</h3>
-                                            <p>If you pay for reservation using Credit Card.</p>
-                                            <p>Please provide Credit Card details to guarantee your reservation.</p>
-                                            <br>
-                                            <p>If you want to pay for your reservation using cash.</p>
-                                            <p>Please pay on the bank at least 50% of the total price guarantee your reservation.</p>
-                  
+                                            <p>Pay for your reservation using cash.</p>
                                             <ul>
                                                 <li>Failure to pay for the reservation fee will result to voiding your reservation.</li>
                                                 <li>Reservations can only last up to 4 days.</li>
@@ -191,7 +185,6 @@
                                     
                                     <div id="visa-passport" class="tab-pane">
                                         <div class="byf-info-wrap">
-                                            <img src="images/byf-visa-passport.jpg" class="img-responsive" alt="byf-info-img">
                                             <h3 class="byf-info-heading">Terms and Conditions</h3>
                                             <p>Input terms and conditions here.</p>
                                         </div><!-- end byf-info-wrap -->
@@ -212,7 +205,7 @@
                                         <h2 class="side-bar-heading">Contact Us</h2>
                                         <div class="c-list">
                                             <div class="icon"><span><i class="fa fa-envelope"></i></span></div>
-                                            <div class="text"><p>osas@isatu.edu.ph</p></div>
+                                            <div class="text"><p>vpaa@isatu.edu.ph</p></div>
                                         </div><!-- end c-list -->
                                         
                                         <div class="c-list">

@@ -128,7 +128,7 @@ function checkRoomExistence($roomId) {
                 <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
                         <li class="active"><a href="hotel-hrsc.php">HRTSC</a></li>
-                        <li class="active"><a href="hotel-tlsc.php">TLSC</a></li>
+                        <li><a href="hotel-tlsc.php">TLEC</a></li>
                     </ul>
                 </li>
 
@@ -178,7 +178,7 @@ function checkRoomExistence($roomId) {
                 <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
                 <div class="collapse sub-menu" id="hotels-links">
                     <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
-                    <a href="hotel-tlsc.php" class="list-group-item">TLSC</a>
+                    <a href="hotel-tlsc.php" class="list-group-item">TLEC</a>
                 </div><!-- end sub-menu -->
             </div><!-- end list-group -->
         </div><!-- end main-menu -->
@@ -419,8 +419,8 @@ function checkRoomExistence($roomId) {
 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
                 <ul class="list-unstyled list-inline">
-                    <li><a href="#">Terms & Condition</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="hotel-policy.php">Terms & Condition</a></li>
+                    <li><a href="hotel-policy.php">Privacy Policy</a></li>
                 </ul>
             </div><!-- end columns -->
         </div><!-- end row -->

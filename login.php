@@ -188,11 +188,7 @@ if(isset($_SESSION["invalid"])) {
                                         
                                         <button class="btn btn-orange btn-block">Login</button>
                                     </form>
-                                    
-                                    <div class="other-links">
-                                    	<p class="link-line">New Here ? <a href="#">Signup</a></p>
-                                        <a class="simple-link" href="#">Forgot Password ?</a>
-                                    </div><!-- end other-links -->
+                                
                                 </div><!-- end custom-form -->
                                 
                                 <div class="flex-content-img custom-form-img">
@@ -211,7 +207,7 @@ if(isset($_SESSION["invalid"])) {
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="copyright">
-                            <p>© 2017 <a href="#">StarTravel</a>. All rights reserved.</p>
+                            <p>© 2018 <a href="#">Iloilo Science and Technology University</a>. All rights reserved.</p>
                         </div><!-- end columns -->
                         
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">

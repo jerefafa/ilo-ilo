@@ -94,13 +94,13 @@ require "connection.php";
             <ul class="nav navbar-nav navbar-right navbar-search-link">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                        <li><a href="index.php">Hotel Homepage</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="hotel-hrsc.php" class="list-group-item">HRTSC</a></li>
-                        <li><a href="hotel-tlsc.php" class="list-group-item">TLSC</a></li>
+                        <li><a href="hotel-tlsc.php" class="list-group-item">TLEC</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
@@ -130,7 +130,7 @@ require "connection.php";
                 <div class="collapse sub-menu" id="hotels-links">
                     <a href="hotel-homepage.php" class="list-group-item">Hotel Homepage</a>
                     <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
-                    <a href="hotel-tlsc.php" class="list-group-item">TLSC</a>
+                    <a href="hotel-tlsc.php" class="list-group-item">TLEC</a>
                 </div><!-- end sub-menu -->
 
             </div><!-- end list-group -->
@@ -175,19 +175,19 @@ require "connection.php";
                                         <select class="form-control" name="hotel" required>
                                             <option selected disabled>HOTELS</option>
                                             <option value="1">HRTSC</option>
-                                            <option value="2">TLSC</option>
+                                            <option value="2">TLEC</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
+                                         <p>From</p>
                                         <input type="date" class="form-control dpd2" required name="from"/>
-                                        <p>All reservations will be displayed on the given date</p>
                                     </div>
                                     <div class="form-group">
+                                        <p>To</p>
                                         <input type="date" class="form-control dpd2" required name="to"/>
-                                        <p>All reservations will be displayed on the given date</p>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-success">Search</button>
+                                         <button type="submit" class="btn btn-orange btn-block" >Search</button>
                                     </div>
                                 </form>
 
@@ -255,12 +255,6 @@ require "connection.php";
                 <p>© 2018 <a href="#">Iloilo Science and Technology University</a>. All rights reserved.</p>
             </div><!-- end columns -->
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
-                <ul class="list-unstyled list-inline">
-                    <li><a href="#">Terms & Condition</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div><!-- end columns -->
         </div><!-- end row -->
     </div><!-- end container -->
 </div><!-- end footer-bottom -->

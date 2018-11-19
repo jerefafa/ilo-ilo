@@ -201,7 +201,7 @@ else {
                         <div class="col-xs-12 col-sm-6 col-md-12">
                             <div class="side-bar-block support-block">
                                 <h3>Need Help</h3>
-                                <p>Tawag ka sa wonder pets.</p>
+                                <p>Contact us.</p>
                                 <div class="support-contact">
                                     <span><i class="fa fa-phone"></i></span>
                                     <p>(033) 320-7190</p>
@@ -309,8 +309,8 @@ else {
 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
                 <ul class="list-unstyled list-inline">
-                    <li><a href="#">Terms & Condition</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="hotel-policy.php">Terms & Condition</a></li>
+                    <li><a href="hotel-policy.php">Privacy Policy</a></li>
                 </ul>
             </div><!-- end columns -->
         </div><!-- end row -->

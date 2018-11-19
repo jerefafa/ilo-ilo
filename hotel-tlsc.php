@@ -131,7 +131,7 @@
         
                         <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
-                                <li class="active"><a href="hotel-hrsc.php">HRTSC</a></li>
+                                <li><a href="hotel-hrsc.php">HRTSC</a></li>
                                 <li class="active"><a href="#">TLEC</a></li>
                             </ul>			
                         </li>
@@ -405,8 +405,8 @@
                         
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
                             <ul class="list-unstyled list-inline">
-                            	<li><a href="#">Terms & Condition</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
+                            	<li><a href="hotel-policy.php">Terms & Condition</a></li>
+                                <li><a href="hotel-policy.php">Privacy Policy</a></li>
                             </ul>
                         </div><!-- end columns -->
                     </div><!-- end row -->
