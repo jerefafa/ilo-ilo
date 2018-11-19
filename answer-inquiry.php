@@ -38,6 +38,4 @@ if(!$mail->Send()) {
 } else {
     echo "Message has been sent";
 }
-
-$mail->send();
 //header("location:inquiry.php");
