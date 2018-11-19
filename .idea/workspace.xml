@@ -2,38 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bffea9c-5ccf-40d7-bca7-9fdcc80b9a51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/modified.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/detail-event.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/detail-hrtsc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/detail-tlsc-event.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/detail-tlsc-hotel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/detail-tlsc-resto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/details-hrtsc-lounge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hrt-bldg.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hrt-bldg1.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hrtsc-hotel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hrtsc-login.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hrtsc-login1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/index1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/index2.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/inquiry.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/mangga.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/munggo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/test-coco.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/test-edu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/test-yassi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/tlsc-bldg.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accomodation.php" beforeDir="false" afterPath="$PROJECT_DIR$/accomodation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/orange.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/orange.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel-hrsc.php" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-hrsc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel-tlsc.php" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-tlsc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cover-hotel-detail.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inquiry-client.php" beforeDir="false" afterPath="$PROJECT_DIR$/inquiry-client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inquiry.php" beforeDir="false" afterPath="$PROJECT_DIR$/inquiry.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/room-booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/room-booking.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +49,7 @@
           <entry key="css" value="3" />
           <entry key="jpg" value="1" />
           <entry key="js" value="2" />
-          <entry key="php" value="96" />
+          <entry key="php" value="97" />
           <entry key="sql" value="3" />
         </counts>
       </usages-collector>
@@ -84,21 +58,21 @@
           <entry key="CSS" value="3" />
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="96" />
+          <entry key="PHP" value="97" />
           <entry key="SQL" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="49" />
-          <entry key="php" value="30945" />
+          <entry key="php" value="31089" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="49" />
           <entry key="HTML" value="51" />
-          <entry key="PHP" value="30879" />
+          <entry key="PHP" value="31023" />
           <entry key="SQL" value="15" />
         </counts>
       </usages-collector>
@@ -109,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/room-booking.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+            <state relative-caret-position="340">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -118,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotel-hrsc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="191" column="49" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
+            <state relative-caret-position="235">
+              <caret line="195" column="66" selection-start-line="195" selection-start-column="66" selection-end-line="195" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -127,17 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inquiry.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+            <state relative-caret-position="405">
+              <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -163,8 +128,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotel-tlsc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="195" column="29" lean-forward="true" selection-start-line="195" selection-start-column="29" selection-end-line="195" selection-end-column="29" />
+            <state relative-caret-position="184">
+              <caret line="134" column="67" selection-start-line="134" selection-start-column="67" selection-end-line="134" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/connection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -172,10 +146,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="178" column="131" selection-start-line="178" selection-start-column="131" selection-end-line="178" selection-end-column="131" />
+            <state relative-caret-position="226">
+              <caret line="141" selection-start-line="141" selection-end-line="141" />
               <folding>
                 <element signature="e#7526#7533#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#1;n#ul#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#2;n#ul#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -192,7 +167,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reservation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
@@ -205,13 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>package`</find>
-      <find>hote</find>
-      <find>if(</find>
-      <find>room</find>
-      <find>aja</find>
-      <find>packa</find>
-      <find>addi</find>
       <find>echo</find>
       <find>$str</find>
       <find>print deta</find>
@@ -229,12 +197,19 @@
       <find>page-cove</find>
       <find>page-c</find>
       <find>cover-ho</find>
-      <find>selec</find>
       <find>flex</find>
       <find>img</find>
       <find>page-co</find>
       <find>ifra</find>
       <find>sales</find>
+      <find>selec</find>
+      <find>search</find>
+      <find>ul</find>
+      <find>searc</find>
+      <find>hotel res</find>
+      <find>TLSC</find>
+      <find>tlsc`</find>
+      <find>tlsc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -273,18 +248,18 @@
         <option value="$PROJECT_DIR$/book-room.php" />
         <option value="$PROJECT_DIR$/sales.php" />
         <option value="$PROJECT_DIR$/check-available-rooms.php" />
-        <option value="$PROJECT_DIR$/connection.php" />
-        <option value="$PROJECT_DIR$/room-booking.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/hotel-tlsc.php" />
-        <option value="$PROJECT_DIR$/hotel-hrsc.php" />
         <option value="$PROJECT_DIR$/css/orange.css" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/inquiry.php" />
         <option value="$PROJECT_DIR$/css/modified.css" />
         <option value="$PROJECT_DIR$/inquiry-client.php" />
         <option value="$PROJECT_DIR$/accomodation.php" />
         <option value="$PROJECT_DIR$/reservation.php" />
+        <option value="$PROJECT_DIR$/room-booking.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/hotel-hrsc.php" />
+        <option value="$PROJECT_DIR$/hotel-tlsc.php" />
+        <option value="$PROJECT_DIR$/connection.php" />
       </list>
     </option>
   </component>
@@ -329,7 +304,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="res&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/reservation.php&#10;acc&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/accomodation.php&#10;inq&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/inquiry-client.php&#10;inqui&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/inquiry.php&#10;log&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/login.php&#10;hotel-hrt&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/images/hotel-hrt.jpg&#10;hr&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-hrsc.php&#10;inde&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/index.php&#10;roo&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/room-booking.php&#10;tls&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-tlsc.php&#10;inqu&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/inquiry-client.php&#10;conn&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/connection.php&#10;room&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/room-booking.php&#10;chec&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/check-available-rooms.php&#10;ho&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-tlsc.php&#10;poli&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-policy.php&#10;book-ro&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/book-room.php&#10;sales&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/sales.php&#10;reserva&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/reservation.php&#10;reservation.ph&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/admin-reservation.php&#10;reser&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/reservation-fill.php&#10;get&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/get-packages.php&#10;fina&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/finalize-reservation.php&#10;ind&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/index.php&#10;fill-re&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/fill-reservation.php&#10;ad&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/admin-cash-payment.php&#10;cash&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/cash-payment.php&#10;ava&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/available-rooms.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/login-user.php&#10;cash-pa&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/cash-payment.php&#10;hrs&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-hrsc.php&#10;hotel&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-hrsc.php&#10;sal&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/sales.php&#10;sale&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/sales.php&#10;dash&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/dashboard.php&#10;login-us&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/login-user.php&#10;cas&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/cash-payment.php&#10;em&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/email-confirmation.php&#10;boo&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/booking.php&#10;bo&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/book-room.php&#10;book&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/book-room.php&#10;ca&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/cash-payment.php&#10;date&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/js/bootstrap-datepicker.js&#10;cred&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/credit-payment.php&#10;hrsc&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-hrsc.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/index.php&#10;Sty&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/css/Style4.css&#10;cre&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/credit-payment.php" />
+    <property name="SearchEverywhereHistoryKey" value="conn&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/connection.php&#10;hotel&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-tlsc.php&#10;hrs&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-hrsc.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/login.php&#10;inde&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/index.php&#10;hr&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-hrsc.php&#10;room-bo&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/room-booking.php&#10;res&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/reservation.php&#10;acc&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/accomodation.php&#10;inq&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/inquiry-client.php&#10;inqui&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/inquiry.php&#10;log&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/login.php&#10;hotel-hrt&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/images/hotel-hrt.jpg&#10;roo&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/room-booking.php&#10;tls&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-tlsc.php&#10;inqu&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/inquiry-client.php&#10;room&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/room-booking.php&#10;chec&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/check-available-rooms.php&#10;ho&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-tlsc.php&#10;poli&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-policy.php&#10;book-ro&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/book-room.php&#10;sales&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/sales.php&#10;reserva&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/reservation.php&#10;reservation.ph&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/admin-reservation.php&#10;reser&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/reservation-fill.php&#10;get&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/get-packages.php&#10;fina&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/finalize-reservation.php&#10;ind&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/index.php&#10;fill-re&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/fill-reservation.php&#10;ad&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/admin-cash-payment.php&#10;cash&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/cash-payment.php&#10;ava&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/available-rooms.php&#10;cash-pa&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/cash-payment.php&#10;sal&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/sales.php&#10;sale&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/sales.php&#10;dash&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/dashboard.php&#10;login-us&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/login-user.php&#10;cas&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/cash-payment.php&#10;em&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/email-confirmation.php&#10;boo&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/booking.php&#10;bo&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/book-room.php&#10;book&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/book-room.php&#10;ca&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/cash-payment.php&#10;date&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/js/bootstrap-datepicker.js&#10;cred&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/credit-payment.php&#10;hrsc&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/hotel-hrsc.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/index.php&#10;Sty&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/css/Style4.css&#10;cre&#9;FILE&#9;file://C:/xampp/htdocs/iloilo-hotel/credit-payment.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../NULS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -371,12 +346,12 @@
       <workItem from="1541072197948" duration="905000" />
       <workItem from="1541151784968" duration="63771000" />
       <workItem from="1541855203069" duration="35912000" />
-      <workItem from="1542033422199" duration="65087000" />
+      <workItem from="1542033422199" duration="68847000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173333000" />
+    <option name="totallyTimeSpent" value="177093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -686,60 +661,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="113" selection-start-line="7" selection-start-column="113" selection-end-line="7" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/room-booking.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="178" column="131" selection-start-line="178" selection-start-column="131" selection-end-line="178" selection-end-column="131" />
-          <folding>
-            <element signature="e#7526#7533#1#HTML" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/hotel-hrt.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotel-tlsc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="195" column="29" lean-forward="true" selection-start-line="195" selection-start-column="29" selection-end-line="195" selection-end-column="29" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/orange.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="1820" column="48" selection-start-line="1820" selection-start-column="48" selection-end-line="1820" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotel-hrsc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="191" column="49" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -775,6 +703,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="166" column="36" selection-start-line="166" selection-start-column="36" selection-end-line="166" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/room-booking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+          <folding>
+            <element signature="e#7526#7533#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel-hrsc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="195" column="66" selection-start-line="195" selection-start-column="66" selection-end-line="195" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel-tlsc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="134" column="67" selection-start-line="134" selection-start-column="67" selection-end-line="134" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>

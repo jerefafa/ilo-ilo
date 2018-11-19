@@ -110,7 +110,7 @@ if(isset($_SESSION["invalid"])) {
                                 <li><a href="hotel-hrsc.php">TLSC</a></li>
                             </ul>			
                         </li>
-                        <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
+                        <li></li>
                     </ul>
                 </div><!-- end navbar collapse -->
             </div><!-- end container -->

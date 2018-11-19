@@ -112,9 +112,6 @@ function checkRoomExistence($roomId) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="header-search hidden-lg">
-                <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
-            </div>
             <img src="images/logo.png" class="img-responsive" alt="registration-img">
             <!--  <a href="#" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>-->
         </div><!-- end navbar-header -->
@@ -139,7 +136,7 @@ function checkRoomExistence($roomId) {
                     <a href="inquiry-client.php">About us</a>
                 </li>
 
-                <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
+                <li>    </li>
             </ul>
         </div><!-- end navbar collapse -->
         <div class="navbar" style="margin-left: 10%">
@@ -193,10 +190,10 @@ function checkRoomExistence($roomId) {
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="page-title">Hotel Restaurant Training and Service Center</h1>
+                <h1 class="page-title">Hotel Restaurant Technology Service Center</h1>
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Hotel Restaurant Training and Service Center</li>
+                    <li class="active">Hotel Restaurant Technology Service Center</li>
                 </ul>
             </div><!-- end columns -->
         </div><!-- end row -->

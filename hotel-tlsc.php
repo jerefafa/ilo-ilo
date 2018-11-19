@@ -17,7 +17,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>TLSC</title>
+        <title>TLEC</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" href="images/download.png" type="image/x-icon">
@@ -132,7 +132,7 @@
                         <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
                                 <li class="active"><a href="hotel-hrsc.php">HRTSC</a></li>
-                                <li class="active"><a href="#">TLSC</a></li>
+                                <li class="active"><a href="#">TLEC</a></li>
                             </ul>			
                         </li>
 
@@ -194,10 +194,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1 class="page-title">Technology and Livelihood Service Center</h1>
+                        <h1 class="page-title">Technology and Livelihood Education Center</h1>
                         <ul class="breadcrumb">
                             <li><a href="#">Home</a></li>
-                            <li class="active">Technology and Livelihood Service Center</li>
+                            <li class="active">Technology and Livelihood Education Center
+                            </li>
                         </ul>
                     </div><!-- end columns -->
                 </div><!-- end row -->
@@ -299,7 +300,7 @@
 
                                                 <div class="col-sm-8 col-md-8 tab-text">
                                                     <h3>Hotel Overview</h3>
-                                                    <p>TLSC Hotel offers guests a unique hospitality experience, based on individual attention and value for their money. Its beautiful country setting makes every morning a bird watching experience. Enjoy tranquility and nature while being in a safe, private and comfortable environment.</p>
+                                                    <p>TLEC Hotel offers guests a unique hospitality experience, based on individual attention and value for their money. Its beautiful country setting makes every morning a bird watching experience. Enjoy tranquility and nature while being in a safe, private and comfortable environment.</p>
                                                 </div><!-- end columns -->
                                             </div><!-- end row -->
                                         </div><!-- end hotel-overview -->
@@ -312,7 +313,7 @@
 
                                                 <div class="col-sm-8 col-md-8 tab-text">
                                                     <h3>Restaurant</h3>
-                                                    <p>TLSC Lounge is designed to create a community atmosphere as a good, old fashioned, friendly, neighborhood cafe. The location puts the lounge in the heart of lively, downtown Iloilo.</p>
+                                                    <p>TLEC Lounge is designed to create a community atmosphere as a good, old fashioned, friendly, neighborhood cafe. The location puts the lounge in the heart of lively, downtown Iloilo.</p>
                                                 </div><!-- end columns -->
                                             </div><!-- end row -->
                                         </div><!-- end restaurant -->
