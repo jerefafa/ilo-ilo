@@ -23,7 +23,6 @@ else{
             echo $_SESSION["reservation"]["reservationInfo"]["package"]->id;
             if(isset($_SESSION["user_id"])) {
             $stmt = $conn->query("INSERT INTO `payments`(`reservation_id`,`amount_paid`) VALUES('$id','".$_SESSION["reservation"]["reservationInfo"]['totalPrice']."')");
-            echo $conn->error;
             }
             else {
                 $to = $_SESSION["reservation"]["reservationInfo"]["email"];
