@@ -107,8 +107,8 @@ if(isset($_SESSION["invalid"])) {
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="hotel-hrsc.php">HRTSC</a></li>
-                                <li><a href="hotel-hrsc.php">TLSC</a></li>
-                            </ul>			
+                                <li><a href="hotel-tlsc.php">TLEC</a></li>
+                            </ul>
                         </li>
                         <li></li>
                     </ul>

@@ -111,13 +111,13 @@ if(!isset($_SESSION["reservation"])){
             <ul class="nav navbar-nav navbar-right navbar-search-link">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                        <li><a href="index.php">Hotel Homepage</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="hotel-homepage.php">Hotel Homepage</a></li>
+                        <li><a href="index.php">Hotel Homepage</a></li>
                         <li class="active"><a href="#">HRTSC</a></li>
                     </ul>
                 </li>

@@ -25,8 +25,6 @@ else{
             $stmt = $conn->query("INSERT INTO `payments`(`reservation_id`,`amount_paid`) VALUES('$id','".$_SESSION["reservation"]["reservationInfo"]['totalPrice']."')");
             }
             else {
-                $sendGrid = new SendGrid();
-
                 $to = $_SESSION["reservation"]["reservationInfo"]["email"];
                 $subject = "Thank you for your reservation";
                 $body = "<a href = 'https://iloilo.azurewebsites.net/receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
