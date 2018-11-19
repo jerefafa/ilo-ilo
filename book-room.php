@@ -204,7 +204,7 @@ else {
                                 <p>Contact us.</p>
                                 <div class="support-contact">
                                     <span><i class="fa fa-phone"></i></span>
-                                    <p>(033) 320-7190</p>
+                                    <p>(033) 320-7190 loc 234</p>
                                 </div><!-- end support-contact -->
                             </div><!-- end side-bar-block -->
                         </div><!-- end columns -->

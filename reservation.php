@@ -162,9 +162,11 @@ require "connection.php";
 
                             <div class="col-xs-12 col-sm-2 col-md-2 dashboard-nav">
                                 <ul class="nav nav-tabs nav-stacked text-center">
-                                    <li><a href="dashboard.php"><span><i class="fa fa-reply"></i></span>Back</a></li>
-                                    <li><a href="accomodation.php"><span><i class="fa fa-briefcase"></i></span>Accomodation</a></li>
+                                    <li><a href="dashboard.php" style="background-color: #00008B;"><span><i class="fa fa-reply"></i></span>Back</a></li>
+                                    <li><a href="accomodation.php" style="background-color: #00008B;"><span><i class="fa fa-briefcase"></i></span>Facts and Figures</a></li>
                                     <li class="active"><a href="#"><span><i class="fa fa-line-chart"></i></span>Reservation</a></li>
+                                    <li><a href="web-manage.php" style="background-color: #00008B;"><span><i class="fa fa-desktop"></i></span>Website Management</a></li>
+                                    <li><a href="log-tra.php" style="background-color: #00008B;"><span><i class="fa fa-history"></i></span>Log Trail</a></li>
                                 </ul>
                             </div><!-- end columns -->
 

@@ -137,7 +137,7 @@ if(isset($_SESSION["reservation"])) {
                                 </li>
 
                                 <li class="text">
-                                    <a href="inquiry-client.php">About us</a>
+                                    <a href="inquiry-client.php">Contact us</a>
                                 </li>
 
                             </ul>
@@ -265,9 +265,9 @@ if(isset($_SESSION["reservation"])) {
                         
                     </div><!-- end columns -->
                     
-                    <div class="col-sm-12 col-md-12 col-lg-6 luxury-text luxury-room-text">
-                        <h2>Affordable Rooms</h2>
-                        <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri.</p>
+                      <div class="col-sm-12 col-md-12 col-lg-6 luxury-text luxury-room-text">
+                        <h2>Our Hotels and Rooms</h2>
+                        <p>Enjoy world-class service amidst tranquil surroundings, coupled with inspirational design and transformative experiences in some of the world's finest urban addresses and resort destinations. Achieve more with every meeting and event you plan with us. Create priceless experiences that are engaging and productive.</p>
                         <a href="hotel-hrsc.php" class="btn btn-black">From ₱3500/Day</a>
                         <a href="hotel-tlsc.php" class="btn btn-o-border">View Details</a>
                     </div><!-- end columns -->

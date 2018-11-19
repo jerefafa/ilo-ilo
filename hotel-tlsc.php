@@ -137,7 +137,7 @@
                         </li>
 
                         <li class="text">
-                            <a href="inquiry-client.php">About us</a>
+                            <a href="inquiry-client.php">contact us</a>
                         </li>
                         <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
                     </ul>

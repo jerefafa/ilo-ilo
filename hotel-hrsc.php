@@ -133,7 +133,7 @@ function checkRoomExistence($roomId) {
                 </li>
 
                 <li class="text">
-                    <a href="inquiry-client.php">About us</a>
+                    <a href="inquiry-client.php">contact us</a>
                 </li>
 
                 <li>    </li>

@@ -113,7 +113,7 @@ session_start();
                     </ul>
                 </li>
                 <li class="text active">
-                    <a href="inquiry-client.php">About us</a>
+                    <a href="inquiry-client.php">Contact us</a>
                 </li>
 
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>

@@ -123,12 +123,12 @@ require "connection.php";
 
                 <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
                 <div class="collapse sub-menu" id="home-links">
-                    <a href="hotel-homepage.php" class="list-group-item">Hotel Homepage</a>
+                    <a href="index.php" class="list-group-item">Hotel Homepage</a>
                 </div><!-- end sub-menu -->
 
                 <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
                 <div class="collapse sub-menu" id="hotels-links">
-                    <a href="hotel-homepage.php" class="list-group-item">Hotel Homepage</a>
+                    <a href="index.php" class="list-group-item">Hotel Homepage</a>
                     <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
                     <a href="hotel-tlsc.php" class="list-group-item">TLEC</a>
                 </div><!-- end sub-menu -->
@@ -163,81 +163,107 @@ require "connection.php";
                             <div class="col-xs-12 col-sm-2 col-md-2 dashboard-nav">
                                 <ul class="nav nav-tabs nav-stacked text-center">
                                     <li><a href="dashboard.php" style="background-color: #00008B;"><span><i class="fa fa-reply"></i></span>Back</a></li>
-                                    <li class="active"><a href="#"><span><i class="fa fa-briefcase"></i></span>Facts and Figures</a></li>
+                                    <li><a href="accomodation.php" style="background-color: #00008B;"><span><i class="fa fa-briefcase"></i></span>Facts and Figures</a></li>
                                     <li><a href="reservation.php" style="background-color: #00008B;"><span><i class="fa fa-line-chart"></i></span>Reservation</a></li>
-                                    <li><a href="web-manage.php" style="background-color: #00008B;"><span><i class="fa fa-desktop"></i></span>Website Management</a></li>
+                                    <li class="active"><a href="#"><span><i class="fa fa-desktop"></i></span>Website Management</a></li>
                                     <li><a href="log-trail.php" style="background-color: #00008B;"><span><i class="fa fa-history"></i></span>Log Trail</a></li>
                                 </ul>
                             </div><!-- end columns -->
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
-                                <h2 class="dash-content-title">FACTS AND FIGURES</h2>
-                                <form action="accommodation.php" method="get">
+                                <h2 class="dash-content-title">WEBSITE MANAGEMENT</h2>
+                                <form action="web-manage.php" method="get">
                                     <div class="form-group right-icon">
-                                        <select class="form-control" name="hotel" required>
-                                            <option selected disabled>HOTELS</option>
+                                        <select class="form-control" name="hotel">
+                                            <option selected>HOTELS</option>
                                             <option value="1">HRTSC</option>
                                             <option value="2">TLEC</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                         <p>From</p>
-                                        <input type="date" class="form-control dpd2" required name="from"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <p>To</p>
-                                        <input type="date" class="form-control dpd2" required name="to"/>
-                                    </div>
-                                    <div class="form-group">
-                                         <button type="submit" class="btn btn-orange btn-block" >Search</button>
+                                         <button type="submit" class="btn btn-orange btn-block" >Proceed</button>
                                     </div>
                                 </form>
 
                                 <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">TOTAL ACCOMMODATION PER ROOM</h3>
+                                    <h3 class="dash-listing-heading"><?php
+
+                                        if(!isset($_GET["hotel"])) {
+                                            echo "Hotel";
+                                        }
+                                        elseif ($_GET["hotel"] == 1) {
+                                            echo "HRTSC";
+                                        }
+                                        else {
+                                            echo "TLEC";
+                                        }
+                                        ?></h3>
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <tbody>
+
+                                            <!-- Search Bar -->
+                                            <div class="input-group">
+                                                <form action="reservation.php" method="get">
+                                                <input type="text" class="form-control" placeholder="Search room number here...." name="reservationId" />
+                                                <span class="input-group-btn"><button type="submit" class="btn"><span>
+                                                                <i class="fa fa-search"></i>
+                                                            </span>
+                                                        </button>
+                                                    </span>
+                                                </form>
+                                            </div><!--end search bar -->
+
                                             <tr>
-                                                <th>ROOM</th>
-                                                <th>NO. OF CHECK IN</th>
-                                                <th>AMOUNT</th>
+                                                <th>ROOM#</th>
+                                                <th>PRICE</th>
+                                                <th>LAST UPDATED</th>
+                                                <th>ACTIONS</th>
                                             </tr>
-
-                                            <?php
-                                                if(isset($_GET["hotel"])) {
-                                                    $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '".$_GET["hotel"]."'");
-                                                    while ($row = $stmt->fetch_object()) {
-                                                        ?>
-                                                        <tr>
-                                                        <td><?= $row->room_type.' '.$row->room_name ?></td>
-                                                        <?php
-                                                        $stmt2 = $conn->query("SELECT * FROM `reservations` WHERE `room_id` = '".$row->id."' AND (`check_in` BETWEEN '".$_GET["from"]."' AND '".$_GET["to"]."') AND `cancelled_by` IS NULL");
-                                                        ?>
-                                                        <td><?= mysqli_num_rows($stmt2)?></td>
-                                                            <?php
-                                                        $total = 0;
-                                                        while ($row2 = $stmt2->fetch_object()) {
-                                                                $stmt3 = $conn->query("SELECT * FROM `payments` WHERE `payments`.`reservation_id` = '$row2->id' ");
-                                                                while ($row3 = $stmt3->fetch_object()) {
-                                                                    $total+= $row3->amount_paid;
-                                                                }
-
-                                                            }
-                                                            ?>
-
-                                                            <td><?= $total ?></td>
-
-                                                        </tr>
-                                                        <?php
-                                                    }
-                                                }
-                                            ?>
-
+                                                <tr>
+                                                 <td class="dash-list-text recent-ac-text">206</td>
+                                                 <td class="dash-list-text recent-ac-text">2500</td>
+                                                 <td class="dash-list-text recent-ac-text">01/04/2018</td>
+                                                 <td class="dash-list-text recent-ac-text"><a data-toggle="modal" data-target="#change"><button class="btn btn-orange btn-block" >UPDATE ROOM PRICE</button></a></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div><!-- end table-responsive -->
                                 </div><!-- end recent-activity -->
+                                <br><br><br>
+
+
+                                   <div class="dashboard-listing recent-activity">
+                                    <h3 class="dash-listing-heading">PROMOS</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tbody>
+
+                                            <div class="form-group">
+                                        <a data-toggle="modal" data-target="#promo"><button type="submit" class="btn btn-orange btn-block" >CREATE PROMO</button></a>
+                                         </div>
+
+                                            <tr>
+                                                <th>PROMO NAME</th>
+                                                <th>DESCRIPTION</th>
+                                                <th>PROMO PRICE</th>
+                                                <th>STARTING DATE</th>
+                                                <th>EXPIRY DATE</th>
+                                                <th>ACTIONS</th>
+                                            </tr>
+                                                <tr>
+                                                 <td class="dash-list-text recent-ac-text">SUMMER PROMO</td>
+                                                 <td class="dash-list-text recent-ac-text">SUMMER SAYA RENT 1 GET 1</td>
+                                                 <td class="dash-list-text recent-ac-text">2500</td>
+                                                 <td class="dash-list-text recent-ac-text">05/29/2018</td>
+                                                 <td class="dash-list-text recent-ac-text">06/29/2018</td>
+                                                 <td class="dash-list-text recent-ac-text"><button class="btn btn-orange btn-block" >DELETE PROMO</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!-- end table-responsive -->
+                                </div><!-- end recent-activity -->
+
                             </div><!-- end columns -->
 
                         </div><!-- end row -->
@@ -248,6 +274,86 @@ require "connection.php";
     </div><!-- end dashboard -->
 </section><!-- end innerpage-wrapper -->
 
+<!-- MODAL -->
+<div id="change" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Update Room Price</h3>
+            </div><!-- end modal-header -->
+
+            <div class="modal-body">
+                <form method="get" action="check-available-rooms.php">
+                    <div class="form-group">
+                        <label>New Price</label>
+                        <input placeholder="New Price" class="form-control" type="text" name="newPrice" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Enter password for verification</label>
+                        <input placeholder="Password" class="form-control" type="password" name="password" required/>
+                    </div>
+
+                    
+                    <button class="btn btn-orange">Proceed</button>
+                </form>
+            </div><!-- end modal-bpdy -->
+        </div><!-- end modal-content -->
+    </div><!-- end modal-dialog -->
+</div><!-- end add-card -->
+<!--end of modal -->
+
+<!-- PROMO -->
+<div id="promo" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Create Promo</h3>
+            </div><!-- end modal-header -->
+
+            <div class="modal-body">
+                <form method="get" action="check-available-rooms.php">
+                    <div class="form-group">
+                        <label>Promo Name</label>
+                        <input placeholder="Promo Name" class="form-control" type="text" name="promoName" required/>
+                    </div>
+
+                     <div class="form-group">
+                        <label>DESCRIPTION</label>
+                        <textarea class="form-control" name="promoDesc" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Promo Price</label>
+                        <input placeholder="Promo Price" class="form-control" type="number" name="promoPrice" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Starting Date</label>
+                        <input  class="form-control" type="date" name="startDate" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input  class="form-control" type="date" name="expDate" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Enter password for verification</label>
+                        <input placeholder="Password" class="form-control" type="password" name="password" required/>
+                    </div>
+
+                    
+                    <button class="btn btn-orange">Proceed</button>
+                </form>
+            </div><!-- end modal-bpdy -->
+        </div><!-- end modal-content -->
+    </div><!-- end modal-dialog -->
+</div><!-- end add-card -->
+<!--end of modal -->
+
 
 
 <div id="footer-bottom" class="ftr-bot-black">
@@ -256,7 +362,6 @@ require "connection.php";
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="copyright">
                 <p>© 2018 <a href="#">Iloilo Science and Technology University</a>. All rights reserved.</p>
             </div><!-- end columns -->
-
         </div><!-- end row -->
     </div><!-- end container -->
 </div><!-- end footer-bottom -->
