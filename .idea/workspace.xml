@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bffea9c-5ccf-40d7-bca7-9fdcc80b9a51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cash-payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/cash-payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer-inquiry.php" beforeDir="false" afterPath="$PROJECT_DIR$/answer-inquiry.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +44,7 @@
           <entry key="css" value="3" />
           <entry key="jpg" value="1" />
           <entry key="js" value="2" />
-          <entry key="php" value="99" />
+          <entry key="php" value="100" />
           <entry key="sql" value="3" />
         </counts>
       </usages-collector>
@@ -53,21 +53,21 @@
           <entry key="CSS" value="3" />
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="99" />
+          <entry key="PHP" value="100" />
           <entry key="SQL" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="49" />
-          <entry key="php" value="31128" />
+          <entry key="php" value="31332" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="49" />
           <entry key="HTML" value="51" />
-          <entry key="PHP" value="31062" />
+          <entry key="PHP" value="31266" />
           <entry key="SQL" value="15" />
         </counts>
       </usages-collector>
@@ -115,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/connection.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -124,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/available-rooms.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="371">
-              <caret line="124" column="33" lean-forward="true" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
+              <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -138,20 +138,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cash-payment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="4200">
               <caret line="268" column="69" selection-start-line="268" selection-start-column="69" selection-end-line="268" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accomodation.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/answer-inquiry.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="166" column="36" selection-start-line="166" selection-start-column="36" selection-end-line="166" selection-end-column="36" />
+            <state relative-caret-position="187">
+              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -221,7 +221,6 @@
         <option value="$PROJECT_DIR$/cancel-reservation.php" />
         <option value="$PROJECT_DIR$/confirm-payment.php" />
         <option value="$PROJECT_DIR$/submit-inquiry.php" />
-        <option value="$PROJECT_DIR$/answer-inquiry.php" />
         <option value="$PROJECT_DIR$/get-prices.php" />
         <option value="$PROJECT_DIR$/get-packages.php" />
         <option value="$PROJECT_DIR$/reservation-fill.php" />
@@ -249,6 +248,7 @@
         <option value="$PROJECT_DIR$/available-rooms.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/cash-payment.php" />
+        <option value="$PROJECT_DIR$/answer-inquiry.php" />
       </list>
     </option>
   </component>
@@ -278,12 +278,7 @@
             <path>
               <item name="iloilo-hotel" type="b2602c69:ProjectViewProjectNode" />
               <item name="iloilo-hotel" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iloilo-hotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iloilo-hotel" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -335,18 +330,18 @@
       <workItem from="1541072197948" duration="905000" />
       <workItem from="1541151784968" duration="63771000" />
       <workItem from="1541855203069" duration="35912000" />
-      <workItem from="1542033422199" duration="73110000" />
+      <workItem from="1542033422199" duration="74173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181356000" />
+    <option name="totallyTimeSpent" value="182419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -359,7 +354,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.235461" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.235461" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -511,13 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/answer-inquiry.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -705,7 +693,7 @@
     <entry file="file://$PROJECT_DIR$/connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -719,7 +707,7 @@
     <entry file="file://$PROJECT_DIR$/available-rooms.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
-          <caret line="124" column="33" lean-forward="true" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
+          <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -732,8 +720,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cash-payment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="4200">
           <caret line="268" column="69" selection-start-line="268" selection-start-column="69" selection-end-line="268" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/answer-inquiry.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
         </state>
       </provider>
     </entry>
