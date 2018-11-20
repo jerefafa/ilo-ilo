@@ -334,7 +334,18 @@ function checkRoomExistence($roomId) {
 
                                         <div class="col-sm-8 col-md-8 tab-text">
                                             <h3>Promos</h3>
-                                            <p>The event hall is a spacious function hall, a large room great to be used for public meetings or meetings of the members of an organization such as a school, church, or deliberative assembly.</p>
+                                            <?php
+                                            $stmt = $conn->query("SELECT * FROM `promos` WHERE `hotel_id` = 1 ");
+                                            ?>
+                                            <ul>
+                                                <?php
+                                                while ($row =$stmt->fetch_object()) {
+                                                    ?>
+                                                    <li><?=$row->promo.'-'.$row->price?></li>
+                                                <?php
+                                                }
+                                                ?>
+                                            </ul>
                                         </div><!-- end columns -->
                                     </div><!-- end row -->
                                 </div><!-- end pick-up -->
