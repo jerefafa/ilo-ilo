@@ -1,7 +1,7 @@
 <?php
 require "connection.php";
 if(isset($_POST['rep_user'])){
-        $conn->query("UPDATE `inquiry` SET `replied_by` = '".$_POST["id"]."'");
+        $conn->query("UPDATE `inquiry` SET `replied_by` = '".$_POST["id"]."' WHERE `id`='".$_POST["id"]."'");
         $message = $_POST["reply"];
         $email = $_POST["email"];
         $subject = "Response to your question";
