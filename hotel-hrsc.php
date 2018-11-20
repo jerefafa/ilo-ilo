@@ -116,29 +116,44 @@ function checkRoomExistence($roomId) {
             <!--  <a href="#" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>-->
         </div><!-- end navbar-header -->
 
-        <div class="collapse navbar-collapse" id="myNavbar1">
-            <ul class="nav navbar-nav navbar-right navbar-search-link">
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index.php">Hotel Homepage</a></li>
-                    </ul>
+          <div class="collapse navbar-collapse" id="myNavbar1">
+                            <ul class="nav navbar-nav navbar-right">
+                                     <?php
+                                    if(isset($_SESSION["user_id"])) {
+                                        ?>
+                                          <li class="text"><a href="index.php" >Home</a></li>
+                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="active"><a href="#">HRTSC</a></li>
+                                        <li><a href="hotel-tlsc.php">TLEC</a></li>
+                                    </ul>           
+                                </li>
+                                <li class="text"><a href="inquiry-client.php">Contact us</a></li>
+                                <li class="text"><a href="dashboard.php">Dashboard</a></li>
 
-                </li>
+                                <?php
+                                    }
+                                    else {
+                                        ?>
+                                        
+                                 <li class="text"><a href="index.php" >Home</a></li>
+                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="active"><a href="#">HRTSC</a></li>
+                                        <li><a href="hotel-tlsc.php">TLEC</a></li>
+                                    </ul>           
+                                </li>
+                                <li class="text">
+                                    <a href="inquiry-client.php">Contact us</a>
+                                </li>
+                                        <?php
+                                    }
+                                ?>
 
-                <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
-                    <ul class="dropdown-menu">
-                        <li class="active"><a href="hotel-hrsc.php">HRTSC</a></li>
-                        <li><a href="hotel-tlsc.php">TLEC</a></li>
-                    </ul>
-                </li>
 
-                <li class="text">
-                    <a href="inquiry-client.php">contact us</a>
-                </li>
 
-                <li>    </li>
-            </ul>
-        </div><!-- end navbar collapse -->
+                            </ul>
+                        </div><!-- end navbar collapse -->
         <div class="navbar" style="margin-left: 10%">
             <a href="#" class="about-text">Home</a> |
             <a href="#gallery">Gallery</a> |

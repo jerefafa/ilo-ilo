@@ -125,20 +125,39 @@ if(isset($_SESSION["reservation"])) {
                     
                         <div class="collapse navbar-collapse" id="myNavbar1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="#" >Home</a>        
-                                </li>
-
-    
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
+                                     <?php
+                                    if(isset($_SESSION["user_id"])) {
+                                        ?>
+                                          <li class="active"><a href="#" >Home</a></li>
+                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="hotel-hrsc.php">HRTSC</a></li>
                                         <li><a href="hotel-tlsc.php">TLEC</a></li>
                                     </ul>           
                                 </li>
+                                <li class="text"><a href="inquiry-client.php">Contact us</a></li>
+                                <li class="text"><a href="dashboard.php">Dashboard</a></li>
 
+                                <?php
+                                    }
+                                    else {
+                                        ?>
+                                        
+                                 <li class="active"><a href="#" >Home</a></li>
+                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="hotel-hrsc.php">HRTSC</a></li>
+                                        <li><a href="hotel-tlsc.php">TLEC</a></li>
+                                    </ul>           
+                                </li>
                                 <li class="text">
                                     <a href="inquiry-client.php">Contact us</a>
                                 </li>
+                                        <?php
+                                    }
+                                ?>
+
+
 
                             </ul>
                         </div><!-- end navbar collapse -->
@@ -167,6 +186,8 @@ if(isset($_SESSION["reservation"])) {
                                 <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
                                 <a href="hotel-tlsc.php" class="list-group-item">TLEC</a>
                             </div><!-- end sub-menu -->
+
+                            
 
                         </div><!-- end list-group -->
                     </div><!-- end main-menu -->

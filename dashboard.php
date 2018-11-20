@@ -89,53 +89,75 @@
             <!--<a href="#" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a> -->
         </div><!-- end navbar-header -->
 
-        <div class="collapse navbar-collapse" id="myNavbar1">
-            <ul class="nav navbar-nav navbar-right navbar-search-link">
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index.php">Hotel Homepage</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="hotel-hrsc.php" class="list-group-item">HRTSC</a></li>
-                        <li><a href="hotel-tlsc.php" class="list-group-item">TLEC</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
-            </ul>
-        </div><!-- end navbar collapse -->
+             <div class="collapse navbar-collapse" id="myNavbar1">
+                            <ul class="nav navbar-nav navbar-right">
+                                     <?php
+                                    if(isset($_SESSION["user_id"])) {
+                                        ?>
+                                          <li class="text"><a href="index.php" >Home</a></li>
+                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="hotel-hrsc.php">HRTSC</a></li>
+                                        <li><a href="hotel-tlsc.php">TLEC</a></li>
+                                    </ul>           
+                                </li>
+                                <li class="text"><a href="inquiry-client.php">Contact us</a></li>
+                                <li class="active"><a href="#">Dashboard</a></li>
+
+                                <?php
+                                    }
+                                    else {
+                                        ?>
+                                        
+                                 <li class="text"><a href="index.php" >Home</a></li>
+                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="hotel-hrsc.php">HRTSC</a></li>
+                                        <li><a href="hotel-tlsc.php">TLEC</a></li>
+                                    </ul>           
+                                </li>
+                                <li class="text">
+                                    <a href="inquiry-client.php">Contact us</a>
+                                </li>
+                                        <?php
+                                    }
+                                ?>
+
+
+
+                            </ul>
+                        </div><!-- end navbar collapse -->
     </div><!-- end container -->
 </nav><!-- end navbar -->
-
 <div class="sidenav-content">
-    <div id="mySidenav" class="sidenav" >
-        <img src="images/logo.png" class="img-responsive" alt="registration-img">
-        <!--<h2 id="web-name"><span><i class="fa fa-plane"></i></span>Star Travel</h2>-->
+                <div id="mySidenav" class="sidenav" >
+                    <img src="images/logo.png" class="img-responsive" alt="registration-img">
+                    <!-- <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Star Travel</h2> -->
 
-        <div id="main-menu">
-            <div class="closebtn">
-                <button class="btn btn-default" id="closebtn">&times;</button>
-            </div><!-- end close-btn -->
+                    <div id="main-menu">
+                        <div class="closebtn">
+                            <button class="btn btn-default" id="closebtn">&times;</button>
+                        </div><!-- end close-btn -->
 
-            <div class="list-group panel">
+                        <div class="list-group panel">
 
-                <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
-                <div class="collapse sub-menu" id="home-links">
-                    <a href="index.php" class="list-group-item">Hotel Homepage</a>
-                </div><!-- end sub-menu -->
+                            <a href="#home-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                            <div class="collapse sub-menu" id="home-links">
+                                <a href="index.php" class="list-group-item">Hotel Homepage</a>
+                            </div><!-- end sub-menu -->
 
-                <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
-                <div class="collapse sub-menu" id="hotels-links">
-                    <a href="index.php" class="list-group-item">Hotel Homepage</a>
-                    <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
-                    <a href="hotel-tlsc.php" class="list-group-item">TLEC</a>
-                </div><!-- end sub-menu -->
+                            <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa fa-building link-icon"></i></span>Hotels<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                            <div class="collapse sub-menu" id="hotels-links">
+                                <a href="hotel-hrsc.php" class="list-group-item">HRTSC</a>
+                                <a href="hotel-tlsc.php" class="list-group-item">TLEC</a>
+                            </div><!-- end sub-menu -->
 
-            </div><!-- end list-group -->
-        </div><!-- end main-menu -->
-    </div><!-- end mySidenav -->
-</div><!-- end sidenav-content -->
+                            
+
+                        </div><!-- end list-group -->
+                    </div><!-- end main-menu -->
+                </div><!-- end mySidenav -->
+            </div><!-- end sidenav-content -->
 
 
 <!--========== PAGE-COVER =========-->
