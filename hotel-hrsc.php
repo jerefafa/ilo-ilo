@@ -282,7 +282,7 @@ function checkRoomExistence($roomId) {
                                                 </li>
                                             </ul>
                                         </div><!-- end main-mask -->
-                                        g                          </div><!-- end room-img -->
+                                    </div><!-- end room-img -->
 
                                     <div class="list-info room-info">
                                         <h3 class="block-title"><a href="#"><?= $row->room_type ?> Room</a></h3>

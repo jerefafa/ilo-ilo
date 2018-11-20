@@ -121,44 +121,27 @@
                   <!--  <a href="#" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>-->
                 </div><!-- end navbar-header -->
                 
-                    <div class="collapse navbar-collapse" id="myNavbar1">
-                            <ul class="nav navbar-nav navbar-right">
-                                     <?php
-                                    if(isset($_SESSION["user_id"])) {
-                                        ?>
-                                          <li class="text"><a href="index.php" >Home</a></li>
-                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="text"><a href="hotel-hrsc">HRTSC</a></li>
-                                        <li class="active"><a href="#">TLEC</a></li>
-                                    </ul>           
-                                </li>
-                                <li class="text"><a href="inquiry-client.php">Contact us</a></li>
-                                <li class="text"><a href="dashboard.php">Dashboard</a></li>
-
-                                <?php
-                                    }
-                                    else {
-                                        ?>
-                                        
-                                 <li class="text"><a href="index.php" >Home</a></li>
-                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="active"><a href="hotel-hrsc.php">HRTSC</a></li>
-                                        <li class="active"><a href="#">TLEC</a></li>
-                                    </ul>           
-                                </li>
-                                <li class="text">
-                                    <a href="inquiry-client.php">Contact us</a>
-                                </li>
-                                        <?php
-                                    }
-                                ?>
-
-
-
+                <div class="collapse navbar-collapse" id="myNavbar1">
+                    <ul class="nav navbar-nav navbar-right navbar-search-link">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.php">Hotel Homepage</a></li>
                             </ul>
-                        </div><!-- end navbar collapse -->
+                        </li>
+
+                        <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="hotel-hrsc.php">HRTSC</a></li>
+                                <li class="active"><a href="#">TLEC</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="text">
+                            <a href="inquiry-client.php">contact us</a>
+                        </li>
+                        <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
+                    </ul>
+                </div><!-- end navbar collapse -->
 
                 <div class="navbar" >
                     <a href="#" class="about-text">Home</a> |
@@ -260,38 +243,39 @@
 
                             <div class="available-blocks" id="available-rooms">
                             	<h2>Available Rooms</h2>
-                            	<div class="list-block main-block room-block"  <?php
-                                        $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '$hotel_id'");
-                                        while ($row = $stmt->fetch_object()) {
-                                            $lowestPrice;
-                                            $stmt2 = $conn->query("SELECT MIN(rate) AS minimumRate FROM (room_rates) WHERE `room_id` = '$row->id'");
-                                            while ($row2 = $stmt2->fetch_object()){
-                                                $lowestPrice = $row2->minimumRate;
-                                            }
-                                            ?>
-                                            <div class="list-block main-block room-block">
-                                                <div class="list-content">
-                                                    <div class="main-img list-img room-img">
-                                                        <a href="#">
-                                                            <img src="<?= $row->image_path?>.jpg" class="img-responsive" alt="room-img" />
-                                                        </a>
-                                                        <div class="main-mask">
-                                                            <ul class="list-unstyled list-inline offer-price-1">
-                                                                <li class="price">Starts at ₱<?= $lowestPrice ?><span class="divider"></span><span class="pkg"> | Day</span></li>
-                                                                <li class="rating">
-                                                                    <span><i class="fa fa-star orange"></i></span>
-                                                                    <span><i class="fa fa-star orange"></i></span>
-                                                                    <span><i class="fa fa-star orange"></i></span>
-                                                                    <span><i class="fa fa-star orange"></i></span>
-                                                                    <span><i class="fa fa-star lightgrey"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div><!-- end main-mask -->
-                                                    </div><!-- end room-img -->
+                                <div class="list-block main-block room-block"
+                                <?php
+                                $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '$hotel_id'");
+                                while ($row = $stmt->fetch_object()) {
+                                    $lowestPrice;
+                                    $stmt2 = $conn->query("SELECT MIN(rate) AS minimumRate FROM (room_rates) WHERE `room_id` = '$row->id'");
+                                    while ($row2 = $stmt2->fetch_object()){
+                                        $lowestPrice = $row2->minimumRate;
+                                    }
+                                    ?>
+                                    <div class="list-block main-block room-block">
+                                        <div class="list-content">
+                                            <div class="main-img list-img room-img">
+                                                <a href="#">
+                                                    <img src="Rm201_Triple Beds.jpg" class="img-responsive" alt="room-img"/>
+                                                </a>
+                                                <div class="main-mask">
+                                                    <ul class="list-unstyled list-inline offer-price-1">
+                                                        <li class="price">Starts at ₱<?= $lowestPrice ?><span class="divider"></span><span class="pkg"> | Day</span></li>
+                                                        <li class="rating">
+                                                            <span><i class="fa fa-star orange"></i></span>
+                                                            <span><i class="fa fa-star orange"></i></span>
+                                                            <span><i class="fa fa-star orange"></i></span>
+                                                            <span><i class="fa fa-star orange"></i></span>
+                                                            <span><i class="fa fa-star lightgrey"></i></span>
+                                                        </li>
+                                                    </ul>
+                                                </div><!-- end main-mask -->
+                                            </div><!-- end room-img -->
 
                                                     <div class="list-info room-info">
                                                         <h3 class="block-title">Room: <?= $row->room_name ?></h3>
-                                                        <p><?= $row->room_description?></p>
+                                                        <p><?= $row->room_description ?></p>
                                                         <a href="book-room.php?roomId=<?=$row->id?>" class="btn btn-orange btn-lg">View More</a>
                                                     </div><!-- end room-info -->
                                                 </div><!-- end list-content -->
