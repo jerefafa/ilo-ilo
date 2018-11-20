@@ -1,12 +1,12 @@
 <script src="js/jquery.min.js"></script>
 <script>
-    function sendMail(email, subject, message){
+    function sendMail(email, subject, id){
         $.ajax({
             url: "https://iloilo-mailing.000webhostapp.com/mail.php",
             type: "GET",
             data: {email: email,
                 subject: subject,
-                message: message},
+                id: id},
             dataType: "Text",
             success: function () {
                 location.href='inquiry.php'
@@ -36,17 +36,15 @@ else{
                 $stmt = $conn->query("INSERT INTO `reservation_info`(`reservation_id`,`first_name`,`last_name`,`email`,`phone_number`,`num_adult`,`num_child`) VALUES('$id', '" . $_SESSION["reservation"]["reservationInfo"]["fname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["lname"] . "','" . $_SESSION["reservation"]["reservationInfo"]["email"] . "','" . $_SESSION["reservation"]["reservationInfo"]["phone"] . "','" . $_SESSION["reservation"][1]["numAdult"] . "','" . $_SESSION["reservation"][1]["numChild"] . "')");
 
             }
-            echo $_SESSION["reservation"]["reservationInfo"]["package"]->id;
             if(isset($_SESSION["user_id"])) {
             $stmt = $conn->query("INSERT INTO `payments`(`reservation_id`,`amount_paid`) VALUES('$id','".$_SESSION["reservation"]["reservationInfo"]['totalPrice']."')");
             }
             else {
                 $to = $_SESSION["reservation"]["reservationInfo"]["email"];
                 $subject = "Thank you for your reservation";
-                $body = "<a href = 'https://iloilo.azurewebsites.net/receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
-                        <a href='https://iloilo.azurewebsites.net/email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
+
                 $headers = "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                echo "<script>sendMail('".$to."','".$subject."','".$body."')</script>";
+                echo "<script>sendMail('".$to."','".$subject."','".$id."')</script>";
             }
             unset($_SESSION["reservation"]);
             echo "<script>
