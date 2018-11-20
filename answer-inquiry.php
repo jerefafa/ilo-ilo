@@ -7,5 +7,5 @@ if(isset($_POST['rep_user'])){
         $subject = "Response to your question";
         $url = "http://iloilo.x10host.com/answer-inquiry.php?email=$email&subject=$subject&reply=$message";
         echo "<script>window.open('$url','_blank')</script>";
-         echo "<script>location.href='inquiry.php'</script>";
+//         echo "<script>location.href='inquiry.php'</script>";
 }
