@@ -194,7 +194,7 @@ require "connection.php";
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
                                 <h2 class="dash-content-title">FACTS AND FIGURES</h2>
-                                <form action="accommodation.php" method="get">
+                                <form action="accomodation.php" method="get">
                                     <div class="form-group right-icon">
                                         <select class="form-control" name="hotel" required>
                                             <option selected disabled>HOTELS</option>
