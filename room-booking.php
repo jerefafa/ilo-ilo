@@ -9,7 +9,7 @@
                 id: id},
             dataType: "Text",
             success: function () {
-                location.href='inquiry.php'
+                location.href='reservation-landing-page.php'
             }
         });
     }
