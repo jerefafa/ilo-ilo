@@ -9,6 +9,7 @@
                 reply: message},
             dataType: "Text",
             success: function () {
+                location.href='inquiry.php'
             }
         });
     }
@@ -23,6 +24,5 @@ if(isset($_POST['rep_user'])){
         $subject = "Response to your question";
         $url = "http://iloilo.x10host.com/answer-inquiry.php?email=$email&subject=$subject&reply=$message";
         echo "<script>sendMail('".$email."','".$subject."','".$message."')</script>";
-        echo "<script>location.href='inquiry.php'</script>";
 }
 ?>
