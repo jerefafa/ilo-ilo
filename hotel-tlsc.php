@@ -273,7 +273,7 @@
                                                 <div class="list-content">
                                                     <div class="main-img list-img room-img">
                                                         <a href="#">
-                                                            <img src="<?= $row->image_path ?>" class="img-responsive" alt="room-img" />
+                                                            <img src="<?= $row->image_path?>.jpg" class="img-responsive" alt="room-img" />
                                                         </a>
                                                         <div class="main-mask">
                                                             <ul class="list-unstyled list-inline offer-price-1">

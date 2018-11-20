@@ -291,7 +291,7 @@ else {
                                     <div id="<?= $strId ?>" class="tab-pane">
                                         <div class="row">
                                             <div class="col-sm-4 col-md-4 tab-img">
-                                                <img src="<?= $row->image_path ?>" class="img-responsive" alt="flight-detail-img" />
+                                                <img src="<?= $row->image_path?>" class="img-responsive" alt="flight-detail-img" />
                                             </div><!-- end columns -->
 
                                             <div class="col-sm-8 col-md-8 tab-text">
