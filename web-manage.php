@@ -1,6 +1,18 @@
 <?php
 require "auth-checker.php";
 require "connection.php";
+if(isset($_POST["btnSubmit"])) {
+    $stmt = $conn->query("UPDATE `room_rates` SET `rate` = '".$_POST[$_POST["btnSubmit"]]."' WHERE `id` = '".$_POST["btnSubmit"]."'");
+    $stmt = $conn->query("UPDATE `rooms` SET `last_edited_by` = '".$_SESSION["user_id"]."' WHERE `id` = '".$_POST["roomId"]."'");
+}
+if(isset($_POST["hotelId"])) {
+    $stmt = $conn->query("INSERT INTO `promos`(`hotel_id`,`promo`,`price`,`created_by`) VALUES('".$_POST["hotelId"]."','".$_POST["promo"]."','".$_POST["price"]."','".$_SESSION["user_id"]."')");
+}
+
+if(isset($_POST["deletePromo"])) {
+    $stmt  =$conn->query("DELETE FROM `promos` WHERE `id` = '".$_POST["deletePromo"]."'");
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -202,30 +214,35 @@ require "connection.php";
                                         <table class="table table-hover">
                                             <tbody>
 
-                                            <!-- Search Bar -->
-                                            <div class="input-group">
-                                                <form action="reservation.php" method="get">
-                                                <input type="text" class="form-control" placeholder="Search room number here...." name="reservationId" />
-                                                <span class="input-group-btn"><button type="submit" class="btn"><span>
-                                                                <i class="fa fa-search"></i>
-                                                            </span>
-                                                        </button>
-                                                    </span>
-                                                </form>
-                                            </div><!--end search bar -->
-
                                             <tr>
                                                 <th>ROOM#</th>
+                                                <th>DESCRIPTION</th>
                                                 <th>PRICE</th>
-                                                <th>LAST UPDATED</th>
                                                 <th>ACTIONS</th>
                                             </tr>
-                                                <tr>
-                                                 <td class="dash-list-text recent-ac-text">206</td>
-                                                 <td class="dash-list-text recent-ac-text">2500</td>
-                                                 <td class="dash-list-text recent-ac-text">01/04/2018</td>
-                                                 <td class="dash-list-text recent-ac-text"><a data-toggle="modal" data-target="#change"><button class="btn btn-orange btn-block" >UPDATE ROOM PRICE</button></a></td>
-                                                </tr>
+                                            <?php
+                                                $sql="";
+                                                if(isset($_GET["hotel"])) {
+                                                    $sql = "SELECT * FROM `rooms` INNER JOIN `room_rates` WHERE `room_rates`.`room_id` = `rooms`.`id` AND `rooms`.`hotel_id` = '".$_GET["hotel"]."'";
+                                                    $stmt = $conn->query($sql);
+                                                    while ($row = $stmt->fetch_object()) {
+
+                                                        ?>
+
+                                                        <tr>
+                                                            <form action="web-manage.php" method="post">
+                                                                <input type="hidden" name="roomId" value="<?=$row->room_id?>">
+                                                            <td class="dash-list-text recent-ac-text"><?=$row->room_name?></td>
+                                                            <td class="dash-list-text recent-ac-text"><?=$row->rate_description?></td>
+                                                            <td class="dash-list-text recent-ac-text"><input class="form-control" value="<?=$row->rate?>" name="<?=$row->id?>"></td>
+                                                            <td class="dash-list-text recent-ac-text"><button class="btn btn-orange btn-block" type="submit" name="btnSubmit" value="<?=$row->id?>">UPDATE ROOM PRICE</button></td>
+                                                            </form>
+                                                        </tr>
+                                                        <!-- MODAL -->
+                                                        <?php
+                                                    }
+                                                }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div><!-- end table-responsive -->
@@ -245,20 +262,39 @@ require "connection.php";
 
                                             <tr>
                                                 <th>PROMO NAME</th>
-                                                <th>DESCRIPTION</th>
                                                 <th>PROMO PRICE</th>
-                                                <th>STARTING DATE</th>
-                                                <th>EXPIRY DATE</th>
                                                 <th>ACTIONS</th>
                                             </tr>
-                                                <tr>
-                                                 <td class="dash-list-text recent-ac-text">SUMMER PROMO</td>
-                                                 <td class="dash-list-text recent-ac-text">SUMMER SAYA RENT 1 GET 1</td>
-                                                 <td class="dash-list-text recent-ac-text">2500</td>
-                                                 <td class="dash-list-text recent-ac-text">05/29/2018</td>
-                                                 <td class="dash-list-text recent-ac-text">06/29/2018</td>
-                                                 <td class="dash-list-text recent-ac-text"><button class="btn btn-orange btn-block" >DELETE PROMO</button></td>
-                                                </tr>
+                                            <?php
+                                                if(isset($_GET["hotel"])) {
+                                                    $stmt = $conn->query("SELECT * FROM `promos` WHERE `hotel_id` = '".$_GET["hotel"]."'");
+                                                    while ($row = $stmt->fetch_object()) {
+                                                        ?>
+                                                        <tr>
+                                                            <form action="web-manage.php" method="post">
+                                                                <td class="dash-list-text recent-ac-text"><?=$row->promo?></td>
+                                                                <td class="dash-list-text recent-ac-text"><?=$row->price?></td>
+                                                                <input type="hidden" value="<?=$row->id?>" name="deletePromo">
+                                                                <td class="dash-list-text recent-ac-text"><button class="btn btn-orange btn-block" type="submit">DELETE PROMO</button></td>
+                                                            </form>
+                                                            </tr>
+
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                    <form action="web-manage.php" method="post">
+                                                        <tr>
+
+                                                            <td><input class="form-control" placeholder="PROMO" name="promo"></td>
+                                                            <td><input class="form-control" placeholder="PRICE" name="price">
+                                                            <input type="hidden" value="<?=$_GET["hotel"]?>" name="hotelId">
+                                                            </td>
+                                                            <td class="dash-list-text recent-ac-text"><button class="btn btn-orange btn-block" >ADD PROMO</button></td>
+                                                        </tr>
+                                                    </form>
+                                            <?php
+                                                }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div><!-- end table-responsive -->
@@ -273,36 +309,6 @@ require "connection.php";
         </div><!-- end container -->
     </div><!-- end dashboard -->
 </section><!-- end innerpage-wrapper -->
-
-<!-- MODAL -->
-<div id="change" class="modal custom-modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title">Update Room Price</h3>
-            </div><!-- end modal-header -->
-
-            <div class="modal-body">
-                <form method="get" action="check-available-rooms.php">
-                    <div class="form-group">
-                        <label>New Price</label>
-                        <input placeholder="New Price" class="form-control" type="text" name="newPrice" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Enter password for verification</label>
-                        <input placeholder="Password" class="form-control" type="password" name="password" required/>
-                    </div>
-
-                    
-                    <button class="btn btn-orange">Proceed</button>
-                </form>
-            </div><!-- end modal-bpdy -->
-        </div><!-- end modal-content -->
-    </div><!-- end modal-dialog -->
-</div><!-- end add-card -->
-<!--end of modal -->
 
 <!-- PROMO -->
 <div id="promo" class="modal custom-modal fade" role="dialog">
@@ -370,7 +376,7 @@ require "connection.php";
 
 
 <!-- Page Scripts Starts -->
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/custom-navigation.js"></script>
 <!-- Page Scripts Ends -->

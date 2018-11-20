@@ -285,6 +285,7 @@ function checkRoomExistence($roomId) {
                                 <li class="active"><a href="#hotel-overview" data-toggle="tab">Hotel Overview</a></li>
                                 <li><a href="#restaurant" data-toggle="tab">Restaurant</a></li>
                                 <li><a href="#pick-up" data-toggle="tab">Event Hall</a></li>
+                                <li><a href="#promos" data-toggle="tab">Promos</a> </li>
                             </ul>
 
                             <div class="tab-content">
@@ -323,6 +324,16 @@ function checkRoomExistence($roomId) {
 
                                         <div class="col-sm-8 col-md-8 tab-text">
                                             <h3>Event Hall</h3>
+                                            <p>The event hall is a spacious function hall, a large room great to be used for public meetings or meetings of the members of an organization such as a school, church, or deliberative assembly.</p>
+                                        </div><!-- end columns -->
+                                    </div><!-- end row -->
+                                </div><!-- end pick-up -->
+
+                                <div id="promos" class="tab-pane">
+                                    <div class="row">
+
+                                        <div class="col-sm-8 col-md-8 tab-text">
+                                            <h3>Promos</h3>
                                             <p>The event hall is a spacious function hall, a large room great to be used for public meetings or meetings of the members of an organization such as a school, church, or deliberative assembly.</p>
                                         </div><!-- end columns -->
                                     </div><!-- end row -->

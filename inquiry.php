@@ -210,7 +210,7 @@ require "connection.php";
                                                                      <div class="form-group">
                                                                          <textarea class="form-control" name="reply"></textarea>
                                                                      </div>
-                                                                     <button class="btn btn-orange">Reply</button>
+                                                                     <button class="btn btn-orange" name="rep_user">Reply</button>
                                                                  </form>
                                                              </div><!-- end modal-bpdy -->
                                                          </div><!-- end modal-content -->

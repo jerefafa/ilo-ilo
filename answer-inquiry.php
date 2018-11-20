@@ -1,21 +1,40 @@
 <?php
-session_start();
-require "connection.php";
-$id = $_POST["id"];
-$stmt = $conn->query("UPDATE `inquiry` SET `replied_by` = '".$_SESSION["user_id"]."' WHERE `id` = '$id'");
-$reply = $_POST["reply"];
-$email = $_POST["email"];
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+if(isset($_POST['rep_user'])){
 
-$data = array('reply' => $reply, 'id' => $id, 'email' => $email);
-$url = "http://iloilo.x10host.com/answer-inquiry.php";
-$options = array(
-    'http' => array(
-        'header' => 'Content-type: application/x-www-form-urlencoded\r\n',
-        'method' => 'POST',
-        'content' => http_build_query($data)
-    )
-);
-$context = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
+        $conn->query("UPDATE `inquiry` SET `replied_by` = '".$_POST["id"]."'");
+//Load Composer's autoloader
+    require 'vendor/autoload.php';
 
-//header("location:inquiry.php");
+    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+    try {
+        //Server settings
+        $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = 'jeffynota@gmail.com';                 // SMTP username
+        $mail->Password = 'Jeffrolan11';                           // SMTP password
+        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail -> SMTPOptions =array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => true ));
+        $mail->Port = 587;                                    // TCP port to connect to
+
+        //Recipients
+        $mail->setFrom('jeffynota@gmail.com', 'Jeff');
+        $mail->addAddress('jeffynota@gmail.com');               // Name is optional
+
+        //Content
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = 'ISATU response to your question';
+        $mail->Body    = $_POST["rep_user"];
+        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
+}
+
+?>

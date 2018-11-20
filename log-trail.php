@@ -171,39 +171,141 @@ require "connection.php";
                             </div><!-- end columns -->
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
+                                <form action="log-trail.php" method="post">
                                 <h2 class="dash-content-title">LOG TRAIL</h2>
                                   <div class="form-group">
-                                         <p>Date of Report</p>
-                                        <input type="date" class="form-control dpd2" required name="from"/>
+                                      <p>User</p>
+                                      <select class="form-control" name="user">
+                                      <?php
+                                        $stmt = $conn->query("SELECT * FROM `users`");
+                                        while ($row = $stmt->fetch_object()) {
+                                            ?>
+                                            <option value="<?=$row->id?>"><?=$row->username?></option>
+                                          <?php
+                                        }
+                                      ?>
+                                      </select>
                                     </div>
                                     <div class="form-group">
                                          <button type="submit" class="btn btn-orange btn-block" >Search</button>
                                     </div>
+                                </form>
 
                                 <div class="dashboard-listing recent-activity">
-                                    <h3 class="dash-listing-heading">Reports</h3>
+                                    <h3 class="dash-listing-heading">Rooms Edited</h3>
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <tbody>
 
                                             <tr>
-                                                <th>USERNAME</th>
-                                                <th>MODULE INTERACTED</th>
-                                                <th>ACTION COMMITTED</th>
-                                                <th>DATE</th>
+                                                <th>Hotel</th>
+                                                <th>Room</th>
                                             </tr>
+
+                                            <?php
+                                            if(isset($_POST["user"])) {
+                                            $stmt = $conn->query("SELECT * FROM `rooms` INNER JOIN `hotels` WHERE `rooms`.`hotel_id` = `hotels`.`id` AND `rooms`.`last_edited_by` = '".$_POST["user"]."'");
+                                            while ($row = $stmt->fetch_object()) {
+                                                ?>
                                                 <tr>
-                                                 <td class="dash-list-text recent-ac-text">jeremiah</td>
-                                                 <td class="dash-list-text recent-ac-text">promos</td>
-                                                 <td class="dash-list-text recent-ac-text">added a promo</td>
-                                                 <td class="dash-list-text recent-ac-text">05/29/2018</td>
+                                                    <td><?=$row->hotel_name?></td>
+                                                    <td><?=$row->room_name?></td>
                                                 </tr>
+                                            <?php
+                                            }
+                                            }
+                                            ?>
+                                            </tbody>
+                                        </table>
+                                    </div><!-- end table-responsive -->
+                                </div><!-- end recent-activity -->
+                                <br>
+                                <div class="dashboard-listing recent-activity">
+                                    <h3 class="dash-listing-heading">Promos Created</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tbody>
+
+                                            <tr>
+                                                <th>Promo</th>
+                                            </tr>
+
+                                            <?php
+                                            if(isset($_POST["user"])) {
+                                                $stmt = $conn->query("SELECT * FROM `promos` WHERE `created_by`='".$_POST["user"]."'");
+                                                while ($row = $stmt->fetch_object()) {
+                                                    ?>
+                                                    <tr>
+                                                        <td><?=$row->promo?></td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+                                            </tbody>
+                                        </table>
+                                    </div><!-- end table-responsive -->
+                                </div><!-- end recent-activity -->
+                        <br>
+                                <div class="dashboard-listing recent-activity">
+                                    <h3 class="dash-listing-heading">Replied Inquiries</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tbody>
+
+                                            <tr>
+                                                <th>Asked By</th>
+                                                <th>Question</th>
+                                            </tr>
+
+                                            <?php
+                                            if(isset($_POST["user"])) {
+                                                $stmt = $conn->query("SELECT * FROM `inquiry`    WHERE `replied_by` = '".$_POST["user"]."'");
+                                                while ($row = $stmt->fetch_object()) {
+                                                    ?>
+                                                    <tr>
+                                                        <td><?=$row->sender_name?></td>
+                                                        <td><?=$row->question?></td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+                                            </tbody>
+                                        </table>
+                                    </div><!-- end table-responsive -->
+                                </div><!-- end recent-activity -->
+                                <br>
+                                <div class="dashboard-listing recent-activity">
+                                    <h3 class="dash-listing-heading">Reservations Cancelled</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tbody>
+
+                                            <tr>
+                                                <th>RESERVATION #</th>
+                                            </tr>
+
+                                            <?php
+                                            if(isset($_POST["user"])) {
+                                                $stmt = $conn->query("SELECT * FROM `reservations` WHERE `cancelled_by` = '".$_POST["user"]."'");
+                                                while ($row = $stmt->fetch_object()) {
+                                                    ?>
+                                                    <tr>
+                                                        <td><?=$row->id?></td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div><!-- end table-responsive -->
                                 </div><!-- end recent-activity -->
 
+
                             </div><!-- end columns -->
+
 
                         </div><!-- end row -->
                     </div><!-- end dashboard-wrapper -->
