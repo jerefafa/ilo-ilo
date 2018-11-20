@@ -1,8 +1,9 @@
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <script src="js/jquery.min.js"></script>
 <script>
     function sendMail(email, subject, message){
         $.ajax({
-            url: "http://iloilo.x10host.com/answer-inquiry.php",
+            url: "https://iloilo.x10host.com/answer-inquiry.php",
             type: "GET",
             data: {email: email,
                 subject: subject,
