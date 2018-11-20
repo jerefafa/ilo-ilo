@@ -244,22 +244,20 @@ else {
 
                             <div id="hotel-overview" class="tab-pane in active">
                                 <div class="row">
+                                    <?php
+                                    $stmt = $conn->query("SELECT * FROM `rooms` WHERE `id` = '".$_GET["roomId"]."'");
+                                    $roomObject = null;
+                                    while ($row = $stmt->fetch_object()) {
+                                        $roomObject = $row;
+                                    }
+                                    ?>
                                     <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="images/hotel-detail-tab-1.jpg" class="img-responsive" alt="flight-detail-img" />
+                                        <img src="<?=$roomObject->image_path?>" class="img-responsive" alt="flight-detail-img" />
                                     </div><!-- end columns -->
 
                                     <div class="col-sm-8 col-md-8 tab-text">
-                                        <h3>Room Overview</h3>
-                                        <ul>
-                                            <?php
-                                            $stmt = $conn->query("SELECT * FROM `room_amenities` WHERE `room_id` = '".$_GET["roomId"]."'");
-                                            while ($row = $stmt->fetch_object()) {
-                                                ?>
-                                            <li><?= $row->amenity  ?></li>
-                                            <?php
-                                            }
-                                            ?>
-                                        </ul>
+
+                                        <h3><?=$roomObject->room_description?></h3>
                                     </div><!-- end columns -->
                                 </div><!-- end row -->
                             </div><!-- end hotel-overview -->
