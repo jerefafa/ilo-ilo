@@ -1,7 +1,8 @@
 <?php
 require "connection.php";
 $reservationId = $_GET["reservationId"];
-$stmt = $conn->query("SELECT * FROM `reservations` INNER JOIN `reservation_info` INNER JOIN `rooms` INNER JOIN `hotels` INNER JOIN `packages` WHERE `reservation_info`.`reservation_id` = `reservations`.`id` AND  `rooms`.`id` = `reservations`.`room_id` AND `hotels`.`id` = `rooms`.`hotel_id` AND `packages`.`id` = `reservation_info`.`package_id` AND `reservations`.`id` = '".$reservationId."' AND `reservations`.`cancelled_by` IS NULL");
+echo $reservationId;
+$stmt = $conn->query("SELECT * FROM `reservations` INNER JOIN `reservation_info` INNER JOIN `rooms` INNER JOIN `hotels`  WHERE `reservation_info`.`reservation_id` = `reservations`.`id` AND  `rooms`.`id` = `reservations`.`room_id` AND `hotels`.`id` = `rooms`.`hotel_id` AND `reservations`.`id` = '".$reservationId."' AND `reservations`.`cancelled_by` IS NULL");
 $printableObject = null;
 while ($row = $stmt->fetch_object()) {
     $printableObject = $row;
@@ -47,10 +48,7 @@ while ($row = $stmt->fetch_object()) {
             <span>Number of Children: <?= $printableObject->num_child ?></span>
             <br>
             <br>
-            <span>Package: <?= $printableObject->package_title ?></span><br>
-            <span>Package Includes: <?= $printableObject->package?></span>
-            <br>
-            <br>
+
             <span>Total Price: <?= $printableObject->total_price?></span>
         </div>
     </div>
