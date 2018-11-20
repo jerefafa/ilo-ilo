@@ -1,3 +1,19 @@
+<script src="js/jquery.min.js"></script>
+<script>
+    function sendMail(email, subject, message){
+        $.ajax({
+            url: "https://iloilo-mailing.000webhostapp.com/mail.php",
+            type: "GET",
+            data: {email: email,
+                subject: subject,
+                message: message},
+            dataType: "Text",
+            success: function () {
+                location.href='inquiry.php'
+            }
+        });
+    }
+</script>
 <?php
 require "connection.php";
 session_start();
@@ -29,9 +45,8 @@ else{
                 $subject = "Thank you for your reservation";
                 $body = "<a href = 'https://iloilo.azurewebsites.net/receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
                         <a href='https://iloilo.azurewebsites.net/email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
-                $url = "http://iloilo.x10host.com/answer-inquiry.php?email=$to&subject=$subject&reply=$body";
-                echo "<script>window.open('$url','_blank')</script>";
-                echo "<script>location.href='inquiry.php'</script>";
+                $headers = "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                echo "<script>sendMail('".$to."','".$subject."','".$body."')</script>";
             }
             unset($_SESSION["reservation"]);
             echo "<script>

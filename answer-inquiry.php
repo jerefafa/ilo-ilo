@@ -1,13 +1,12 @@
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <script src="js/jquery.min.js"></script>
 <script>
     function sendMail(email, subject, message){
         $.ajax({
-            url: "https://iloilo.x10host.com/answer-inquiry.php",
+            url: "https://iloilo-mailing.000webhostapp.com/mail.php",
             type: "GET",
             data: {email: email,
                 subject: subject,
-                reply: message},
+                message: message},
             dataType: "Text",
             success: function () {
                 location.href='inquiry.php'
@@ -15,6 +14,7 @@
         });
     }
 </script>
+
 <?php
 require "connection.php";
 session_start();
@@ -23,7 +23,6 @@ if(isset($_POST['rep_user'])){
         $message = $_POST["reply"];
         $email = $_POST["email"];
         $subject = "Response to your question";
-        $url = "http://iloilo.x10host.com/answer-inquiry.php?email=$email&subject=$subject&reply=$message";
+        $url = "https://iloilo-mailing.000webhostapp.com/answer-inquiry.php?email=$email&subject=$subject&reply=$message";
         echo "<script>sendMail('".$email."','".$subject."','".$message."')</script>";
 }
-?>
