@@ -29,8 +29,9 @@ else{
                 $subject = "Thank you for your reservation";
                 $body = "<a href = 'https://iloilo.azurewebsites.net/receipt.php?reservationId=$id'>Click here to print Payment Information</a><br>
                         <a href='https://iloilo.azurewebsites.net/email-confirmation.php?reservationid=$id'>Click Here to confirm your booking</a>";
-                $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                mail($to, $subject, $body, $headers);
+                $url = "http://iloilo.x10host.com/answer-inquiry.php?email=$to&subject=$subject&reply=$body";
+                echo "<script>window.open('$url','_blank')</script>";
+                echo "<script>location.href='inquiry.php'</script>";
             }
             unset($_SESSION["reservation"]);
             echo "<script>
