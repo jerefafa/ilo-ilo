@@ -48,7 +48,7 @@ else{
             }
             unset($_SESSION["reservation"]);
             echo "<script>
-            location.href = 'reservation-landing-page.php';
+//            location.href = 'reservation-landing-page.php';
             </script>";
     }
 }
