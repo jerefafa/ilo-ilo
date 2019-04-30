@@ -43,5 +43,5 @@ error_reporting(0);
         array_push($reservation, $roomsArray);
         array_push($reservation, $reservationInfo);
         $_SESSION["reservation"] = $reservation;
-//        echo "<script>window.location.href='available-rooms.php'</script>";
+        echo "<script>window.location.href='available-rooms.php'</script>";
 //        header("location: available-rooms.php");
