@@ -193,6 +193,10 @@ if(!isset($_SESSION["reservation"])){
                             <span><i class="fa fa-phone"></i></span>
                             <p>(033) 320-7190</p>
                         </div><!-- end support-contact -->
+                        <div class="support-contact" style="font-size: small">
+                            <span><i class="fa fa-envelope"></i></span>
+                            <p style="font-size: medium">vpaa@isatu.edu.ph</p>
+                        </div>
                     </div><!-- end side-bar-block -->
 
                     <div class="row">
