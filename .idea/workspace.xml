@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0bffea9c-5ccf-40d7-bca7-9fdcc80b9a51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/available-rooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/available-rooms.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/check-available-rooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/check-available-rooms.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/available-rooms.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
@@ -107,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check-available-rooms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+            <state relative-caret-position="119">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -200,8 +199,8 @@
         <option value="$PROJECT_DIR$/reservation-fill.php" />
         <option value="$PROJECT_DIR$/connection.php" />
         <option value="$PROJECT_DIR$/inquiry-client.php" />
-        <option value="$PROJECT_DIR$/check-available-rooms.php" />
         <option value="$PROJECT_DIR$/available-rooms.php" />
+        <option value="$PROJECT_DIR$/check-available-rooms.php" />
       </list>
     </option>
   </component>
@@ -282,12 +281,12 @@
       <workItem from="1541855203069" duration="35912000" />
       <workItem from="1542033422199" duration="110842000" />
       <workItem from="1556446894771" duration="7438000" />
-      <workItem from="1556615073177" duration="2893000" />
+      <workItem from="1556615073177" duration="3188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229419000" />
+    <option name="totallyTimeSpent" value="229714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -657,22 +656,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/check-available-rooms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/about-us.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inquiry-client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="252" column="28" lean-forward="true" selection-start-line="252" selection-start-column="28" selection-end-line="255" selection-end-column="53" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/available-rooms.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -682,6 +667,20 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inquiry-client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="252" column="28" lean-forward="true" selection-start-line="252" selection-start-column="28" selection-end-line="255" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check-available-rooms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
