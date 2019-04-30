@@ -1,6 +1,7 @@
 <?php
 require "auth-checker.php";
 require "connection.php";
+$user = "";
 ?>
 <!doctype html>
 <html lang="en">
@@ -96,13 +97,13 @@ require "connection.php";
                                     if(isset($_SESSION["user_id"])) {
                                         ?>
                                           <li class="text"><a href="index.php" >Home</a></li>
-                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa fa-angle-down"></i></span></a>
+                                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotels<span><i class="fa
+                                        <li><a href="hotel-tlsc.php">TLEC</a></li>
+                            </ul>
+               </li>
+               <li class="text"><a href="inquiry-client.php">Contact us</a></li>fa-angle-down"></i></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="hotel-hrsc.php">HRTSC</a></li>
-                                        <li><a href="hotel-tlsc.php">TLEC</a></li>
-                                    </ul>           
-                                </li>
-                                <li class="text"><a href="inquiry-client.php">Contact us</a></li>
                                 <li class="active"><a href="dashboard.php">Dashboard</a></li>
 
                                 <?php
@@ -199,10 +200,15 @@ require "connection.php";
                                       <p>User</p>
                                       <select class="form-control" name="user">
                                       <?php
+                                      $user = "";
                                         $stmt = $conn->query("SELECT * FROM `users`");
                                         while ($row = $stmt->fetch_object()) {
                                             ?>
-                                            <option value="<?=$row->id?>"><?=$row->username?></option>
+                                            <option value="<?=$row->id?>" <?php
+                                                if(isset($_POST["user"]) && $_POST["user"] == $row->id) {
+                                                    echo "selected";
+                                                }
+                                            ?>><?=$row->username?></option>
                                           <?php
                                         }
                                       ?>
@@ -226,6 +232,11 @@ require "connection.php";
 
                                             <?php
                                             if(isset($_POST["user"])) {
+                                                $user = "";
+                                                $st = $conn->query("SELECT * FROM `users` WHERE `id` = '".$_POST["user"]."'");
+                                                while ($rw = $st->fetch_object()) {
+                                                    $user = $rw->fname.' '.$rw->lname;
+                                                }
                                             $stmt = $conn->query("SELECT * FROM `rooms` INNER JOIN `hotels` WHERE `rooms`.`hotel_id` = `hotels`.`id` AND `rooms`.`last_edited_by` = '".$_POST["user"]."'");
                                             while ($row = $stmt->fetch_object()) {
                                                 ?>

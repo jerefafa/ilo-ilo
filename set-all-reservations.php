@@ -11,11 +11,6 @@ $lname = $_POST["lname"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
 $address = $_POST["address"];
-$package = $_POST["package"];
-$stmt = $conn->query("SELECT * FROM `packages` WHERE `id` = '$package'");
-while ($row = $stmt->fetch_object()){
-    $package = $row;
-}
 $choice = $_POST["choice"];
 $stmt = $conn->query("SELECT * FROM `room_rates` WHERE `id` = '$choice'");
 while ($row = $stmt->fetch_object()) {
@@ -28,7 +23,7 @@ array_push($_SESSION["reservation"],$lname); //7
 array_push($_SESSION["reservation"],$email); //8
 array_push($_SESSION["reservation"],$phone); //9
 array_push($_SESSION["reservation"],$address); //10
-array_push($_SESSION["reservation"],$package); //11
+array_push($_SESSION["reservation"],0); //11
 array_push($_SESSION["reservation"],$choice); //12
 array_push($_SESSION["reservation"],$additionalBed); //13
 $numdays = date_diff(date_create($_SESSION["reservation"][1]),date_create($_SESSION["reservation"][0]))->format("%a");

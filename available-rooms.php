@@ -290,22 +290,7 @@ if(!isset($_SESSION["reservation"])){
                                                     <input type="text" class="form-control" placeholder="Address" name="address" required/>
                                                 </div>
 
-                                                <div class="form-group right-icon">
-                                                    <select class="form-control" name="package">
-                                                        <option selected>Package</option>
-                                                        <?php
-                                                        $stmt = $conn->query("SELECT * FROM `packages` WHERE `room_id` = '$room->id'");
-                                                        while ($row = $stmt->fetch_object()) {
-                                                            ?>
-                                                            <option value="<?=$row->id?>"><?=$row->package_title?></option>
-                                                        <?php
-                                                        }
 
-                                                        ?>
-                                                    </select>
-                                                    <br>
-                                                    <a href="book-room.php?roomId=<?=$room->id?>"  target="_blank" style="margin-left: 3px;text-decoration: underline; color: darkred">See packages info</a>
-                                                </div>
                                                 <div class="form-group right-icon">
                                                 <select class="form-control" required name="choice">
                                                     <option selected disabled>Rate Choice</option>

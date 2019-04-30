@@ -8,7 +8,7 @@ $checkOut = $_GET["checkOut"];
 $dateToday = strtotime(date('Y-m-d'));
 error_reporting(0);
     if(strtotime($checkIn) >= strtotime($checkOut) || strtotime($checkIn) < $dateToday || strtotime($checkOut) < $dateToday) {
-        echo "<script>alert('Invalid date arrangement, Check in or check out cannot be in the past');
+        echo "<script>
         window.history.back();
 </script>";
     }

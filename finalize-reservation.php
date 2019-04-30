@@ -173,33 +173,6 @@ if(!isset($_SESSION["reservation"])) {
 
                             <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
                                 <form action="set-all-reservations.php" method="post">
-
-
-                                    <div class="form-group right-icon">
-                                        <select class="form-control" name="room" id="room">
-                                            <option selected disabled>Rooms</option>
-                                            <?php
-                                            $roomsArray = array();
-                                            $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '".$_SESSION["reservation"][4]."'");
-                                            while ($row = $stmt->fetch_object()) {
-                                                array_push($roomsArray, $row);
-                                            }
-                                            $i=0;
-                                            foreach ($roomsArray as $room) {
-                                                if(mysqli_num_rows($conn->query("SELECT * FROM `reservations` WHERE ((`check_in` between '".$_SESSION["reservationInfo"][0]."' AND '".$_SESSION["reservationInfo"][1]."') OR (`check_out` between '".$_SESSION["reservationInfo"][0]."' AND '".$_SESSION["reservationInfo"][1]."')) AND `room_id` = '$room->id' AND `cancelled_by` IS NULL")) > 0) {
-                                                    array_splice($roomsArray,$i,1);
-                                                    continue;
-                                                }
-                                                else{
-                                                    ?>
-                                                    <option value="<?=$room->id?>"><?=$room->room_type.' '.$room->room_name?></option>
-                                                    <?php
-                                                }
-                                                $i++;
-                                            }
-                                            ?>
-                                    </div>
-                                    <br>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="First Name" name="fname" required/>
                                     </div>
@@ -221,8 +194,28 @@ if(!isset($_SESSION["reservation"])) {
                                     </div>
 
                                     <div class="form-group right-icon">
-                                        <select class="form-control" name="package" id="package" required>
-                                            <option selected disabled>Package</option>
+                                        <select class="form-control" name="room" id="room" required>
+                                            <option selected disabled>Rooms</option>
+                                            <?php
+                                            $roomsArray = array();
+                                            $stmt = $conn->query("SELECT * FROM `rooms` WHERE `hotel_id` = '".$_SESSION["reservation"][4]."'");
+                                            while ($row = $stmt->fetch_object()) {
+                                                array_push($roomsArray, $row);
+                                            }
+                                            $i=0;
+                                            foreach ($roomsArray as $room) {
+                                                if(mysqli_num_rows($conn->query("SELECT * FROM `reservations` WHERE ((`check_in` between '".$_SESSION["reservation"][0]."' AND '".$_SESSION["reservation"][1]."') OR (`check_out` between '".$_SESSION["reservationInfo"][0]."' AND '".$_SESSION["reservation"][1]."')) AND `room_id` = '$room->id' AND `cancelled_by` IS NULL")) > 0) {
+                                                    array_splice($roomsArray,$i,1);
+                                                    continue;
+                                                }
+                                                else{
+                                                    ?>
+                                                    <option value="<?=$room->id?>"><?=$room->room_type.' '.$room->room_name?></option>
+                                                    <?php
+                                                }
+                                                $i++;
+                                            }
+                                            ?>
                                         </select>
 
                                     </div>
@@ -234,7 +227,7 @@ if(!isset($_SESSION["reservation"])) {
                                         </select>
                                     </div>
                                     <?php
-                                    if($_SESSION["reservationInfo"][4] == 1){
+                                    if($_SESSION["reservation"][4] == 1){
                                         ?>
 
                                         <div class="form-group right-icon">
