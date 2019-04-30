@@ -409,6 +409,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <?php
+                                    if(isset($_SESSION["fail"])) {
+                                        unset($_SESSION["fail"]);
+                                        ?>
+                                        <span style="color: red; font-size: small">*Invalid date arrangement, dates must be later from today</span>
+                                        <?php
+                                    }
+                                    ?>
                                     <button class="btn btn-orange">Proceed</button>
                                 </form>
                             </div><!-- end modal-bpdy -->

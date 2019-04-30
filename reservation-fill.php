@@ -234,7 +234,14 @@ require "auth-checker.php";
                                                 <option value="2">TLEC</option>
                                             </select>
                                         </div>
-
+                                    <?php
+                                    if(isset($_SESSION["fail"])) {
+                                        unset($_SESSION["fail"]);
+                                        ?>
+                                        <span style="color: red; font-size: small">*Invalid date arrangement, dates must be later from today</span>
+                                        <?php
+                                    }
+                                    ?>
                                         <br>
                                         <button class="btn btn-orange btn-block" >Proceed</button>
 

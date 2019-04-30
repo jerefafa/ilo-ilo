@@ -3,6 +3,7 @@ require "auth-checker.php";
 require "connection.php";
 $dateToday = strtotime(date('Y-m-d'));
 if(strtotime($_POST["checkIn"]) >= strtotime($_POST["checkOut"]) || strtotime($_POST["checkIn"]) < $dateToday || strtotime($_POST["checkOut"]) < $dateToday) {
+   $_SESSION["fail"] = true;
     echo "<script>
         window.history.back();
 </script>";

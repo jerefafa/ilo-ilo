@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bffea9c-5ccf-40d7-bca7-9fdcc80b9a51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin-reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/available-rooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/available-rooms.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/check-available-rooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/check-available-rooms.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fill-reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/fill-reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalize-reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/finalize-reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log-trail.php" beforeDir="false" afterPath="$PROJECT_DIR$/log-trail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation-landing-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/reservation-landing-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/room-booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/room-booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/set-all-reservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/set-all-reservations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-hrsc.php" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-hrsc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel-tlsc.php" beforeDir="false" afterPath="$PROJECT_DIR$/hotel-tlsc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation-fill.php" beforeDir="false" afterPath="$PROJECT_DIR$/reservation-fill.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,52 +34,38 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/room-booking.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/available-rooms.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="292" lean-forward="true" selection-start-line="292" selection-end-line="292" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finalize-reservation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="175" column="52" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/set-all-reservations.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin-cash-payment.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-3964">
               <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/reservation-fill.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="240" column="84" selection-start-line="240" selection-start-column="84" selection-end-line="240" selection-end-column="84" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fill-reservation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth-checker.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -96,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-manage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1164">
+            <state relative-caret-position="603">
               <caret line="306" column="56" selection-start-line="306" selection-start-column="56" selection-end-line="306" selection-end-column="56" />
             </state>
           </provider>
@@ -115,19 +96,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/check-available-rooms.php">
+        <entry file="file://$PROJECT_DIR$/hotel-tlsc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="224">
+              <caret line="415" column="84" selection-start-line="415" selection-start-column="84" selection-end-line="415" selection-end-column="84" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-trail.php">
+        <entry file="file://$PROJECT_DIR$/hotel-hrsc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="208" column="68" selection-start-line="208" selection-start-column="68" selection-end-line="208" selection-end-column="68" />
+            <state relative-caret-position="340">
+              <caret line="444" column="72" selection-start-line="444" selection-start-column="72" selection-end-line="444" selection-end-column="72" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/check-available-rooms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -136,8 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pick</find>
-      <find>pick-</find>
       <find>packag</find>
       <find>room ove</find>
       <find>img</find>
@@ -161,11 +155,13 @@
       <find>form</find>
       <find>package</find>
       <find>&lt;?=</find>
-      <find>form</find>
-      <find>a hre</find>
       <find>Home</find>
       <find>Reservat</find>
       <find>promos</find>
+      <find>a hre</find>
+      <find>proc</find>
+      <find>pro</find>
+      <find>form</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,21 +199,21 @@
         <option value="$PROJECT_DIR$/answer-inquiry.php" />
         <option value="$PROJECT_DIR$/receipt.php" />
         <option value="$PROJECT_DIR$/book-room.php" />
-        <option value="$PROJECT_DIR$/hotel-hrsc.php" />
-        <option value="$PROJECT_DIR$/hotel-tlsc.php" />
         <option value="$PROJECT_DIR$/accomodation.php" />
-        <option value="$PROJECT_DIR$/reservation-fill.php" />
         <option value="$PROJECT_DIR$/connection.php" />
         <option value="$PROJECT_DIR$/inquiry-client.php" />
         <option value="$PROJECT_DIR$/log-trail.php" />
-        <option value="$PROJECT_DIR$/fill-reservation.php" />
-        <option value="$PROJECT_DIR$/check-available-rooms.php" />
         <option value="$PROJECT_DIR$/available-rooms.php" />
         <option value="$PROJECT_DIR$/finalize-reservation.php" />
         <option value="$PROJECT_DIR$/set-all-reservations.php" />
         <option value="$PROJECT_DIR$/room-booking.php" />
         <option value="$PROJECT_DIR$/reservation-landing-page.php" />
         <option value="$PROJECT_DIR$/admin-reservation.php" />
+        <option value="$PROJECT_DIR$/check-available-rooms.php" />
+        <option value="$PROJECT_DIR$/hotel-tlsc.php" />
+        <option value="$PROJECT_DIR$/hotel-hrsc.php" />
+        <option value="$PROJECT_DIR$/fill-reservation.php" />
+        <option value="$PROJECT_DIR$/reservation-fill.php" />
       </list>
     </option>
   </component>
@@ -298,12 +294,12 @@
       <workItem from="1541855203069" duration="35912000" />
       <workItem from="1542033422199" duration="110842000" />
       <workItem from="1556446894771" duration="7438000" />
-      <workItem from="1556615073177" duration="10407000" />
+      <workItem from="1556615073177" duration="11796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236933000" />
+    <option name="totallyTimeSpent" value="238322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -355,7 +351,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/iloilo.sql" />
     <entry file="file://$PROJECT_DIR$/pay.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -533,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel-tlsc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4386">
-          <caret line="258" column="60" selection-start-line="258" selection-start-column="60" selection-end-line="258" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accomodation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3332">
@@ -606,34 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reservation-fill.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fill-reservation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotel-hrsc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="402" column="22" selection-start-line="402" selection-start-column="17" selection-end-line="402" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/check-available-rooms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/available-rooms.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -666,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin-cash-payment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3964">
-          <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/room-booking.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -687,6 +640,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web-manage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="306" column="56" selection-start-line="306" selection-start-column="56" selection-end-line="306" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin-reservation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -694,10 +654,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-manage.php">
+    <entry file="file://$PROJECT_DIR$/admin-cash-payment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1164">
-          <caret line="306" column="56" selection-start-line="306" selection-start-column="56" selection-end-line="306" selection-end-column="56" />
+        <state relative-caret-position="-3964">
+          <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check-available-rooms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel-tlsc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="415" column="84" selection-start-line="415" selection-start-column="84" selection-end-line="415" selection-end-column="84" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel-hrsc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="444" column="72" selection-start-line="444" selection-start-column="72" selection-end-line="444" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-checker.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fill-reservation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reservation-fill.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="240" column="84" selection-start-line="240" selection-start-column="84" selection-end-line="240" selection-end-column="84" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

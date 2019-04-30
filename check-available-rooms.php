@@ -8,6 +8,7 @@ $checkOut = $_GET["checkOut"];
 $dateToday = strtotime(date('Y-m-d'));
 error_reporting(0);
     if(strtotime($checkIn) >= strtotime($checkOut) || strtotime($checkIn) < $dateToday || strtotime($checkOut) < $dateToday) {
+        $_SESSION["fail"] = true;
         echo "<script>
         window.history.back();
 </script>";
