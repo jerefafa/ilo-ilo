@@ -231,7 +231,7 @@ if(!isset($_SESSION["reservation"])){
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="grid-block main-block h-grid-block">
                                     <div class="main-img h-grid-img">
-                                        <a href="hotel-detail-left-sidebar.html">
+                                        <a href="#">
                                             <img src="<?= $room->image_path ?>" class="img-responsive" alt="hotel-img" />
                                         </a>
                                         <div class="main-mask">

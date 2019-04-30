@@ -2,8 +2,19 @@
 session_start();
 require "connection.php";
 
+
 $checkIn = $_GET["checkIn"];
 $checkOut = $_GET["checkOut"];
+$dateToday = strtotime(date('Y-m-d'));
+error_reporting(0);
+
+
+    if(strtotime($checkIn) >= strtotime($checkOut) || $checkIn < $dateToday || $checkOut < $dateToday) {
+        echo "<script>alert('Invalid date arrangement, Check in or check out cannot be in the past');
+        window.history.back();
+</script>";
+        return;
+    }
 $hotelId = $_GET["hotelId"];
 $cout = new DateTime($checkOut);
 $cout->modify('-1 day');
@@ -36,5 +47,4 @@ $reservation = array();
 array_push($reservation,$roomsArray);
 array_push($reservation,$reservationInfo);
 $_SESSION["reservation"] = $reservation;
-header("location:available-rooms.php");
 echo "<script>location.href='available-rooms.php'</script>";

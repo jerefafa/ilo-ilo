@@ -125,7 +125,7 @@ session_start();
                                         <li><a href="hotel-tlsc.php">TLEC</a></li>
                                     </ul>           
                                 </li>
-                                <li class="active"><a href="#">>Contact us</a></li>
+                                <li class="active"><a href="#">Contact us</a></li>
                                         <?php
                                     }
                                 ?>
